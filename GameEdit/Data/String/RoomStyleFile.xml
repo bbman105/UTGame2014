@@ -1,0 +1,22 @@
+<root>
+	<SID1>
+		<StyleID>1</StyleID>
+		<StyleFile>forest</StyleFile>
+		<StyleName>´ËªL</StyleName>
+	</SID1>
+	<SID2>
+		<StyleID>2</StyleID>
+		<StyleFile>desert</StyleFile>
+		<StyleName>¨Fºz</StyleName>
+	</SID2>
+	<SID3>
+		<StyleID>3</StyleID>
+		<StyleFile>plain</StyleFile>
+		<StyleName>´Óª«¶é</StyleName>
+	</SID3>
+	<SID4>
+		<StyleID>4</StyleID>
+		<StyleFile>swamp</StyleFile>
+		<StyleName>ªh¿A</StyleName>
+	</SID4>
+</root>

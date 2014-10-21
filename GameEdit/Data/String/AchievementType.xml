@@ -1,0 +1,22 @@
+<root>
+	<ATID1>
+		<AchievementTypeID>1</AchievementTypeID>
+		<AchievementName>完成成就</AchievementName>
+		<AchievementDetail>完成任務關卡</AchievementDetail>
+	</ATID1>
+	<ATID2>
+		<AchievementTypeID>2</AchievementTypeID>
+		<AchievementName>探索成就</AchievementName>
+		<AchievementDetail>完全探索任務關卡中的出沒怪獸</AchievementDetail>
+	</ATID2>
+	<ATID3>
+		<AchievementTypeID>3</AchievementTypeID>
+		<AchievementName>評價成就</AchievementName>
+		<AchievementDetail>達成此任務的S級評價</AchievementDetail>
+	</ATID3>
+	<ATID4>
+		<AchievementTypeID>4</AchievementTypeID>
+		<AchievementName>獵殺成就</AchievementName>
+		<AchievementDetail>擊殺此任務的懸賞怪獸</AchievementDetail>
+	</ATID4>
+</root>

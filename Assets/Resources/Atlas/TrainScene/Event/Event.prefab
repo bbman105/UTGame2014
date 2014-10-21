@@ -1,0 +1,630 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400000}
+  - 114: {fileID: 11400000}
+  m_Layer: 0
+  m_Name: Event
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0c51bb0b6e93049af5e88f93826e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: adf7b74cd4101bb40bf2b10f166caa59, type: 2}
+  mSprites:
+  - name: 1
+    x: 770
+    y: 34
+    width: 64
+    height: 64
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 23
+    paddingRight: 21
+    paddingTop: 14
+    paddingBottom: 9
+  - name: 10
+    x: 1007
+    y: 371
+    width: 67
+    height: 64
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 23
+    paddingRight: 18
+    paddingTop: 14
+    paddingBottom: 9
+  - name: 101
+    x: 129
+    y: 87
+    width: 56
+    height: 56
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 28
+    paddingRight: 24
+    paddingTop: 19
+    paddingBottom: 12
+  - name: 102
+    x: 692
+    y: 359
+    width: 77
+    height: 76
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 16
+    paddingRight: 15
+    paddingTop: 10
+    paddingBottom: 1
+  - name: 103
+    x: 692
+    y: 138
+    width: 75
+    height: 66
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 17
+    paddingRight: 16
+    paddingTop: 9
+    paddingBottom: 12
+  - name: 104
+    x: 770
+    y: 361
+    width: 78
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 18
+    paddingRight: 12
+    paddingTop: 9
+    paddingBottom: 4
+  - name: 105
+    x: 692
+    y: 282
+    width: 77
+    height: 76
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 15
+    paddingRight: 16
+    paddingTop: 10
+    paddingBottom: 1
+  - name: 106
+    x: 455
+    y: 193
+    width: 67
+    height: 59
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 23
+    paddingRight: 18
+    paddingTop: 20
+    paddingBottom: 8
+  - name: 107
+    x: 692
+    y: 205
+    width: 77
+    height: 76
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 15
+    paddingRight: 16
+    paddingTop: 10
+    paddingBottom: 1
+  - name: 11
+    x: 618
+    y: 110
+    width: 68
+    height: 72
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 20
+    paddingRight: 20
+    paddingTop: 6
+    paddingBottom: 9
+  - name: 12
+    x: 618
+    y: 38
+    width: 64
+    height: 71
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 23
+    paddingRight: 21
+    paddingTop: 7
+    paddingBottom: 9
+  - name: 13
+    x: 770
+    y: 164
+    width: 64
+    height: 64
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 23
+    paddingRight: 21
+    paddingTop: 14
+    paddingBottom: 9
+  - name: 14
+    x: 692
+    y: 68
+    width: 64
+    height: 69
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 23
+    paddingRight: 21
+    paddingTop: 9
+    paddingBottom: 9
+  - name: 15
+    x: 770
+    y: 295
+    width: 64
+    height: 65
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 9
+    paddingRight: 7
+    paddingTop: 8
+    paddingBottom: 6
+  - name: 16
+    x: 435
+    y: 26
+    width: 80
+    height: 80
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 10
+    paddingRight: 18
+    paddingTop: 1
+    paddingBottom: 6
+  - name: 17
+    x: 618
+    y: 353
+    width: 73
+    height: 82
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 16
+    paddingRight: 19
+    paddingTop: 0
+    paddingBottom: 5
+  - name: 18
+    x: 1075
+    y: 371
+    width: 65
+    height: 64
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 22
+    paddingRight: 21
+    paddingTop: 14
+    paddingBottom: 9
+  - name: 19
+    x: 692
+    y: 3
+    width: 68
+    height: 64
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 23
+    paddingRight: 17
+    paddingTop: 14
+    paddingBottom: 9
+  - name: 2
+    x: 849
+    y: 364
+    width: 78
+    height: 71
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 19
+    paddingRight: 11
+    paddingTop: 9
+    paddingBottom: 7
+  - name: 3
+    x: 618
+    y: 183
+    width: 68
+    height: 78
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 23
+    paddingRight: 17
+    paddingTop: 6
+    paddingBottom: 3
+  - name: 4
+    x: 770
+    y: 229
+    width: 64
+    height: 65
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 23
+    paddingRight: 21
+    paddingTop: 14
+    paddingBottom: 8
+  - name: 5
+    x: 435
+    y: 107
+    width: 86
+    height: 84
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 20
+    paddingTop: 1
+    paddingBottom: 2
+  - name: 6
+    x: 516
+    y: 24
+    width: 74
+    height: 82
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 11
+    paddingRight: 14
+    paddingTop: 6
+    paddingBottom: 12
+  - name: 7
+    x: 522
+    y: 108
+    width: 87
+    height: 83
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 7
+    paddingRight: -8
+    paddingTop: 6
+    paddingBottom: 6
+  - name: 8
+    x: 770
+    y: 99
+    width: 64
+    height: 64
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 23
+    paddingRight: 21
+    paddingTop: 14
+    paddingBottom: 9
+  - name: 9
+    x: 928
+    y: 370
+    width: 78
+    height: 65
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 16
+    paddingRight: 14
+    paddingTop: 14
+    paddingBottom: 8
+  - name: choice-buttom
+    x: 0
+    y: 144
+    width: 185
+    height: 108
+    borderLeft: 100
+    borderRight: 35
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 4
+    paddingRight: 5
+    paddingTop: 4
+    paddingBottom: 5
+  - name: editbuttom-edit
+    x: 835
+    y: 302
+    width: 58
+    height: 58
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 1
+    paddingTop: 1
+    paddingBottom: 2
+  - name: event-bubble
+    x: 894
+    y: 308
+    width: 64
+    height: 52
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: floor
+    x: 186
+    y: 192
+    width: 268
+    height: 60
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 4
+    paddingRight: 4
+    paddingTop: 5
+    paddingBottom: 4
+  - name: new-event-bg
+    x: 0
+    y: 253
+    width: 617
+    height: 771
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 163
+    borderBottom: 200
+    paddingLeft: 6
+    paddingRight: 8
+    paddingTop: 5
+    paddingBottom: 10
+  - name: evoTitle2
+    x: 825
+    y: 484
+    width: 206
+    height: 47
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 0
+    paddingTop: 2
+    paddingBottom: 3
+  - name: evoTitle5
+    x: 186
+    y: 96
+    width: 248
+    height: 47
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 3
+    paddingTop: 3
+    paddingBottom: 2
+  - name: evoTitle1
+    x: 618
+    y: 484
+    width: 206
+    height: 47
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 0
+    paddingTop: 2
+    paddingBottom: 3
+  - name: evoTitle4
+    x: 186
+    y: 144
+    width: 248
+    height: 47
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 3
+    paddingTop: 3
+    paddingBottom: 2
+  - name: evoTitle3
+    x: 618
+    y: 436
+    width: 206
+    height: 47
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 0
+    paddingTop: 2
+    paddingBottom: 3
+  - name: evoTitle6
+    x: 186
+    y: 48
+    width: 248
+    height: 47
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 3
+    paddingTop: 3
+    paddingBottom: 2
+  - name: new-event-frame
+    x: 0
+    y: 8
+    width: 128
+    height: 135
+    borderLeft: 40
+    borderRight: 40
+    borderTop: 40
+    borderBottom: 40
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: new-event-Radiance
+    x: 618
+    y: 532
+    width: 533
+    height: 492
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 25
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 21
+  - name: new-event-spot
+    x: 1152
+    y: 710
+    width: 567
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 14
+    paddingRight: 0
+    paddingTop: 3
+    paddingBottom: 3
+  - name: new-event-tittlebottom
+    x: 618
+    y: 262
+    width: 66
+    height: 90
+    borderLeft: 16
+    borderRight: 16
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: new-propertybottom
+    x: 959
+    y: 312
+    width: 67
+    height: 48
+    borderLeft: 18
+    borderRight: 18
+    borderTop: 15
+    borderBottom: 15
+    paddingLeft: 0
+    paddingRight: 1
+    paddingTop: 3
+    paddingBottom: 4
+  - name: shadow
+    x: 186
+    y: 29
+    width: 92
+    height: 18
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 3
+    paddingTop: 2
+    paddingBottom: 5
+  - name: x-buttom
+    x: 523
+    y: 193
+    width: 60
+    height: 59
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  mPixelSize: 1
+  mReplacement: {fileID: 0}
+  mCoordinates: 0
+  sprites: []
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 100000}
+  m_IsPrefabParent: 1
+  m_IsExploded: 1

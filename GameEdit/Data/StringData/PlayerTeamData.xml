@@ -1,0 +1,26 @@
+<root>
+	<TID1>
+		<TeamID>1</TeamID>
+		<OwnPlayerID>1</OwnPlayerID>
+		<TeamName>大東方缺程式</TeamName>
+		<Member1ID>1000001</Member1ID>
+		<Member2ID>1000002</Member2ID>
+		<Member3ID>1000003</Member3ID>
+	</TID1>
+	<TID3>
+		<TeamID>3</TeamID>
+		<OwnPlayerID>1</OwnPlayerID>
+		<TeamName>也缺美術</TeamName>
+		<Member1ID>1000005</Member1ID>
+		<Member2ID>0</Member2ID>
+		<Member3ID>0</Member3ID>
+	</TID3>
+	<TID2>
+		<TeamID>2</TeamID>
+		<OwnPlayerID>1</OwnPlayerID>
+		<TeamName>跪求音樂音效人</TeamName>
+		<Member1ID>1000004</Member1ID>
+		<Member2ID>0</Member2ID>
+		<Member3ID>0</Member3ID>
+	</TID2>
+</root>

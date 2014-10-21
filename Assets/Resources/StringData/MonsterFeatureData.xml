@@ -1,0 +1,8 @@
+<root>
+	<FID1>
+		<FeatureUID>1</FeatureUID>
+		<OwnMonsterUID>1000001</OwnMonsterUID>
+		<FeatureID>50002</FeatureID>
+		<IsDominant>True</IsDominant>
+	</FID1>
+</root>

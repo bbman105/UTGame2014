@@ -1,0 +1,22 @@
+<root>
+	<MID1>
+		<PlayerID>1</PlayerID>
+		<PlayerName>scozirge</PlayerName>
+		<Gold>1000</Gold>
+		<Dimand>10</Dimand>
+		<CurEnergy>10</CurEnergy>
+		<MaxEnergy>100</MaxEnergy>
+		<FireSilver>23</FireSilver>
+		<FireGold>18</FireGold>
+		<FireDimand>13</FireDimand>
+		<FireCrystal>9</FireCrystal>
+		<WoodSilver>23</WoodSilver>
+		<WoodGold>23</WoodGold>
+		<WoodDimand>23</WoodDimand>
+		<WoodCrystal>23</WoodCrystal>
+		<WaterSilver>23</WaterSilver>
+		<WaterGold>23</WaterGold>
+		<WaterDimand>23</WaterDimand>
+		<WaterCrystal>23</WaterCrystal>
+	</MID1>
+</root>

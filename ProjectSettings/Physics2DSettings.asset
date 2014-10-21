@@ -1,0 +1,11 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!19 &1
+Physics2DSettings:
+  m_ObjectHideFlags: 0
+  m_Gravity: {x: 0, y: -30}
+  m_DefaultMaterial: {fileID: 0}
+  m_VelocityIterations: 8
+  m_PositionIterations: 3
+  m_RaycastsHitTriggers: 1
+  m_LayerCollisionMatrix: ffff3fc0ffff3fc0ffff3fc0ffffffffffff3fc0fffffffffffffffffffffffffff93fc0fffe3fc0fff23fc0fff33fc0ffff3ec0ffdf6cc0ffbf1ac0ffff3ec0ff0f08c0ffdf64c0ffbf12c0ffff01c1ffdf64c0ffbf12c0e82012c0e80000c3e80088c0e80080d0e80000c0e80000f0e80000cae80000c8ffffffffffffffff

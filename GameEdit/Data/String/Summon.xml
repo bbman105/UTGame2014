@@ -1,0 +1,28 @@
+<root>
+	<SEID1>
+		<EventID>1</EventID>
+		<BossID></BossID>
+		<BossName>§Å¬r«½«½</BossName>
+		<BossSet>1</BossSet>
+		<UnderlingNumber>3</UnderlingNumber>
+		<UnderlingID>2,3,4,5</UnderlingID>
+		<Weight>1,2,3</Weight>
+		<SetPos1>True</SetPos1>
+		<SetPos2>True</SetPos2>
+		<SetPos3>True</SetPos3>
+		<BossTactics1>SingleSuppress</BossTactics1>
+		<Probability1>1</Probability1>
+		<BossTactics2>Suppress</BossTactics2>
+		<Probability2>1</Probability2>
+		<BossTactics3>Health,50%</BossTactics3>
+		<Probability3>1</Probability3>
+		<BossTactics4>None</BossTactics4>
+		<Probability4>None</Probability4>
+		<BossTactics5>None</BossTactics5>
+		<Probability5>None</Probability5>
+		<ColdDown>5</ColdDown>
+		<Restrict1>OnFightMinNumber,1</Restrict1>
+		<Restrict2>OnFightMaxNumber,2</Restrict2>
+		<Restrict3>None</Restrict3>
+	</SEID1>
+</root>

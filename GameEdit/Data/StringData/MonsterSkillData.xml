@@ -1,0 +1,32 @@
+<root>
+	<SID1>
+		<SkillID>1</SkillID>
+		<OwnMonsterID>1</OwnMonsterID>
+		<SpellID>221</SpellID>
+		<>None</>
+	</SID1>
+	<SID4>
+		<SkillID>4</SkillID>
+		<OwnMonsterID>2</OwnMonsterID>
+		<SpellID>51</SpellID>
+		<>None</>
+	</SID4>
+	<SID1000001>
+		<SkillID>1000001</SkillID>
+		<OwnMonsterID>1000001</OwnMonsterID>
+		<SpellID>21</SpellID>
+		<>None</>
+	</SID1000001>
+	<SID1000002>
+		<SkillID>1000002</SkillID>
+		<OwnMonsterID>1000002</OwnMonsterID>
+		<SpellID>31</SpellID>
+		<>None</>
+	</SID1000002>
+	<SID1000003>
+		<SkillID>1000003</SkillID>
+		<OwnMonsterID>1000003</OwnMonsterID>
+		<SpellID>91</SpellID>
+		<>None</>
+	</SID1000003>
+</root>

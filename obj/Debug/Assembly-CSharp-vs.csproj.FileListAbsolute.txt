@@ -1,0 +1,12 @@
+D:\GameDesign\UTGame2014\Temp\bin\Debug\Assembly-CSharp.dll
+D:\GameDesign\UTGame2014\Temp\bin\Debug\Assembly-CSharp.pdb
+D:\GameDesign\UTGame2014\Temp\bin\Debug\UnityEditor.dll
+D:\GameDesign\UTGame2014\Temp\bin\Debug\UnityEngine.dll
+D:\GameDesign\UTGame2014\Temp\bin\Debug\Mono.Cecil.dll
+D:\GameDesign\UTGame2014\Temp\bin\Debug\nunit.framework.dll
+D:\GameDesign\UTGame2014\Temp\bin\Debug\Unity.DataContract.dll
+D:\GameDesign\UTGame2014\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+D:\GameDesign\UTGame2014\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
+D:\GameDesign\UTGame2014\obj\Debug\Assembly-CSharp.dll
+D:\GameDesign\UTGame2014\obj\Debug\Assembly-CSharp.pdb
+D:\GameDesign\UTGame2014\Temp\bin\Debug\IFacebook.dll

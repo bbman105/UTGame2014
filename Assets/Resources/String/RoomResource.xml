@@ -1,0 +1,23 @@
+<root>
+  <Room2>
+    <Resource>
+		<EventType>0</EventType>
+		<Value>120</Value>
+		<Pos>100,100,100</Pos>
+		<Scale>1,1,1</Scale>
+    </Resource>
+    <Resource>
+		<EventType>0</EventType>
+		<Value>120</Value>
+		<Pos>100,100,100</Pos>
+		<Scale>1,1,1</Scale>
+    </Resource>
+  </Room2>
+  <Room1>
+    <Resource>
+    </Resource>
+  </Room1>
+  <Room4>
+    <Resource>1</Resource>
+  </Room4>
+</root>
