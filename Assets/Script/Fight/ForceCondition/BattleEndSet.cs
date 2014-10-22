@@ -137,6 +137,7 @@ public partial class ForceCondition : MonoBehaviour
                 reRollProperty[pos].playerMonster = CurMember;
                 reRollProperty[pos].RollBtnID = pos;
 
+                /*
                 ///////////////////////讀取目前選取腳色的資料/////////////////////////////
                 //設置腳色Icon的各種資料(怪物、元素、邊框、底圖)
                 //判斷物種頭像放在哪個atlas
@@ -150,11 +151,12 @@ public partial class ForceCondition : MonoBehaviour
                 elementSprite[pos].spriteName = "element" + CurMember.MainElement.ToString();
                 elementSprite[pos].MakePixelPerfect();
                 bannerSprite[pos].atlas = iconCharaAtlas[i];
-                bannerSprite[pos].spriteName = "frame" + CurMember.Rare.ToString();
+                bannerSprite[pos].spriteName = "frame" + CurMember.MainElement.ToString();
                 bannerSprite[pos].MakePixelPerfect();
                 bottomSprite[pos].atlas = iconCharaAtlas[i];
-                bottomSprite[pos].spriteName = "bottom" + CurMember.Rare.ToString();
+                bottomSprite[pos].spriteName = "bottom" + CurMember.MainElement.ToString();
                 bottomSprite[pos].MakePixelPerfect();
+                 */
                 pos++;
             }
         }
@@ -384,7 +386,6 @@ public partial class ForceCondition : MonoBehaviour
                 {
                     memberCard[pos].SetActive(true);
                     CurMember = Player.MonsterDic[(Player.TeamDic[PlayerTeamID].Member[i])];
-
                     //選擇對的物種頭像
                     if (CurMember.Species < 8)
                     {
@@ -394,16 +395,18 @@ public partial class ForceCondition : MonoBehaviour
                     {
                         iconCharaSprite[pos].atlas = Resources.Load<UIAtlas>("Atlas/Character/Icon/CharaIcon2");
                     }
+                    //設定外框元素及底圖的atlas
+                    iconCharaAtlas[pos] = Resources.Load<UIAtlas>("Atlas/Character/Icon/CharaIcon");
                     iconCharaSprite[pos].spriteName = CurMember.SpeciesKey;
                     iconCharaSprite[pos].MakePixelPerfect();
                     elementSprite[pos].atlas = iconCharaAtlas[pos];
                     elementSprite[pos].spriteName = "element" + CurMember.MainElement.ToString();
                     elementSprite[pos].MakePixelPerfect();
                     bannerSprite[pos].atlas = iconCharaAtlas[pos];
-                    bannerSprite[pos].spriteName = "frame" + CurMember.Rare.ToString();
+                    bannerSprite[pos].spriteName = "frame" + CurMember.MainElement.ToString();
                     bannerSprite[pos].MakePixelPerfect();
                     bottomSprite[pos].atlas = iconCharaAtlas[pos];
-                    bottomSprite[pos].spriteName = "bottom" + CurMember.Rare.ToString();
+                    bottomSprite[pos].spriteName = "bottom" + CurMember.MainElement.ToString();
                     bottomSprite[pos].MakePixelPerfect();
                     //設置怪物的各種屬性資料(名稱、等級、經驗、種族、體型、生命、殘暴、侵略、抵抗)
                     lvLabel[pos].text = TmpMemberLv[i].ToString();
