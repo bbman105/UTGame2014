@@ -1,6 +1,10 @@
 fileFormatVersion: 2
 guid: 014070b0b13841646ac0e6ab6f64488d
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: puncture_0
+    21300002: puncture_1
+    21300004: puncture_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -35,6 +39,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
@@ -50,6 +55,7 @@ TextureImporter:
         height: 27
       alignment: 9
       pivot: {x: 1.0548861, y: .500001132}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: puncture_1
       rect:
         serializedVersion: 2
@@ -59,6 +65,7 @@ TextureImporter:
         height: 147
       alignment: 9
       pivot: {x: .518338084, y: .550055683}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: puncture_2
       rect:
         serializedVersion: 2
@@ -68,5 +75,6 @@ TextureImporter:
         height: 258
       alignment: 9
       pivot: {x: .254728198, y: .511408091}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

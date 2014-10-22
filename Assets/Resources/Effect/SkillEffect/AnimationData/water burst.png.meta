@@ -1,6 +1,11 @@
 fileFormatVersion: 2
 guid: 52cb59071473c83458fadbfc30107e49
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: Water burst_0
+    21300002: Water burst_1
+    21300004: Water burst_2
+    21300006: Water burst_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -35,6 +40,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
@@ -50,6 +56,7 @@ TextureImporter:
         height: 259
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: Water burst_1
       rect:
         serializedVersion: 2
@@ -59,6 +66,7 @@ TextureImporter:
         height: 230
       alignment: 9
       pivot: {x: .540525436, y: .504954219}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: Water burst_2
       rect:
         serializedVersion: 2
@@ -68,6 +76,7 @@ TextureImporter:
         height: 102
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: Water burst_3
       rect:
         serializedVersion: 2
@@ -77,5 +86,6 @@ TextureImporter:
         height: 222
       alignment: 9
       pivot: {x: .505064309, y: .461504132}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

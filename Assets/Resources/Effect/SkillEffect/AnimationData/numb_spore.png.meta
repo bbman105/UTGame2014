@@ -1,6 +1,10 @@
 fileFormatVersion: 2
 guid: 1080ee418080423478cd03d0ab1d4a6a
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: numb_spore_0
+    21300002: numb_spore_1
+    21300004: numb_spore_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -35,6 +39,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
@@ -50,6 +55,7 @@ TextureImporter:
         height: 181
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: numb_spore_1
       rect:
         serializedVersion: 2
@@ -59,6 +65,7 @@ TextureImporter:
         height: 176
       alignment: 9
       pivot: {x: .546969354, y: .502558768}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: numb_spore_2
       rect:
         serializedVersion: 2
@@ -68,5 +75,6 @@ TextureImporter:
         height: 204
       alignment: 9
       pivot: {x: .53925097, y: .482339025}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
