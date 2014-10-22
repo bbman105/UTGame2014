@@ -293,6 +293,7 @@ public class EnhanceUI : TrainSceneInterfaceUI
                 needGold.text = NeedMaterial.NeedGold.ToString();
                 needResourceTypeLabel.text = NeedMaterial.ItemName;
                 needResourceTypeSprite.spriteName = NeedMaterial.ItemSpriteName;
+                needResourceTypeSprite.MakePixelPerfect();
                 ownResourceNum.text = Player.OwnResource.GetEnhanceMaterial(NeedMaterial.ItemID).ToString();
             }
             else
