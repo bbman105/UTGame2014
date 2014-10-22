@@ -27,6 +27,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -41,161 +42,161 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 0af38a37870f0d342b9866425d6e5f1a, type: 2}
   mSprites:
   - name: item1
-    x: 238
-    y: 408
-    width: 103
-    height: 104
+    x: 59
+    y: 20
+    width: 52
+    height: 52
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 16
-    paddingRight: 16
-    paddingTop: 15
-    paddingBottom: 14
-  - name: item11
-    x: 116
-    y: 51
-    width: 96
-    height: 109
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 19
-    paddingRight: 20
-    paddingTop: 12
-    paddingBottom: 12
-  - name: item12
-    x: 116
-    y: 161
-    width: 102
-    height: 120
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 15
-    paddingRight: 18
-    paddingTop: 6
-    paddingBottom: 7
-  - name: item13
-    x: 224
-    y: 285
-    width: 108
-    height: 118
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 14
-    paddingRight: 13
-    paddingTop: 6
+    paddingLeft: 9
+    paddingRight: 8
+    paddingTop: 8
     paddingBottom: 9
-  - name: item14
-    x: 0
-    y: 136
-    width: 105
-    height: 125
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 14
-    paddingRight: 16
-    paddingTop: 4
-    paddingBottom: 4
-  - name: item2
-    x: 0
-    y: 22
-    width: 115
-    height: 113
+  - name: item11
+    x: 114
+    y: 137
+    width: 48
+    height: 55
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
     paddingLeft: 12
-    paddingRight: 8
-    paddingTop: 10
-    paddingBottom: 10
-  - name: item21
-    x: 342
-    y: 415
-    width: 107
-    height: 97
+    paddingRight: 9
+    paddingTop: 7
+    paddingBottom: 7
+  - name: item12
+    x: 59
+    y: 73
+    width: 51
+    height: 60
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 15
-    paddingRight: 13
-    paddingTop: 19
-    paddingBottom: 17
+    paddingLeft: 9
+    paddingRight: 9
+    paddingTop: 4
+    paddingBottom: 5
+  - name: item13
+    x: 173
+    y: 197
+    width: 54
+    height: 59
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 8
+    paddingRight: 7
+    paddingTop: 5
+    paddingBottom: 5
+  - name: item14
+    x: 59
+    y: 193
+    width: 52
+    height: 63
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 9
+    paddingRight: 8
+    paddingTop: 3
+    paddingBottom: 3
+  - name: item2
+    x: 0
+    y: 72
+    width: 58
+    height: 57
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 6
+    paddingRight: 5
+    paddingTop: 6
+    paddingBottom: 6
+  - name: item21
+    x: 163
+    y: 144
+    width: 53
+    height: 48
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 9
+    paddingRight: 7
+    paddingTop: 11
+    paddingBottom: 10
   - name: item22
-    x: 116
-    y: 404
-    width: 121
-    height: 108
+    x: 112
+    y: 202
+    width: 60
+    height: 54
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
     paddingLeft: 3
-    paddingRight: 11
-    paddingTop: 13
-    paddingBottom: 12
+    paddingRight: 6
+    paddingTop: 8
+    paddingBottom: 7
   - name: item23
     x: 0
-    y: 262
-    width: 111
-    height: 120
+    y: 130
+    width: 56
+    height: 60
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 13
-    paddingRight: 11
-    paddingTop: 0
-    paddingBottom: 13
+    paddingLeft: 7
+    paddingRight: 6
+    paddingTop: 1
+    paddingBottom: 8
   - name: item24
-    x: 116
-    y: 282
-    width: 107
-    height: 121
+    x: 0
+    y: 10
+    width: 54
+    height: 61
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 16
-    paddingRight: 12
-    paddingTop: 5
-    paddingBottom: 7
+    paddingLeft: 9
+    paddingRight: 6
+    paddingTop: 3
+    paddingBottom: 5
   - name: item3
-    x: 333
-    y: 287
-    width: 108
-    height: 116
+    x: 59
+    y: 134
+    width: 54
+    height: 58
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 12
-    paddingRight: 15
-    paddingTop: 10
-    paddingBottom: 7
+    paddingLeft: 8
+    paddingRight: 7
+    paddingTop: 5
+    paddingBottom: 6
   - name: item4
     x: 0
-    y: 383
-    width: 115
-    height: 129
+    y: 191
+    width: 58
+    height: 65
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 10
-    paddingRight: 10
-    paddingTop: 0
-    paddingBottom: 4
+    paddingLeft: 6
+    paddingRight: 5
+    paddingTop: 1
+    paddingBottom: 3
   mPixelSize: 1
   mReplacement: {fileID: 0}
   mCoordinates: 0

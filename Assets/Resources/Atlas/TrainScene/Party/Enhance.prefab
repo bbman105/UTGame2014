@@ -27,6 +27,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -41,8 +42,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: a340520585049cc4b8c16963dedc2129, type: 2}
   mSprites:
   - name: arrow
-    x: 150
-    y: 11
+    x: 0
+    y: 629
     width: 135
     height: 99
     borderLeft: 0
@@ -54,8 +55,8 @@ MonoBehaviour:
     paddingTop: 11
     paddingBottom: 4
   - name: enchantbar
-    x: 390
-    y: 239
+    x: 0
+    y: 599
     width: 128
     height: 29
     borderLeft: 0
@@ -67,60 +68,60 @@ MonoBehaviour:
     paddingTop: 10
     paddingBottom: 9
   - name: enchantbottom
-    x: 0
-    y: 206
-    width: 389
-    height: 306
+    x: 593
+    y: 875
+    width: 358
+    height: 149
     borderLeft: 247
     borderRight: 69
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 8
-    paddingRight: 9
+    borderTop: 91
+    borderBottom: 47
+    paddingLeft: 5
+    paddingRight: 5
     paddingTop: 6
-    paddingBottom: 8
-  - name: enhanceMonsterBottom2
-    x: 0
-    y: 111
-    width: 149
-    height: 94
-    borderLeft: 32
-    borderRight: 32
+    paddingBottom: 10
+  - name: enhanceMonsterBottom0
+    x: 952
+    y: 919
+    width: 54
+    height: 52
+    borderLeft: 35
+    borderRight: 34
     borderTop: 26
     borderBottom: 37
     paddingLeft: 2
-    paddingRight: 4
+    paddingRight: 2
     paddingTop: 1
     paddingBottom: 2
   - name: enhanceMonsterBottom1
-    x: 0
-    y: 16
-    width: 149
-    height: 94
+    x: 952
+    y: 972
+    width: 54
+    height: 52
     borderLeft: 32
     borderRight: 32
     borderTop: 26
     borderBottom: 37
     paddingLeft: 2
-    paddingRight: 4
+    paddingRight: 2
     paddingTop: 1
     paddingBottom: 2
-  - name: enhanceMonsterBottom0
-    x: 150
-    y: 111
-    width: 149
-    height: 94
+  - name: enhanceMonsterBottom2
+    x: 952
+    y: 866
+    width: 54
+    height: 52
     borderLeft: 32
     borderRight: 32
     borderTop: 26
     borderBottom: 37
     paddingLeft: 2
-    paddingRight: 4
+    paddingRight: 2
     paddingTop: 1
     paddingBottom: 2
   - name: frame
-    x: 390
-    y: 334
+    x: 0
+    y: 846
     width: 592
     height: 178
     borderLeft: 0
@@ -132,8 +133,8 @@ MonoBehaviour:
     paddingTop: 9
     paddingBottom: 7
   - name: moneyicon
-    x: 300
-    y: 155
+    x: 0
+    y: 548
     width: 49
     height: 50
     borderLeft: 0
@@ -145,8 +146,8 @@ MonoBehaviour:
     paddingTop: 6
     paddingBottom: 7
   - name: tittlebottom
-    x: 390
-    y: 269
+    x: 145
+    y: 781
     width: 167
     height: 64
     borderLeft: 36
@@ -157,6 +158,19 @@ MonoBehaviour:
     paddingRight: 7
     paddingTop: 8
     paddingBottom: 8
+  - name: upgradebottom
+    x: 0
+    y: 729
+    width: 144
+    height: 116
+    borderLeft: 62
+    borderRight: 61
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 3
+    paddingTop: 1
+    paddingBottom: 1
   mPixelSize: 1
   mReplacement: {fileID: 0}
   mCoordinates: 0
