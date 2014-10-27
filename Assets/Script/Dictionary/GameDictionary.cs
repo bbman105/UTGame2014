@@ -582,6 +582,10 @@ public class GameDictionary
             XmlNodeList Quest4IDNodes = doc.GetElementsByTagName("Quest4ID");
             XmlNodeList Quest5IDNodes = doc.GetElementsByTagName("Quest5ID");
             XmlNodeList Quest6IDNodes = doc.GetElementsByTagName("Quest6ID");
+            XmlNodeList Quest7IDNodes = doc.GetElementsByTagName("Quest7ID");
+            XmlNodeList Quest8IDNodes = doc.GetElementsByTagName("Quest8ID");
+            XmlNodeList Quest9IDNodes = doc.GetElementsByTagName("Quest9ID");
+            XmlNodeList Quest10IDNodes = doc.GetElementsByTagName("Quest10ID");
             for (int i = 0; i < PlanetIDNodes.Count; i++)
             {
                 int planetID = int.Parse(PlanetIDNodes[i].InnerText);
@@ -589,13 +593,17 @@ public class GameDictionary
                 int mapKey = int.Parse(planetID.ToString() + mapID.ToString());
                 string planetName = PlanetNameNodes[i].InnerText;
                 string mapName = MapNameNodes[i].InnerText;
-                int[] questID = new int[6];
+                int[] questID = new int[10];
                 questID[0] = int.Parse(Quest1IDNodes[i].InnerText);
                 questID[1] = int.Parse(Quest2IDNodes[i].InnerText);
                 questID[2] = int.Parse(Quest3IDNodes[i].InnerText);
                 questID[3] = int.Parse(Quest4IDNodes[i].InnerText);
                 questID[4] = int.Parse(Quest5IDNodes[i].InnerText);
                 questID[5] = int.Parse(Quest6IDNodes[i].InnerText);
+                questID[6] = int.Parse(Quest7IDNodes[i].InnerText);
+                questID[7] = int.Parse(Quest8IDNodes[i].InnerText);
+                questID[8] = int.Parse(Quest9IDNodes[i].InnerText);
+                questID[9] = int.Parse(Quest10IDNodes[i].InnerText);
                 Map map = new Map(planetID, mapID, planetName, mapName, questID);
                 MapDic.Add(mapKey, map);
             }
@@ -673,7 +681,6 @@ public class GameDictionary
     {
         UnlockQuestDic = new Dictionary<int, UnlockQuest>();
 
-
         //讀取xml文件
         try
         {
@@ -691,7 +698,11 @@ public class GameDictionary
                 if (ownPlayerNode[i].InnerText == Player.PlayerID.ToString())
                 {
                     unlockPlanetID = int.Parse(ownPlayerNode[i].ParentNode.SelectSingleNode("UnlockPlanet").InnerText);//解鎖星球
+                    if (unlockPlanetID == 0)//如果此星球還沒解鎖
+                        return;
                     unlockMapID = int.Parse(ownPlayerNode[i].ParentNode.SelectSingleNode("UnlockMap").InnerText);//解鎖地圖
+                    if (unlockMapID == 0)//如果此地圖還沒解鎖
+                        return;
                     unlockQuestID = int.Parse(ownPlayerNode[i].ParentNode.SelectSingleNode("UnlockQuest").InnerText);//解鎖任務關卡
                     UnlockQuest unlockQuest = new UnlockQuest(unlockPlanetID, unlockMapID, unlockQuestID);
                     if (!UnlockQuestDic.ContainsKey(unlockPlanetID))

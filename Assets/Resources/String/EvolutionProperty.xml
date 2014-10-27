@@ -1,67 +1,67 @@
 <root>
 	<SpeciesID1>
 		<Species>1</Species>
-		<Base>300,20,40,20,0.5</Base>
-		<Natural2>50,10,10,10,0.3</Natural2>
-		<Mutation2>50,10,10,10,0.3</Mutation2>
-		<Wild2>50,10,10,10,0.3</Wild2>
-		<Natural3>50,10,10,10,0.3</Natural3>
-		<Mutation3>50,10,10,10,0.3</Mutation3>
-		<Wild3>50,10,10,10,0.3</Wild3>
+		<Base>310,20,40,20,0.7</Base>
+		<Natural2>50,5,10,3,0.3</Natural2>
+		<Mutation2>50,5,10,3,0.3</Mutation2>
+		<Wild2>50,5,10,3,0.3</Wild2>
+		<Natural3>50,5,10,3,0.3</Natural3>
+		<Mutation3>50,5,10,3,0.3</Mutation3>
+		<Wild3>50,5,10,3,0.3</Wild3>
 	</SpeciesID1>
 	<SpeciesID2>
 		<Species>2</Species>
-		<Base>300,20,40,20,0.5</Base>
-		<Natural2>50,10,10,10,0.3</Natural2>
-		<Mutation2>50,10,10,10,0.3</Mutation2>
-		<Wild2>50,10,10,10,0.3</Wild2>
-		<Natural3>50,10,10,10,0.3</Natural3>
-		<Mutation3>50,10,10,10,0.3</Mutation3>
-		<Wild3>50,10,10,10,0.3</Wild3>
+		<Base>330,20,40,20,0.6</Base>
+		<Natural2>60,6,6,4,0.3</Natural2>
+		<Mutation2>60,6,6,4,0.3</Mutation2>
+		<Wild2>60,6,6,4,0.3</Wild2>
+		<Natural3>60,6,6,4,0.3</Natural3>
+		<Mutation3>60,6,6,4,0.3</Mutation3>
+		<Wild3>60,6,6,4,0.3</Wild3>
 	</SpeciesID2>
 	<SpeciesID3>
 		<Species>3</Species>
-		<Base>300,20,20,40,0.5</Base>
-		<Natural2>50,10,10,10,0.3</Natural2>
-		<Mutation2>50,10,10,10,0.3</Mutation2>
-		<Wild2>50,10,10,10,0.3</Wild2>
-		<Natural3>50,10,10,10,0.3</Natural3>
-		<Mutation3>50,10,10,10,0.3</Mutation3>
-		<Wild3>50,10,10,10,0.3</Wild3>
+		<Base>300,20,20,40,0.6</Base>
+		<Natural2>50,8,3,6,0.3</Natural2>
+		<Mutation2>50,8,3,6,0.3</Mutation2>
+		<Wild2>50,8,3,6,0.3</Wild2>
+		<Natural3>50,8,3,6,0.3</Natural3>
+		<Mutation3>50,8,3,6,0.3</Mutation3>
+		<Wild3>50,8,3,6,0.3</Wild3>
 	</SpeciesID3>
 	<SpeciesID4>
 		<Species>4</Species>
-		<Base>300,20,20,40,0.5</Base>
-		<Natural2>50,10,10,10,0.3</Natural2>
-		<Mutation2>50,10,10,10,0.3</Mutation2>
-		<Wild2>50,10,10,10,0.3</Wild2>
-		<Natural3>50,10,10,10,0.3</Natural3>
-		<Mutation3>50,10,10,10,0.3</Mutation3>
-		<Wild3>50,10,10,10,0.3</Wild3>
+		<Base>300,20,20,40,0.6</Base>
+		<Natural2>50,6,3,10,0.3</Natural2>
+		<Mutation2>50,6,3,10,0.3</Mutation2>
+		<Wild2>50,6,3,10,0.3</Wild2>
+		<Natural3>50,6,3,10,0.3</Natural3>
+		<Mutation3>50,6,3,10,0.3</Mutation3>
+		<Wild3>50,6,3,10,0.3</Wild3>
 	</SpeciesID4>
 	<SpeciesID5>
 		<Species>5</Species>
-		<Base>300,40,20,20,0.5</Base>
-		<Natural2>50,10,10,10,0.3</Natural2>
-		<Mutation2>50,10,10,10,0.3</Mutation2>
-		<Wild2>50,10,10,10,0.3</Wild2>
-		<Natural3>50,10,10,10,0.3</Natural3>
-		<Mutation3>50,10,10,10,0.3</Mutation3>
-		<Wild3>50,10,10,10,0.3</Wild3>
+		<Base>310,40,20,20,0.6</Base>
+		<Natural2>60,6,6,6,0.3</Natural2>
+		<Mutation2>60,6,6,6,0.3</Mutation2>
+		<Wild2>60,6,6,6,0.3</Wild2>
+		<Natural3>60,6,6,6,0.3</Natural3>
+		<Mutation3>60,6,6,6,0.3</Mutation3>
+		<Wild3>60,6,6,6,0.3</Wild3>
 	</SpeciesID5>
 	<SpeciesID6>
 		<Species>6</Species>
-		<Base>300,20,40,20,0.5</Base>
-		<Natural2>50,10,10,10,0.3</Natural2>
-		<Mutation2>50,10,10,10,0.3</Mutation2>
-		<Wild2>50,10,10,10,0.3</Wild2>
-		<Natural3>50,10,10,10,0.3</Natural3>
-		<Mutation3>50,10,10,10,0.3</Mutation3>
-		<Wild3>50,10,10,10,0.3</Wild3>
+		<Base>350,20,40,20,0.6</Base>
+		<Natural2>70,4,6,4,0.4</Natural2>
+		<Mutation2>70,4,6,4,0.4</Mutation2>
+		<Wild2>70,4,6,4,0.4</Wild2>
+		<Natural3>70,4,6,4,0.4</Natural3>
+		<Mutation3>70,4,6,4,0.4</Mutation3>
+		<Wild3>70,4,6,4,0.4</Wild3>
 	</SpeciesID6>
 	<SpeciesID7>
 		<Species>7</Species>
-		<Base>300,20,40,20,0.5</Base>
+		<Base>300,20,40,20,0.6</Base>
 		<Natural2>50,10,10,10,0.3</Natural2>
 		<Mutation2>50,10,10,10,0.3</Mutation2>
 		<Wild2>50,10,10,10,0.3</Wild2>
@@ -71,7 +71,7 @@
 	</SpeciesID7>
 	<SpeciesID8>
 		<Species>8</Species>
-		<Base>300,20,20,40,0.5</Base>
+		<Base>300,20,20,40,0.6</Base>
 		<Natural2>50,10,10,10,0.3</Natural2>
 		<Mutation2>50,10,10,10,0.3</Mutation2>
 		<Wild2>50,10,10,10,0.3</Wild2>
@@ -81,7 +81,7 @@
 	</SpeciesID8>
 	<SpeciesID9>
 		<Species>9</Species>
-		<Base>300,20,40,20,0.5</Base>
+		<Base>300,20,40,20,0.6</Base>
 		<Natural2>50,10,10,10,0.3</Natural2>
 		<Mutation2>50,10,10,10,0.3</Mutation2>
 		<Wild2>50,10,10,10,0.3</Wild2>
@@ -91,7 +91,7 @@
 	</SpeciesID9>
 	<SpeciesID10>
 		<Species>10</Species>
-		<Base>300,40,20,20,0.5</Base>
+		<Base>300,40,20,20,0.6</Base>
 		<Natural2>50,10,10,10,0.3</Natural2>
 		<Mutation2>50,10,10,10,0.3</Mutation2>
 		<Wild2>50,10,10,10,0.3</Wild2>

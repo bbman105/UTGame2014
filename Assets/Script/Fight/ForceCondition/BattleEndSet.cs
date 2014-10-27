@@ -708,7 +708,8 @@ public partial class ForceCondition : MonoBehaviour
             if (ForceCondition.CharaStatusDic["PlayerMonster"][i].Alive)
                 aliveMember++;
         }
-        PerFinalExp = (int)(FinalExp / aliveMember);
+        if (aliveMember>0)
+            PerFinalExp = (int)(FinalExp / aliveMember);
     }
     /// <summary>
     /// 計算評價加權獎勵比例

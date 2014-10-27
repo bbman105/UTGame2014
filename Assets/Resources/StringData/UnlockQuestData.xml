@@ -7,32 +7,32 @@
 	</PlayerID1>
 	<PlayerID1>
 		<UnlockPlayerUID>1</UnlockPlayerUID>
-		<UnlockPlanet>1</UnlockPlanet>
-		<UnlockMap>2</UnlockMap>
-		<UnlockQuest>1</UnlockQuest>
+		<UnlockPlanet>0</UnlockPlanet>
+		<UnlockMap>0</UnlockMap>
+		<UnlockQuest>0</UnlockQuest>
 	</PlayerID1>
 	<PlayerID1>
 		<UnlockPlayerUID>1</UnlockPlayerUID>
-		<UnlockPlanet>1</UnlockPlanet>
-		<UnlockMap>3</UnlockMap>
-		<UnlockQuest>1</UnlockQuest>
+		<UnlockPlanet>0</UnlockPlanet>
+		<UnlockMap>0</UnlockMap>
+		<UnlockQuest>0</UnlockQuest>
 	</PlayerID1>
 	<PlayerID1>
 		<UnlockPlayerUID>1</UnlockPlayerUID>
-		<UnlockPlanet>1</UnlockPlanet>
-		<UnlockMap>4</UnlockMap>
-		<UnlockQuest>1</UnlockQuest>
+		<UnlockPlanet>0</UnlockPlanet>
+		<UnlockMap>0</UnlockMap>
+		<UnlockQuest>0</UnlockQuest>
 	</PlayerID1>
 	<PlayerID1>
 		<UnlockPlayerUID>1</UnlockPlayerUID>
-		<UnlockPlanet>1</UnlockPlanet>
-		<UnlockMap>5</UnlockMap>
-		<UnlockQuest>1</UnlockQuest>
+		<UnlockPlanet>0</UnlockPlanet>
+		<UnlockMap>0</UnlockMap>
+		<UnlockQuest>0</UnlockQuest>
 	</PlayerID1>
 	<PlayerID1>
 		<UnlockPlayerUID>1</UnlockPlayerUID>
-		<UnlockPlanet>1</UnlockPlanet>
-		<UnlockMap>6</UnlockMap>
-		<UnlockQuest>1</UnlockQuest>
+		<UnlockPlanet>0</UnlockPlanet>
+		<UnlockMap>0</UnlockMap>
+		<UnlockQuest>0</UnlockQuest>
 	</PlayerID1>
 </root>
