@@ -407,10 +407,13 @@ public partial class Player : MonoBehaviour
                 if (ownPlayerNode[i].InnerText == _ownPlayerID.ToString())
                 {
                     //設定基本資源
+                    /*
                     OwnResource.SetResource(3, int.Parse(DimandNode[i].InnerText));
                     OwnResource.SetResource(2, int.Parse(MaxEnergyNode[i].InnerText));
                     OwnResource.SetResource(1, int.Parse(CurEnergyNode[i].InnerText));
                     OwnResource.SetResource(0, int.Parse(GoldNode[i].InnerText));
+                    */
+                    IODataFromArcalet.CheckPlayerItemInstance();//向Server檢查實例化玩者資源物件
                     //設定火素材
                     OwnResource.SetEnhanceMaterial(1, PlayerPrefs.GetInt("FireSilver"));
                     OwnResource.SetEnhanceMaterial(2, PlayerPrefs.GetInt("FireGold"));

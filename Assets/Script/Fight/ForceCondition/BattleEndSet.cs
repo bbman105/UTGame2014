@@ -769,7 +769,7 @@ public partial class ForceCondition : MonoBehaviour
                 }
             }
             /////////////玩家增加金幣並回傳///////////////
-            Player.OwnResource.AddResource(0, FinalGold);
+            Player.OwnResource.AddResource("Gold", FinalGold);
             /////////////玩家增加資源並回傳///////////////
             List<int> dicBuffer = new List<int>(KillLootDic.Keys);
             foreach (int key in dicBuffer)

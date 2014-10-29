@@ -51,10 +51,10 @@ public class ShowRewardText : IShowText
                 monsterStatus.AddHappy(feedBackPoint);
                 break;
             case 1://增加金幣
-                Player.OwnResource.AddResource(0, feedBackPoint);
+                Player.OwnResource.AddResource("Gold", feedBackPoint);
                 break;
             case 2://增加能量
-                Player.OwnResource.AddResource(1, feedBackPoint);
+                Player.OwnResource.AddResource("CurEnergy", feedBackPoint);
                 break;
             default :
                 Debug.Log("獨立事件回饋要增加的屬性類型無法辨識");

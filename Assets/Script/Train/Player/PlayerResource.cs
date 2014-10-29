@@ -183,31 +183,103 @@ public class PlayerResource
     }
     /// <summary>
     ///增加資源功能：<para></para>
-    ///resourceType為資源種類，當resourceType為0時增加金幣、1時增加目前能量、2時增加最大能量、3時增加鑽石<para></para>
+    ///resourceType為資源種類，當resourceType為Gold時增加金幣、CurEnergy時增加目前能量、Maxenergy時增加最大能量、Dimand時增加鑽石<para></para>
     ///resourceNum為增加的量，填100就是增加100，填-100就是減少100
     /// </summary>
-    public void AddResource(byte _resourceType, int _resourceNum)
+    public void AddResource(string _resourceName, int _addNum)
     {
-        switch (_resourceType)
+        int ResourceNum = 0;
+        switch (_resourceName)
         {
-            case 0:
-                AddGold(_resourceNum);
+            case "Gold":
+                AddGold(_addNum);
+                ResourceNum = Gold;
                 break;
-            case 1:
-                AddEnergy(_resourceNum);
+            case "CurEnergy":
+                AddEnergy(_addNum);
+                ResourceNum = CurEnergy;
                 break;
-            case 2:
-                AddMaxEnergy(_resourceNum);
+            case "MaxEnergy":
+                AddMaxEnergy(_addNum);
+                ResourceNum = MaxEnergy;
                 break;
-            case 3:
-                AddDimand(_resourceNum);
+            case "Dimand":
+                AddDimand(_addNum);
+                ResourceNum = Dimand;
                 break;
             default:
                 Debug.Log("增加的資源種類傳入錯誤的類型");
+                return;
+        }
+        IODataFromArcalet.SetPlayerResource(_resourceName, ResourceNum.ToString());//送出資料至ArcaletServer
+        ResourceUI.UpdateResourceUI();
+    }
+    /// <summary>
+    ///增加資源功能：<para></para>
+    ///resourceType為資源種類，當resourceType為0時增加金幣、1時增加目前能量、2時增加最大能量、3時增加鑽石<para></para>
+    ///resourceNum為增加的量，填100就是增加100，填-100就是減少100
+    /// </summary>
+    public void AddResource(byte _resourceType, int _addNum)
+    {
+        string resourceName = "";
+        int ResourceNum = 0;
+        switch (_resourceType)
+        {
+            case 0:
+                AddGold(_addNum);
+                resourceName = "Gold";
+                ResourceNum = Gold;
+                break;
+            case 1:
+                AddEnergy(_addNum);
+                resourceName = "CurEnergy";
+                ResourceNum = CurEnergy;
+                break;
+            case 2:
+                AddMaxEnergy(_addNum);
+                resourceName = "MaxEnergy";
+                ResourceNum = MaxEnergy;
+                break;
+            case 3:
+                AddDimand(_addNum);
+                resourceName = "Dimand";
+                ResourceNum = Dimand;
+                break;
+            default:
+                Debug.Log("增加的資源種類傳入錯誤的類型");
+                return;
+        }
+        IODataFromArcalet.SetPlayerResource(resourceName, ResourceNum.ToString());//送出資料至ArcaletServer
+        ResourceUI.UpdateResourceUI();
+    }
+    /// <summary>
+    ///設定資源功能：<para></para>
+    ///resourceType為資源種類，當resourceType為Gold時設定金幣、CurEnergy時設定目前能量、MaxEnergy時設定最大能量、Dimand時設定鑽石<para></para>
+    ///resourceNum為設定的量，填100就是設定為100
+    /// </summary>
+    public void SetResource(string _resourceType, int _resourceNum)
+    {
+        switch (_resourceType)
+        {
+            case "Gold":
+                SetGold(_resourceNum);
+                break;
+            case "CurEnergy":
+                SetEnergy(_resourceNum);
+                break;
+            case "MaxEnergy":
+                SetMaxEnergy(_resourceNum);
+                break;
+            case "Dimand":
+                SetDimand(_resourceNum);
+                break;
+            default:
+                Debug.Log("設定數量的資源種類傳入錯誤的類型");
                 break;
         }
         ResourceUI.UpdateResourceUI();
     }
+    /*
     /// <summary>
     ///設定資源功能：<para></para>
     ///resourceType為資源種類，當resourceType為0時設定金幣、1時設定目前能量、2時設定最大能量、3時設定鑽石<para></para>
@@ -235,6 +307,7 @@ public class PlayerResource
         }
         ResourceUI.UpdateResourceUI();
     }
+    */
     /// <summary>
     /// 增加金幣
     /// </summary>
