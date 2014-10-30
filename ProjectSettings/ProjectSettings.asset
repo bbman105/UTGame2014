@@ -91,7 +91,7 @@ PlayerSettings:
   uIStatusBarHidden: 1
   uIExitOnSuspend: 0
   uIStatusBarStyle: 0
-  iPhoneSplashScreen: {fileID: 2800000, guid: 89ad82f827d3d0b479ec57a383179f21, type: 3}
+  iPhoneSplashScreen: {fileID: 2800000, guid: ce32780ac89d4804ea8f8fc29f44f684, type: 3}
   iPhoneHighResSplashScreen: {fileID: 0}
   iPhoneTallHighResSplashScreen: {fileID: 0}
   iPhone47inSplashScreen: {fileID: 0}
@@ -113,15 +113,15 @@ PlayerSettings:
       m_Size: 128
   - m_BuildTarget: Android
     m_Icons:
-    - m_Icon: {fileID: 2800000, guid: 104a46403d86e6940a3b393becbbff5a, type: 3}
+    - m_Icon: {fileID: 2800000, guid: f8b8a1f18f7cd2a4487b6f168aa84a56, type: 3}
       m_Size: 144
-    - m_Icon: {fileID: 2800000, guid: df724ad8549718545a22cbd0f0684beb, type: 3}
+    - m_Icon: {fileID: 0}
       m_Size: 96
-    - m_Icon: {fileID: 2800000, guid: 104a46403d86e6940a3b393becbbff5a, type: 3}
+    - m_Icon: {fileID: 2800000, guid: f8b8a1f18f7cd2a4487b6f168aa84a56, type: 3}
       m_Size: 72
-    - m_Icon: {fileID: 2800000, guid: 104a46403d86e6940a3b393becbbff5a, type: 3}
+    - m_Icon: {fileID: 2800000, guid: f8b8a1f18f7cd2a4487b6f168aa84a56, type: 3}
       m_Size: 48
-    - m_Icon: {fileID: 2800000, guid: 104a46403d86e6940a3b393becbbff5a, type: 3}
+    - m_Icon: {fileID: 2800000, guid: f8b8a1f18f7cd2a4487b6f168aa84a56, type: 3}
       m_Size: 36
   m_BuildTargetBatching: []
   webPlayerTemplate: APPLICATION:Default

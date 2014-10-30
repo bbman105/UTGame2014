@@ -24,7 +24,7 @@ public partial class ForceCondition : MonoBehaviour
     public static int BaseGold;//關卡基本取得金錢
     public static int BaseExp;//關卡基本取得經驗
     public static int HitGold { get; set; }//擊殺取得額外金錢獎勵
-    public static Dictionary<int, int> KillLootDic = new Dictionary<int, int>();//擊殺取得的戰利品[物品ID][數量]
+    public static Dictionary<int, int> KillLootDic;//擊殺取得的戰利品[物品ID][數量]
     public static int KillExp { get; set; }//擊殺取得額外經驗獎勵
     private static int gainExp;//關卡+擊殺經驗獎勵
     public static int GainExp//關卡+擊殺經驗獎勵
@@ -253,6 +253,7 @@ public partial class ForceCondition : MonoBehaviour
         CharaDic = new Dictionary<string, List<GameObject>>();
         ForceStatusDic = new Dictionary<string, ForceStatus>();
         CharaStatusDic = new Dictionary<string, Status[]>();//腳色字典
+        KillLootDic = new Dictionary<int, int>();//取得的獎勵物品字典
     }
 
     private void StartNPCMonsterSetting()//NPC怪物生出//

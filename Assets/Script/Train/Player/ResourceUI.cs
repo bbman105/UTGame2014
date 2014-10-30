@@ -20,6 +20,7 @@ public class ResourceUI : TrainSceneInterfaceUI
             dimandLabel.text = Player.OwnResource.Dimand.ToString();
             energyLabel.text = Player.OwnResource.CurEnergy.ToString();
         }
+
     }
 
 }

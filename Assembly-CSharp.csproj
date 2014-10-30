@@ -211,9 +211,13 @@
      <Compile Include="Assets\Script\Arcalet\PlayerLogout.cs" />
      <Compile Include="Assets\Script\Arcalet\PlayerRegister.cs" />
      <Compile Include="Assets\Script\Connect\AutoLogin.cs" />
-     <Compile Include="Assets\Script\Connect\GetData\CheckItemInstance.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\CheckEnhanceResourceInstance.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\CheckResourceInstance.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\GetDataFormServer.cs" />
      <Compile Include="Assets\Script\Connect\GetData\GetDataFromServer.cs" />
-     <Compile Include="Assets\Script\Connect\GetData\GetPlayerResourceFormServer.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\GetPlayerEnhanceResource.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\GetPlayerResource.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\SetPlayerEnhanceResourceToServer.cs" />
      <Compile Include="Assets\Script\Connect\GetData\SetPlayerResourceToServer.cs" />
      <Compile Include="Assets\Script\Connect\ReAutoLogin.cs" />
      <Compile Include="Assets\Script\Debug\IViewDebugLog.cs" />

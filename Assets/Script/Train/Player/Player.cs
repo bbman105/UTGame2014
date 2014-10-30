@@ -38,7 +38,7 @@ public partial class Player : MonoBehaviour
 
     //monsterResource
     public static Dictionary<int, PlayerMonster> MonsterDic { get; set; }
-    public static PlayerResource OwnResource;//玩者資源
+    public static PlayerResource OwnResource = new PlayerResource();//玩者資源
     private static GameObject monsterObj;
     public static List<GameObject> monster;
     private static int monsterNum;
@@ -367,8 +367,11 @@ public partial class Player : MonoBehaviour
     //玩家起始設置
     public static void PlayerSourceSetting(int _ownPlayerID)
     {
-        //PlayerResource setting
+        //更新玩者資源介面
+        ResourceUI.UpdateResourceUI();
         PlayerID = _ownPlayerID;
+        /*
+
         try
         {
             if (TrainScene.StartSet)//暫時用
@@ -377,7 +380,6 @@ public partial class Player : MonoBehaviour
             }
             //建立玩者資源
             OwnResource = new PlayerResource();
-
             //讀取XML文件
             TextAsset XMLFile = Resources.Load<TextAsset>("StringData/PlayerResourceData");
             XmlDocument doc = new XmlDocument();
@@ -399,53 +401,13 @@ public partial class Player : MonoBehaviour
             XmlNodeList WaterGoldNode = doc.GetElementsByTagName("WaterGold");
             XmlNodeList WaterDimandNode = doc.GetElementsByTagName("WaterDimand");
             XmlNodeList WaterCrystalNode = doc.GetElementsByTagName("WaterCrystal");
-
+            
             //以迴圈搜尋此玩家擁有的隊伍，迴圈長度取決抓取到的node
             for (int i = 0; i < ownPlayerNode.Count; i++)
             {
                 //判斷屬於此玩家的隊伍，若為此玩家擁有，則加入此玩家的隊伍清單
                 if (ownPlayerNode[i].InnerText == _ownPlayerID.ToString())
                 {
-                    //設定基本資源
-                    /*
-                    OwnResource.SetResource(3, int.Parse(DimandNode[i].InnerText));
-                    OwnResource.SetResource(2, int.Parse(MaxEnergyNode[i].InnerText));
-                    OwnResource.SetResource(1, int.Parse(CurEnergyNode[i].InnerText));
-                    OwnResource.SetResource(0, int.Parse(GoldNode[i].InnerText));
-                    */
-                    IODataFromArcalet.CheckPlayerItemInstance();//向Server檢查實例化玩者資源物件
-                    //設定火素材
-                    OwnResource.SetEnhanceMaterial(1, PlayerPrefs.GetInt("FireSilver"));
-                    OwnResource.SetEnhanceMaterial(2, PlayerPrefs.GetInt("FireGold"));
-                    OwnResource.SetEnhanceMaterial(3, PlayerPrefs.GetInt("FireDimand"));
-                    OwnResource.SetEnhanceMaterial(4, PlayerPrefs.GetInt("FireCrystal"));
-                    //設定木素材
-                    OwnResource.SetEnhanceMaterial(11, PlayerPrefs.GetInt("WoodSilver"));
-                    OwnResource.SetEnhanceMaterial(12, PlayerPrefs.GetInt("WoodGold"));
-                    OwnResource.SetEnhanceMaterial(13, PlayerPrefs.GetInt("WoodDimand"));
-                    OwnResource.SetEnhanceMaterial(14, PlayerPrefs.GetInt("WoodCrystal"));
-                    //設定水素材
-                    OwnResource.SetEnhanceMaterial(21, PlayerPrefs.GetInt("WaterSilver"));
-                    OwnResource.SetEnhanceMaterial(22, PlayerPrefs.GetInt("WaterGold"));
-                    OwnResource.SetEnhanceMaterial(23, PlayerPrefs.GetInt("WaterDimand"));
-                    OwnResource.SetEnhanceMaterial(24, PlayerPrefs.GetInt("WaterCrystal"));
-                    /*
-//設定火素材
-OwnResource.SetEnhanceMaterial(1, int.Parse(FireSilverNode[i].InnerText));
-OwnResource.SetEnhanceMaterial(2, int.Parse(FireGoldNode[i].InnerText));
-OwnResource.SetEnhanceMaterial(3, int.Parse(FireDimandNode[i].InnerText));
-OwnResource.SetEnhanceMaterial(4, int.Parse(FireCrystalNode[i].InnerText));
-//設定木素材
-OwnResource.SetEnhanceMaterial(11, int.Parse(WoodSilverNode[i].InnerText));
-OwnResource.SetEnhanceMaterial(12, int.Parse(WoodGoldNode[i].InnerText));
-OwnResource.SetEnhanceMaterial(13, int.Parse(WoodDimandNode[i].InnerText));
-OwnResource.SetEnhanceMaterial(14, int.Parse(WoodCrystalNode[i].InnerText));
-//設定水素材
-OwnResource.SetEnhanceMaterial(21, int.Parse(WaterSilverNode[i].InnerText));
-OwnResource.SetEnhanceMaterial(22, int.Parse(WaterGoldNode[i].InnerText));
-OwnResource.SetEnhanceMaterial(23, int.Parse(WaterDimandNode[i].InnerText));
-OwnResource.SetEnhanceMaterial(24, int.Parse(WaterCrystalNode[i].InnerText));
-*/
 
                 }
             }
@@ -459,6 +421,7 @@ OwnResource.SetEnhanceMaterial(24, int.Parse(WaterCrystalNode[i].InnerText));
             Debug.Log(ex);
             Debug.Log("讀取玩家資源資料時發生錯誤");
         }
+        */
     }
 
     // Use this for initialization

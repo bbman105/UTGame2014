@@ -275,39 +275,9 @@ public class PlayerResource
                 break;
             default:
                 Debug.Log("設定數量的資源種類傳入錯誤的類型");
-                break;
+                return;
         }
-        ResourceUI.UpdateResourceUI();
     }
-    /*
-    /// <summary>
-    ///設定資源功能：<para></para>
-    ///resourceType為資源種類，當resourceType為0時設定金幣、1時設定目前能量、2時設定最大能量、3時設定鑽石<para></para>
-    ///resourceNum為設定的量，填100就是設定為100
-    /// </summary>
-    public void SetResource(byte _resourceType, int _resourceNum)
-    {
-        switch (_resourceType)
-        {
-            case 0:
-                SetGold(_resourceNum);
-                break;
-            case 1:
-                SetEnergy(_resourceNum);
-                break;
-            case 2:
-                SetMaxEnergy(_resourceNum);
-                break;
-            case 3:
-                SetDimand(_resourceNum);
-                break;
-            default:
-                Debug.Log("設定數量的資源種類傳入錯誤的類型");
-                break;
-        }
-        ResourceUI.UpdateResourceUI();
-    }
-    */
     /// <summary>
     /// 增加金幣
     /// </summary>
@@ -364,110 +334,87 @@ public class PlayerResource
     {
         MaxEnergy = _maxEnergy;
     }
-
-    /// <summary>
-    /// 儲存資料到client
-    /// </summary>
-    void SaveEnhanceDateToClient(int _type)//儲存資料到client
-    {
-        switch (_type)
-        {
-            case 1://火銀
-                PlayerPrefs.SetInt("FireSilver", FireSilver);
-                break;
-            case 2://火金
-                PlayerPrefs.SetInt("FireGold", FireGold);
-                break;
-            case 3://火鑽
-                PlayerPrefs.SetInt("FireDimand", FireDimand);
-                break;
-            case 4://火晶
-                PlayerPrefs.SetInt("FireCrystal", FireCrystal);
-                break;
-            case 11://木銀
-                PlayerPrefs.SetInt("WoodSilver", WoodSilver);
-                break;
-            case 12://木金
-                PlayerPrefs.SetInt("WoodGold", WoodGold);
-                break;
-            case 13://木鑽
-                PlayerPrefs.SetInt("WoodDimand", WoodDimand);
-                break;
-            case 14://木晶
-                PlayerPrefs.SetInt("WoodCrystal", WoodCrystal);
-                break;
-            case 21://水銀
-                PlayerPrefs.SetInt("WaterSilver", WaterSilver);
-                break;
-            case 22://水金
-                PlayerPrefs.SetInt("WaterGold", WaterGold);
-                break;
-            case 23://水鑽
-                PlayerPrefs.SetInt("WaterDimand", WaterDimand);
-                break;
-            case 24://水晶
-                PlayerPrefs.SetInt("WaterCrystal", WaterCrystal);
-                break;
-            default:
-                Debug.LogError("傳入的怪獸進化素材種類錯誤");
-                break;
-        }
-    }
     /// <summary>
     /// 增加怪獸強化素材，傳入1~4為火，11~14為木，21~24為水
     /// </summary>
     public void AddEnhanceMaterial(int _type, int _addNum)
     {
+        string resourceName = "";
+        int ResourceNum = 0;
         try
         {
             switch (_type)
             {
                 case 1://火銀
                     FireSilver += _addNum;
+                    resourceName = "FireSilver";
+                    ResourceNum = FireSilver;
                     break;
                 case 2://火金
                     FireGold += _addNum;
+                    resourceName = "FireGold";
+                    ResourceNum = FireGold;
                     break;
                 case 3://火鑽
                     FireDimand += _addNum;
+                    resourceName = "FireDimand";
+                    ResourceNum = FireDimand;
                     break;
                 case 4://火晶
                     FireCrystal += _addNum;
+                    resourceName = "FireCrystal";
+                    ResourceNum = FireCrystal;
                     break;
                 case 11://木銀
                     WoodSilver += _addNum;
+                    resourceName = "WoodSilver";
+                    ResourceNum = WoodSilver;
                     break;
                 case 12://木金
                     WoodGold += _addNum;
+                    resourceName = "WoodGold";
+                    ResourceNum = WoodGold;
                     break;
                 case 13://木鑽
                     WoodDimand += _addNum;
+                    resourceName = "WoodDimand";
+                    ResourceNum = WoodDimand;
                     break;
                 case 14://木晶
                     WoodCrystal += _addNum;
+                    resourceName = "WoodCrystal";
+                    ResourceNum = WoodCrystal;
                     break;
                 case 21://水銀
                     WaterSilver += _addNum;
+                    resourceName = "WaterSilver";
+                    ResourceNum = WaterSilver;
                     break;
                 case 22://水金
                     WaterGold += _addNum;
+                    resourceName = "WaterGold";
+                    ResourceNum = WaterGold;
                     break;
                 case 23://水鑽
                     WaterDimand += _addNum;
+                    resourceName = "WaterDimand";
+                    ResourceNum = WaterDimand;
                     break;
                 case 24://水晶
                     WaterCrystal += _addNum;
+                    resourceName = "WaterCrystal";
+                    ResourceNum = WaterCrystal;
                     break;
                 default:
-                    Debug.LogError("傳入的怪獸進化素材種類錯誤");
-                    break;
+                    Debug.LogWarning("傳入的怪獸進化素材種類錯誤");
+                    return;
             }
+            IODataFromArcalet.SetPlayerEnhanceResource(resourceName, ResourceNum.ToString());//送出資料至ArcaletServer
         }
         catch
         {
-            Debug.LogError("設定怪獸強化元素時發生錯誤");
+            Debug.LogWarning("設定怪獸強化元素時發生錯誤");
         }
-        SaveEnhanceDateToClient(_type);//儲存資料到client
     }
     /// <summary>
     /// 設定怪獸強化素材，傳入1~4為火，11~14為木，21~24為水
@@ -515,15 +462,69 @@ public class PlayerResource
                     WaterCrystal = _setNum;
                     break;
                 default:
-                    Debug.LogError("傳入的怪獸進化素材種類錯誤");
-                    break;
+                    Debug.LogWarning("傳入的怪獸進化素材種類錯誤");
+                    return;
             }
         }
         catch
         {
-            Debug.LogError("設定怪獸強化元素時發生錯誤");
+            Debug.LogWarning("設定怪獸強化元素時發生錯誤");
         }
-        SaveEnhanceDateToClient(_type);//儲存資料到client
+    }
+    /// <summary>
+    /// 設定怪獸強化素材，傳入1~4為火，11~14為木，21~24為水
+    /// </summary>
+    public void SetEnhanceMaterial(string _type, int _setNum)
+    {
+        try
+        {
+            switch (_type)
+            {
+                case "FireSilver"://火銀
+                    FireSilver = _setNum;
+                    break;
+                case "FireGold"://火金
+                    FireGold = _setNum;
+                    break;
+                case "FireDimand"://火鑽
+                    FireDimand = _setNum;
+                    break;
+                case "FireCrystal"://火晶
+                    FireCrystal = _setNum;
+                    break;
+                case "WoodSilver"://木銀
+                    WoodSilver = _setNum;
+                    break;
+                case "WoodGold"://木金
+                    WoodGold = _setNum;
+                    break;
+                case "WoodDimand"://木鑽
+                    WoodDimand = _setNum;
+                    break;
+                case "WoodCrystal"://木晶
+                    WoodCrystal = _setNum;
+                    break;
+                case "WaterSilver"://水銀
+                    WaterSilver = _setNum;
+                    break;
+                case "WaterGold"://水金
+                    WaterGold = _setNum;
+                    break;
+                case "WaterDimand"://水鑽
+                    WaterDimand = _setNum;
+                    break;
+                case "WaterCrystal"://水晶
+                    WaterCrystal = _setNum;
+                    break;
+                default:
+                    Debug.LogWarning("傳入的怪獸進化素材種類錯誤");
+                    return;
+            }
+        }
+        catch
+        {
+            Debug.LogWarning("設定怪獸強化元素時發生錯誤");
+        }
     }
     /// <summary>
     /// 傳入素材種類，取得玩家擁有的怪獸強化素材數量，傳入1~4為火，11~14為木，21~24為水
@@ -572,13 +573,13 @@ public class PlayerResource
                     materialNum = WaterCrystal;
                     break;
                 default:
-                    Debug.LogError("傳入的怪獸進化素材種類錯誤");
+                    Debug.LogWarning("傳入的怪獸進化素材種類錯誤");
                     break;
             }
         }
         catch
         {
-            Debug.LogError("設定怪獸強化元素時發生錯誤");
+            Debug.LogWarning("設定怪獸強化元素時發生錯誤");
         }
         return materialNum;
     }

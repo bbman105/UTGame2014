@@ -4,11 +4,13 @@ using System.Collections;
 public partial class ArcaletSetter : MonoBehaviour
 {
     //登入需求宣告
-    string accountStr = "";//登入帳號
-    string passwardStr = "";//登入密碼
     bool onLogin = false;//是否登入中
     bool autoLogin = true;	//是否允許玩家在註冊帳號之後自動登入
 
+    public void StartSetPlayerLogin()//起始設定PlayerLogin
+    {
+        onLogin = false;
+    }
 
     //使用者登入
     public void ArcaletLaunch(string _accountStr, string _passwordStr)
@@ -34,7 +36,7 @@ public partial class ArcaletSetter : MonoBehaviour
         if (code == 0)
         {
             onLogin = true;
-            SceneController.GoTrainScene();//切換到培養介面
+            GetGameDataFormArcaletServer();//起始向Server取得所有資料
             //登入成功時執行的區段
             Debug.Log("登入成功!");
         }

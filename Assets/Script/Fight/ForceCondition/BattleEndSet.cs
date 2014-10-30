@@ -708,7 +708,7 @@ public partial class ForceCondition : MonoBehaviour
             if (ForceCondition.CharaStatusDic["PlayerMonster"][i].Alive)
                 aliveMember++;
         }
-        if (aliveMember>0)
+        if (aliveMember > 0)
             PerFinalExp = (int)(FinalExp / aliveMember);
     }
     /// <summary>
@@ -774,16 +774,13 @@ public partial class ForceCondition : MonoBehaviour
             List<int> dicBuffer = new List<int>(KillLootDic.Keys);
             foreach (int key in dicBuffer)
             {
-                for (int i = 0; i < KillLootDic[key]; i++)
-                {
-                    Player.OwnResource.AddEnhanceMaterial(key, KillLootDic[key]);
-                }
+                Player.OwnResource.AddEnhanceMaterial(key, KillLootDic[key]);
             }
         }
         catch (Exception ex)
         {
-            Debug.LogError("回傳戰鬥結果時發生錯誤");
-            Debug.LogError(ex);
+            Debug.LogWarning("回傳戰鬥結果時發生錯誤");
+            Debug.LogWarning(ex);
         }
     }
     void CalculateRank()//計算評價
