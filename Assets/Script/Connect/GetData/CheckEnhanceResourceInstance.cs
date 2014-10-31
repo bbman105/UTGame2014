@@ -87,23 +87,23 @@ public partial class IODataFromArcalet
         }
     }
     /// <summary>
-    /// 向Server取得玩者所有資源
+    /// //向Server取得玩者強化怪獸資源
     /// </summary>
-    static void GetEnhanceResource()//向Server取得玩者所有資源
+    static void GetEnhanceResource()//向Server取得玩者強化怪獸資源
     {
-        List<String> enhanceResourceList = new List<string>();
-        enhanceResourceList.Add("FireSilver");
-        enhanceResourceList.Add("FireGold");
-        enhanceResourceList.Add("FireDimand");
-        enhanceResourceList.Add("FireCrystal");
-        enhanceResourceList.Add("WoodSilver");
-        enhanceResourceList.Add("WoodGold");
-        enhanceResourceList.Add("WoodDimand");
-        enhanceResourceList.Add("WoodCrystal");
-        enhanceResourceList.Add("WaterSilver");
-        enhanceResourceList.Add("WaterGold");
-        enhanceResourceList.Add("WaterDimand");
-        enhanceResourceList.Add("WaterCrystal");
-        IODataFromArcalet.GetPlayerEnhanceResource(enhanceResourceList);
+        List<String> propertyList = new List<string>();
+        propertyList.Add("FireSilver");
+        propertyList.Add("FireGold");
+        propertyList.Add("FireDimand");
+        propertyList.Add("FireCrystal");
+        propertyList.Add("WoodSilver");
+        propertyList.Add("WoodGold");
+        propertyList.Add("WoodDimand");
+        propertyList.Add("WoodCrystal");
+        propertyList.Add("WaterSilver");
+        propertyList.Add("WaterGold");
+        propertyList.Add("WaterDimand");
+        propertyList.Add("WaterCrystal");
+        IODataFromArcalet.GetPlayerEnhanceResource(propertyList);
     }
 }

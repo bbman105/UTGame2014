@@ -14,7 +14,7 @@ public partial class IODataFromArcalet
         try
         {
             ArcaletItem.SetItemInstanceAttribute(ArcaletSetter.arcaletGame, ArcaletSetter.PlayerResourceIGuid,
-                PlayerResourceItemID, _resourceName, _resourceNum, CallBack_SetPlayerResourceInstance, _resourceNum);
+                PlayerMonsterItemID, _resourceName, _resourceNum, CallBack_SetPlayerMonsterInstance, _resourceNum);
         }
         catch (Exception ex)
         {

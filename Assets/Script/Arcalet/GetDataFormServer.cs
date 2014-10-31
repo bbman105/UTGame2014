@@ -20,7 +20,7 @@ public partial class ArcaletSetter : MonoBehaviour
     void GetGameDataFormArcaletServer()//起始向Server取得所有資料
     {
         //向Server取得並設定基本資源
-        IODataFromArcalet.CheckResourceInstance();//向Server檢查實例化玩者資源物件
+        IODataFromArcalet.CheckMonsterInstance();//向Server檢查實例化玩者資源物件
         //向Server取得並設定怪獸強化素材
         IODataFromArcalet.CheckEnhanceResourceInstance();//向Server檢查實例化玩者資源物件
     }

@@ -13,7 +13,7 @@ public partial class IODataFromArcalet
     {
         try
         {
-            ArcaletItem.GetItemInstance(ArcaletSetter.arcaletGame, ArcaletSetter.PlayerResourceIGuid, CallBack_CheckResourceInstance, null);
+            ArcaletItem.GetItemInstance(ArcaletSetter.arcaletGame, ArcaletSetter.PlayerResourceIGuid, CallBack_CheckMonsterInstance, null);
         }
         catch (Exception ex)
         {
@@ -38,14 +38,14 @@ public partial class IODataFromArcalet
             List<Hashtable> list = data as List<Hashtable>;
             if (list.Count == 0)//長度為0表示這個Item還沒有實例化過，進行實例化
             {
-                NewResourceInstance();//實例化一個新玩家資源Item
+                NewMonsterInstance();//實例化一個新玩家資源Item
                 Debug.Log("尚未實例化玩家資源物件，進行資料實例化");
                 return;
             }
             //取得物品實例ID
-            PlayerResourceItemID = int.Parse(list[0]["id"].ToString());
-            GetResource();//向Server取得玩者所有資源
-            Debug.Log(string.Format("取得PlayerResource實例化物件，物件ID:{0}", PlayerResourceItemID));
+            PlayerMonsterItemID = int.Parse(list[0]["id"].ToString());
+            GetMonster();//向Server取得玩者所有資源
+            Debug.Log(string.Format("取得PlayerResource實例化物件，物件ID:{0}", PlayerMonsterItemID));
         }
         else//Code非0表示取得資料失敗
         {
@@ -59,7 +59,7 @@ public partial class IODataFromArcalet
     /// <param name="_iGuid"></param>
     static void NewResourceInstance()//實例化一個新物品
     {
-        ArcaletItem.NewItemInstance(ArcaletSetter.arcaletGame, ArcaletSetter.PlayerResourceIGuid, CallBack_NewResourceInstance, null);
+        ArcaletItem.NewItemInstance(ArcaletSetter.arcaletGame, ArcaletSetter.PlayerResourceIGuid, CallBack_NewMonsterInstance, null);
     }
     /*******************************************************************
     *	同一個Item可以Instantiate不只一組
@@ -71,9 +71,9 @@ public partial class IODataFromArcalet
         //Code為0表示建立資料成功
         if (code == 0)
         {
-            if (int.TryParse(data.ToString(), out PlayerResourceItemID))
+            if (int.TryParse(data.ToString(), out PlayerMonsterItemID))
             {
-                GetResource();//向Server取得玩者所有資源
+                GetMonster();//向Server取得玩者所有資源
             }
             else
             {
@@ -87,15 +87,15 @@ public partial class IODataFromArcalet
         }
     }
     /// <summary>
-    /// 向Server取得玩者所有資源
+    /// 向Server取得玩者資源屬性
     /// </summary>
-    static void GetResource()//向Server取得玩者所有資源
+    static void GetResource()//向Server取得玩者資源屬性
     {
-        List<string> resourceList = new List<string>();
-        resourceList.Add("Gold");
-        resourceList.Add("CurEnergy");
-        resourceList.Add("MaxEnergy");
-        resourceList.Add("Dimand");
-        IODataFromArcalet.GetPlayerResource(resourceList);//向Server取得玩者金幣
+        List<string> propertyList = new List<string>();
+        propertyList.Add("Gold");
+        propertyList.Add("CurEnergy");
+        propertyList.Add("MaxEnergy");
+        propertyList.Add("Dimand");
+        IODataFromArcalet.GetPlayerResource(propertyList);//向Server取得玩者金幣
     }
 }

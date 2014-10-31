@@ -213,7 +213,7 @@ public partial class TrainScene : MonoBehaviour
             }
             PersonalityNum = PFeedBackDic.Count;
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             Debug.Log(ex);
         }

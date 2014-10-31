@@ -8,11 +8,11 @@ public partial class IODataFromArcalet
     /// <summary>
     /// 向Server取得玩者資源，傳入資料名稱List
     /// </summary>
-    public static void GetPlayerResource(List<string> _resourceNameList)//向Server取得玩者資源
+    public static void GetPlayerResource(List<string> _propertyNameList)//向Server取得玩者資源
     {
         try
         {
-            ArcaletItem.GetItemInstance(ArcaletSetter.arcaletGame, ArcaletSetter.PlayerResourceIGuid, CallBack_GetPlayerResource, _resourceNameList);
+            ArcaletItem.GetItemInstance(ArcaletSetter.arcaletGame, ArcaletSetter.PlayerResourceIGuid, CallBack_GetPlayerResource, _propertyNameList);
         }
         catch (Exception ex)
         {
@@ -40,31 +40,31 @@ public partial class IODataFromArcalet
                 Debug.LogWarning("尚未實例化物件");
                 return;
             }
-            List<string> resourceNameList = token as List<string>;
+            List<string> propertyNameList = token as List<string>;
             //長度大於1則永遠只取一個Hashtable
             List<Hashtable> hashAttributeList = list[0]["attr"] as List<Hashtable>;
             foreach (Hashtable hashAttribute in hashAttributeList)
             {
-                string resourceName = hashAttribute["name"].ToString();
-                if (resourceNameList.Contains(resourceName))
+                string propertyName = hashAttribute["name"].ToString();
+                if (propertyNameList.Contains(propertyName))
                 {
                     int attributeValue;
                     if (int.TryParse(hashAttribute["value"].ToString(), out attributeValue))
                     {
                         //取得物品實例ID
-                        PlayerResourceItemID = int.Parse(list[0]["id"].ToString());
+                        PlayerMonsterItemID = int.Parse(list[0]["id"].ToString());
                         //設定Client端資源
-                        Player.OwnResource.SetResource(resourceName, attributeValue);
+                        Player.OwnResource.SetResource(propertyName, attributeValue);
                     }
                     else
                     {
-                        Debug.LogWarning(string.Format("讀取玩家資料，名為{0}的資料內容無法轉換為int", resourceName));
+                        Debug.LogWarning(string.Format("讀取玩家資料，名為{0}的資料內容無法轉換為int", propertyName));
                         return;
                     }
                 }
                 else
                 {
-                    Debug.LogWarning(string.Format("PlayerResource資料表中的屬性名稱{0}不在欲取得的屬性名稱陣列中", resourceName));
+                    Debug.LogWarning(string.Format("PlayerResource資料表中的屬性名稱{0}不在欲取得的屬性名稱陣列中", propertyName));
                 }
             }
         }
