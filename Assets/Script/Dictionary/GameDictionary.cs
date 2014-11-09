@@ -6,8 +6,12 @@ using System;
 
 public class GameDictionary
 {
+    //預設怪獸字典
+    public static Dictionary<int, DefaultMonsterData> DefaultMonsterDic { get; set; }
     //特效字典
     public static Dictionary<int, string> EffectDic { get; set; }
+    //總技能字典
+    public static Dictionary<int, Skill> SkillDic;
     //天賦字典
     public static Dictionary<int, Talent> TalentDic { get; set; }
     //房間風格字典
@@ -36,8 +40,6 @@ public class GameDictionary
     public static Dictionary<int, AchievementType> AchievementTypeDic { get; set; }
     //進化樹字典，給予SpeciesID找到可進化的物種
     public static Dictionary<string, SpeciesEvolution> EvolutionTreeDic { get; set; }
-    //任務進度字典;星球ID,QuestUnlock
-    public static Dictionary<int, UnlockQuest> UnlockQuestDic { get; set; }
     //關卡任務字典
     public static Dictionary<int, Quest> QuestDic { get; set; }
     //關卡召喚事件字典
@@ -47,6 +49,8 @@ public class GameDictionary
 
     public static void LoadData()
     {
+        LoadDefaultMonster();//讀取預設怪獸xml檔案
+        LoadSkillFile();//讀取技能xml檔案，並設定技能字典
         LoadEffectFile();//讀取特效xml檔案，並設定特效字典
         LoadRoomStyleFile();//讀取房間風格xml檔案，並設定字典
         LoadTalent();//讀取天賦XML檔案，並設定天賦字典
@@ -54,7 +58,6 @@ public class GameDictionary
         LoadEnhanceItemData();//讀取強化素材資料
         LoadEnhanceNeedMaterialData();//讀取元素物種需求素材
         LoadMonsterRareProperty();//讀取物種品質屬性xml檔案，並設物種物品質屬性字典
-        //LoadMonsterLevelProperty();//讀取物種等級增加屬性xml檔案，並設定物種等級屬性字典
         LoadMonsterSpeciesName();//讀取物種名稱xml檔案，並設定物種字典
         LoadMonsterEvolutionProperty();//讀取物種進化增加屬性xml檔案，並設定物種等級屬性字典
         LoadMonsterEvolutionSkill();//讀取物種進化取得技能
@@ -62,11 +65,54 @@ public class GameDictionary
         LoadMapQuestData();//讀取地圖任務xml檔案，並設定任務資料
         LoadAchievementTypeData();//讀取任務成就種類xml檔案，並設定成就種類資料
         LoadEvolutionTreeData();//讀取進化表xml檔案，並設定進化資料
-        if (!TrainScene.StartSet)
-            LoadUnlockQuestData();//讀取解鎖任務xml檔案
         LoadQuestDic();//讀取任務xml檔案
         LoadSummonEventDic();//讀取召喚事件xml檔案
         LoadNPCDic();//讀取NPC怪物字典
+    }
+    public static void LoadDefaultMonster()//讀取預設怪獸xml檔案
+    {
+        DefaultMonsterDic = new Dictionary<int, DefaultMonsterData>();
+        try
+        {
+            //讀取xml文件
+            TextAsset xmlFile = Resources.Load<TextAsset>("String/PlayerDefaultMonster");
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(xmlFile.text);
+            XmlNodeList IDNodes = doc.GetElementsByTagName("DefaultMonsterID");
+            for (int i = 0; i < IDNodes.Count; i++)
+            {
+                int monsterID = int.Parse(IDNodes[i].InnerText);
+                string name = IDNodes[i].ParentNode.SelectSingleNode("Name").InnerText;
+                int species = int.Parse(IDNodes[i].ParentNode.SelectSingleNode("Species").InnerText);
+                int speciesLevel = int.Parse(IDNodes[i].ParentNode.SelectSingleNode("SpeciesLevel").InnerText);
+                int rare = int.Parse(IDNodes[i].ParentNode.SelectSingleNode("Rare").InnerText);
+                int lv = int.Parse(IDNodes[i].ParentNode.SelectSingleNode("LV").InnerText);
+                int health = int.Parse(IDNodes[i].ParentNode.SelectSingleNode("Health").InnerText);
+                int wild = int.Parse(IDNodes[i].ParentNode.SelectSingleNode("Wild").InnerText);
+                int mutation = int.Parse(IDNodes[i].ParentNode.SelectSingleNode("Mutation").InnerText);
+                int natural = int.Parse(IDNodes[i].ParentNode.SelectSingleNode("Natural").InnerText);
+                int happy = int.Parse(IDNodes[i].ParentNode.SelectSingleNode("Happy").InnerText);
+                int brutal = int.Parse(IDNodes[i].ParentNode.SelectSingleNode("Brutal").InnerText);
+                int aggressive = int.Parse(IDNodes[i].ParentNode.SelectSingleNode("Aggressive").InnerText);
+                int resistance = int.Parse(IDNodes[i].ParentNode.SelectSingleNode("Resistance").InnerText);
+                int mainElement = int.Parse(IDNodes[i].ParentNode.SelectSingleNode("MainElement").InnerText);
+                int exp = int.Parse(IDNodes[i].ParentNode.SelectSingleNode("EXP").InnerText);
+                int personality = int.Parse(IDNodes[i].ParentNode.SelectSingleNode("Personality").InnerText);
+                int selectedSkill = int.Parse(IDNodes[i].ParentNode.SelectSingleNode("SelectedSkill").InnerText);
+                int level2Species = int.Parse(IDNodes[i].ParentNode.SelectSingleNode("Level2Species").InnerText);
+                int level3Speices = int.Parse(IDNodes[i].ParentNode.SelectSingleNode("Level3Species").InnerText);
+                int inRoomID = int.Parse(IDNodes[i].ParentNode.SelectSingleNode("InRoomID").InnerText);
+                DefaultMonsterData monsterData = new DefaultMonsterData();
+                monsterData.DefaultSetMonsterData(monsterID, name, species, speciesLevel, rare, lv, health, wild, mutation,
+                    natural, happy, brutal, aggressive, resistance, mainElement, exp, personality, selectedSkill,
+                    level2Species, level3Speices, inRoomID);
+                DefaultMonsterDic.Add(monsterID, monsterData);
+            }
+        }
+        catch
+        {
+            Debug.LogError("讀入預設怪獸資料(PlayerDefaultMonster.xml)時，發生錯誤");
+        }
     }
     public static void LoadEffectFile()//讀取特效xml檔案，並設定特效字典
     {
@@ -109,6 +155,22 @@ public class GameDictionary
         catch
         {
             Debug.LogError("讀入房間風格資料(RoomStyleFile.xml)時，發生錯誤");
+        }
+    }
+    private static void LoadSkillFile()//讀取技能xml檔案，並設定技能字典
+    {
+        SkillDic = new Dictionary<int, Skill>();
+        //依照法術編號讀取法術資料中的法術各屬性
+        TextAsset XMLFlie = Resources.Load<TextAsset>("String/Spell");
+        //讀取XML文件
+        XmlDocument doc = new XmlDocument();
+        doc.LoadXml(XMLFlie.text);
+        XmlNodeList SPIDxml = doc.GetElementsByTagName("SpellID");
+        for (int i = 0; i < SPIDxml.Count; i++)
+        {
+            int spellID = int.Parse(SPIDxml[i].InnerText);
+            Skill fs = new Skill(spellID);
+            SkillDic.Add(spellID, fs);
         }
     }
     private static void LoadTalent()//讀取天賦XML檔案，並設定天賦字典
@@ -284,7 +346,7 @@ public class GameDictionary
         }
         catch
         {
-            Debug.LogError("讀入物種名稱(SpeciesName.xml)時，發生錯誤");
+            Debug.LogWarning("讀入物種名稱(SpeciesName.xml)時，發生錯誤");
         }
     }
     public static void LoadMonsterEvolutionProperty()//讀取物種進化屬性xml檔案，並設定怪物進化屬性字典
@@ -473,43 +535,43 @@ public class GameDictionary
                 Skill[] baseSkills = new Skill[BaseSkill.Length];
                 for (int j = 0; j < baseSkills.Length; j++)
                 {
-                    baseSkills[j] = TrainScene.SkillDic[int.Parse(BaseSkill[j])];
+                    baseSkills[j] = SkillDic[int.Parse(BaseSkill[j])];
                 }
                 MonsterEvolutionSkillChildDic.Add(0, baseSkills);
                 Skill[] nutural2Skills = new Skill[Natural2Skill.Length];
                 for (int j = 0; j < nutural2Skills.Length; j++)
                 {
-                    nutural2Skills[j] = TrainScene.SkillDic[int.Parse(Natural2Skill[j])];
+                    nutural2Skills[j] = SkillDic[int.Parse(Natural2Skill[j])];
                 }
                 MonsterEvolutionSkillChildDic.Add(1, nutural2Skills);
                 Skill[] mutation2Skills = new Skill[Mutation2Skill.Length];
                 for (int j = 0; j < mutation2Skills.Length; j++)
                 {
-                    mutation2Skills[j] = TrainScene.SkillDic[int.Parse(Mutation2Skill[j])];
+                    mutation2Skills[j] = SkillDic[int.Parse(Mutation2Skill[j])];
                 }
                 MonsterEvolutionSkillChildDic.Add(2, mutation2Skills);
                 Skill[] wild2Skills = new Skill[Wild2Skill.Length];
                 for (int j = 0; j < wild2Skills.Length; j++)
                 {
-                    wild2Skills[j] = TrainScene.SkillDic[int.Parse(Wild2Skill[j])];
+                    wild2Skills[j] = SkillDic[int.Parse(Wild2Skill[j])];
                 }
                 MonsterEvolutionSkillChildDic.Add(3, wild2Skills);
                 Skill[] nutural3Skills = new Skill[Natural3Skill.Length];
                 for (int j = 0; j < nutural3Skills.Length; j++)
                 {
-                    nutural3Skills[j] = TrainScene.SkillDic[int.Parse(Natural3Skill[j])];
+                    nutural3Skills[j] = SkillDic[int.Parse(Natural3Skill[j])];
                 }
                 MonsterEvolutionSkillChildDic.Add(4, nutural3Skills);
                 Skill[] mutation3Skills = new Skill[Mutation3Skill.Length];
                 for (int j = 0; j < mutation3Skills.Length; j++)
                 {
-                    mutation3Skills[j] = TrainScene.SkillDic[int.Parse(Mutation3Skill[j])];
+                    mutation3Skills[j] = SkillDic[int.Parse(Mutation3Skill[j])];
                 }
                 MonsterEvolutionSkillChildDic.Add(5, mutation3Skills);
                 Skill[] wild3Skills = new Skill[Wild3Skill.Length];
                 for (int j = 0; j < wild3Skills.Length; j++)
                 {
-                    wild3Skills[j] = TrainScene.SkillDic[int.Parse(Wild3Skill[j])];
+                    wild3Skills[j] = SkillDic[int.Parse(Wild3Skill[j])];
                 }
                 MonsterEvolutionSkillChildDic.Add(6, wild3Skills);
 
@@ -593,18 +655,24 @@ public class GameDictionary
                 int mapKey = int.Parse(planetID.ToString() + mapID.ToString());
                 string planetName = PlanetNameNodes[i].InnerText;
                 string mapName = MapNameNodes[i].InnerText;
-                int[] questID = new int[10];
-                questID[0] = int.Parse(Quest1IDNodes[i].InnerText);
-                questID[1] = int.Parse(Quest2IDNodes[i].InnerText);
-                questID[2] = int.Parse(Quest3IDNodes[i].InnerText);
-                questID[3] = int.Parse(Quest4IDNodes[i].InnerText);
-                questID[4] = int.Parse(Quest5IDNodes[i].InnerText);
-                questID[5] = int.Parse(Quest6IDNodes[i].InnerText);
-                questID[6] = int.Parse(Quest7IDNodes[i].InnerText);
-                questID[7] = int.Parse(Quest8IDNodes[i].InnerText);
-                questID[8] = int.Parse(Quest9IDNodes[i].InnerText);
-                questID[9] = int.Parse(Quest10IDNodes[i].InnerText);
-                Map map = new Map(planetID, mapID, planetName, mapName, questID);
+                int[] questIDs = new int[10];
+                questIDs[0] = int.Parse(Quest1IDNodes[i].InnerText);
+                questIDs[1] = int.Parse(Quest2IDNodes[i].InnerText);
+                questIDs[2] = int.Parse(Quest3IDNodes[i].InnerText);
+                questIDs[3] = int.Parse(Quest4IDNodes[i].InnerText);
+                questIDs[4] = int.Parse(Quest5IDNodes[i].InnerText);
+                questIDs[5] = int.Parse(Quest6IDNodes[i].InnerText);
+                questIDs[6] = int.Parse(Quest7IDNodes[i].InnerText);
+                questIDs[7] = int.Parse(Quest8IDNodes[i].InnerText);
+                questIDs[8] = int.Parse(Quest9IDNodes[i].InnerText);
+                questIDs[9] = int.Parse(Quest10IDNodes[i].InnerText);
+                List<int> QuestIDList=new List<int>();
+                for(int j=0;j<questIDs.Length;j++)
+                {
+                    if (questIDs[j] != 0)
+                        QuestIDList.Add(questIDs[j]);
+                }
+                Map map = new Map(planetID, mapID, planetName, mapName, QuestIDList);
                 MapDic.Add(mapKey, map);
             }
         }
@@ -676,49 +744,6 @@ public class GameDictionary
             Debug.LogError("讀入怪獸進化表資料(EvolutionTree.xml)時，發生錯誤");
         }
     }
-
-    public static void LoadUnlockQuestData()//讀取解鎖任務xml檔案
-    {
-        UnlockQuestDic = new Dictionary<int, UnlockQuest>();
-
-        //讀取xml文件
-        try
-        {
-            TextAsset unlockQuestXml = Resources.Load<TextAsset>("StringData/UnlockQuestData");
-            XmlDocument unlockQuestDoc = new XmlDocument();
-            unlockQuestDoc.LoadXml(unlockQuestXml.text);
-            XmlNodeList ownPlayerNode = unlockQuestDoc.GetElementsByTagName("UnlockPlayerUID");
-            int unlockPlanetID;
-            int unlockMapID;
-            int unlockQuestID;
-            //以迴圈搜尋此玩家擁有的解鎖星球，迴圈長度取決抓取到的node
-            for (int i = 0; i < ownPlayerNode.Count; i++)
-            {
-                //判斷屬於此玩家的解鎖星球
-                if (ownPlayerNode[i].InnerText == Player.PlayerID.ToString())
-                {
-                    unlockPlanetID = int.Parse(ownPlayerNode[i].ParentNode.SelectSingleNode("UnlockPlanet").InnerText);//解鎖星球
-                    if (unlockPlanetID == 0)//如果此星球還沒解鎖
-                        return;
-                    unlockMapID = int.Parse(ownPlayerNode[i].ParentNode.SelectSingleNode("UnlockMap").InnerText);//解鎖地圖
-                    if (unlockMapID == 0)//如果此地圖還沒解鎖
-                        return;
-                    unlockQuestID = int.Parse(ownPlayerNode[i].ParentNode.SelectSingleNode("UnlockQuest").InnerText);//解鎖任務關卡
-                    UnlockQuest unlockQuest = new UnlockQuest(unlockPlanetID, unlockMapID, unlockQuestID);
-                    if (!UnlockQuestDic.ContainsKey(unlockPlanetID))
-                        UnlockQuestDic.Add(unlockPlanetID, unlockQuest);
-                    else
-                        UnlockQuestDic[unlockPlanetID].MapQuestLevel.Add(unlockMapID, unlockQuestID);
-                }
-            }
-        }
-        catch
-        {
-            Debug.LogError("讀入解鎖任務資料(UnlockQuestData.xml)時，發生錯誤");
-        }
-
-    }
-
     public static void LoadQuestDic()//讀取任務xml檔案
     {
         QuestDic = new Dictionary<int, Quest>();//初始化任務字典

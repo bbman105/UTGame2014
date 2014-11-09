@@ -4,10 +4,10 @@ using System.Collections;
 public partial class ArcaletSetter : MonoBehaviour
 {
     //登入需求宣告
-    bool onLogin = false;//是否登入中
-    bool autoLogin = true;	//是否允許玩家在註冊帳號之後自動登入
+    static bool onLogin = false;//是否登入中
+    static bool autoLogin = true;	//是否允許玩家在註冊帳號之後自動登入
 
-    public void StartSetPlayerLogin()//起始設定PlayerLogin
+    static void StartSetPlayerLogin()//起始設定PlayerLogin
     {
         onLogin = false;
     }

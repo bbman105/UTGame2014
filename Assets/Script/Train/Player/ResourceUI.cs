@@ -7,7 +7,7 @@ public class ResourceUI : TrainSceneInterfaceUI
 
     void Start()
     {
-        StartSetUI();
+        //StartSetUI();
         UISet = true;
         UpdateResourceUI();
     }

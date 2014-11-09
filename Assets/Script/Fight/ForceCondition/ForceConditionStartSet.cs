@@ -191,8 +191,8 @@ public partial class ForceCondition : MonoBehaviour
 
     void Start()//初始設定
     {
-        if (TrainScene.ChangeSceneFunction != null)
-            TrainScene.ChangeSceneFunction();
+        if (LoadingScene.ChangeSceneFunction != null)
+            LoadingScene.ChangeSceneFunction();
         if (MapID != 0)//有選擇地圖
         {
             staticCoroutine = this;

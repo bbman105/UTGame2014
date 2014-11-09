@@ -21,7 +21,7 @@ public class RoomCtrl : TrainSceneUICtrl
         lastGoUILevel = 0;
         curPartyUILevel = 0;
         lastPartyUILevel = 0;
-        TrainScene.ChangeSceneFunction += ChangeScene;
+        LoadingScene.ChangeSceneFunction += ChangeScene;
     }
     //RoomCtrl.curGoUILevel
 

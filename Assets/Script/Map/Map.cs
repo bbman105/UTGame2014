@@ -32,24 +32,41 @@ public class Map
         get { return mapName; }
         set { mapName = value; }
     }
-
-    int[] questID;
-    public int[] QuestID
+    public List<int> QuestIDList;
+    //星球數量
+    int planetNum;
+    public int PlanetNum
     {
-        get { return questID; }
-        set { questID = value; }
+        get { return planetNum; }
+        set { planetNum = value; }
+    }
+    //此星球的地圖數量
+    int mapNum;
+    public int MapNum
+    {
+        get { return mapNum; }
+        set { mapNum = value; }
+    }
+    //此地圖的任務數量
+    int questNum;
+    public int QuestNum
+    {
+        get { return questNum; }
+        set { questNum = value; }
     }
 
-
-
     //地圖建構式
-    public Map(int _planetID, int _mapID, string _planetName, string _mapName, int[] _QuestID)
+    public Map(int _planetID, int _mapID, string _planetName, string _mapName, List<int> _questIDList)
     {
+        QuestIDList = new List<int>();
         this.PlanetID = _planetID;
         this.MapID = _mapID;
         this.PlanetName = _planetName;
         this.MapName = _mapName;
-        this.QuestID = _QuestID;
+        QuestIDList = _questIDList;
+        QuestNum = QuestIDList.Count;
+        MapNum = 5;
+        PlanetNum = 1;
     }
 
 

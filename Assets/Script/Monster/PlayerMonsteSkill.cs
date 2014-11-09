@@ -58,8 +58,9 @@ public partial class PlayerMonster : Monster
     }
     public void ChangeMonsterSkill(int _spellID)
     {
-        if (TrainScene.SkillDic.ContainsKey(_spellID))
+        if (GameDictionary.SkillDic.ContainsKey(_spellID))
         {
+            IODataFromArcalet.SetPlayerMonster("SelectedSkill", _spellID.ToString(), MonsterID);//向Server寫入玩者怪獸資料
             SelectedSkillID = _spellID;
             SelectedSkill = new Skill(_spellID);
             Debug.Log("怪獸技能已更換");

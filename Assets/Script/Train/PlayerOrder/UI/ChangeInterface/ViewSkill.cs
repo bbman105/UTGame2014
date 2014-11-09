@@ -5,10 +5,12 @@ public class ViewSkill : MonoBehaviour
 {
     Transform myTransform;
     public static UISprite[] sprites;
-    void Awake()
+    public void StartSet()
     {
         myTransform = transform;
-        sprites = myTransform.GetComponentsInChildren<UISprite>();
+        sprites = new UISprite[2];
+        sprites[0] = myTransform.FindChild("skillIcon").GetComponent<UISprite>();
+        sprites[1] = myTransform.FindChild("btn").GetComponent<UISprite>();
     }
     void OnClick()
     {

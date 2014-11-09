@@ -76,7 +76,7 @@ public class MapUI : TrainSceneInterfaceUI
         for (int i = 0; i < 6; i++)//一顆星球上有6個地圖
         {
             mapNameLabel[i].text = GameDictionary.MapDic[int.Parse(CurPlanetRank.ToString() + (i+1).ToString())].MapName;
-            if (GameDictionary.UnlockQuestDic[CurPlanetRank].MapQuestLevel.ContainsKey(i+1))
+            if (Player.UnlockQuestDic[CurPlanetRank].MapQuestLevel.ContainsKey(i + 1))
             {
                 mapSprite[i].color = Color.white;
                 mapLock[i].alpha = 0;

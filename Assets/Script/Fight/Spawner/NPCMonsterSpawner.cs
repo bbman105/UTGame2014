@@ -102,10 +102,13 @@ public class NPCMonsterSpawner : MonoBehaviour, ISpawn
                         ForceCondition.CharaDic.Add(monsterTag, new List<GameObject>());
                     }
                     ForceCondition.CharaDic[monsterTag].Add(chara[j]);
+                    /*
                     if (!ForceCondition.CharaDic.ContainsKey(monsterTag))
                     {
+                        //不知道幹嘛用
                         ForceCondition.CharaDic.Add(monsterTag, ForceCondition.CharaDic[monsterTag]);
                     }
+                    */
                 }
             }
             else//企劃資料錯誤，沒有召喚怪獸
@@ -131,10 +134,13 @@ public class NPCMonsterSpawner : MonoBehaviour, ISpawn
                     ForceCondition.CharaDic.Add(monsterTag, new List<GameObject>());
                 }
                 ForceCondition.CharaDic[monsterTag].Add(chara[0]);
+                /*
                 if (!ForceCondition.CharaDic.ContainsKey(monsterTag))
                 {
+                   //不知道幹嘛用
                     ForceCondition.CharaDic.Add(monsterTag, ForceCondition.CharaDic[monsterTag]);
                 }
+                */
                 Debug.Log("企劃資料錯誤，此關卡沒有召喚怪物");
             }
         }

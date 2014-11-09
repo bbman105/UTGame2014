@@ -1,0 +1,8 @@
+D:\GameDesign\UTGame2014\DatabaseManager\DatabaseManager\DatabaseManager\bin\Debug\DatabaseManager.exe
+D:\GameDesign\UTGame2014\DatabaseManager\DatabaseManager\DatabaseManager\bin\Debug\DatabaseManager.pdb
+D:\GameDesign\UTGame2014\DatabaseManager\DatabaseManager\DatabaseManager\obj\Debug\DatabaseManager.csprojResolveAssemblyReference.cache
+D:\GameDesign\UTGame2014\DatabaseManager\DatabaseManager\DatabaseManager\obj\Debug\DatabaseManager.Form1.resources
+D:\GameDesign\UTGame2014\DatabaseManager\DatabaseManager\DatabaseManager\obj\Debug\DatabaseManager.Properties.Resources.resources
+D:\GameDesign\UTGame2014\DatabaseManager\DatabaseManager\DatabaseManager\obj\Debug\DatabaseManager.csproj.GenerateResource.Cache
+D:\GameDesign\UTGame2014\DatabaseManager\DatabaseManager\DatabaseManager\obj\Debug\DatabaseManager.exe
+D:\GameDesign\UTGame2014\DatabaseManager\DatabaseManager\DatabaseManager\obj\Debug\DatabaseManager.pdb

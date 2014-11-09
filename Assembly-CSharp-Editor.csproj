@@ -150,6 +150,7 @@
      <None Include="Assets\Resources\String\Damage.xml" />
      <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo14.txt" />
      <None Include="Assets\Resources\String\Spell.xml" />
+     <None Include="Assets\Resources\String\PlayerDefaultMonster.xml" />
      <None Include="Assets\Font\Impact.fnt" />
      <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_login_activity_layout.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_picker_item_background.xml" />

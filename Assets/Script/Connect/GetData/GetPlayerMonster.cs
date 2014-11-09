@@ -12,7 +12,7 @@ public partial class IODataFromArcalet
     {
         try
         {
-            ArcaletItem.GetItemInstance(ArcaletSetter.arcaletGame, ArcaletSetter.PlayerEnhanceResourceIGuid, CallBack_GetPlayerEnhanceResource, _propertyNameList);
+            ArcaletItem.GetItemInstance(ArcaletSetter.arcaletGame, ArcaletSetter.PlayerMonsterIGuid, CallBack_GetPlayerMonster, _propertyNameList);
         }
         catch (Exception ex)
         {
@@ -36,38 +36,41 @@ public partial class IODataFromArcalet
             * 玩家初登入遊戲時不會有任何Instant Item,所以 List<Hashtable>.Count長度必為0
             *******************************************************************/
             List<Hashtable> list = data as List<Hashtable>;
-            if (list.Count == 0)//長度為0表示這個Item還沒有實例化過，進行實例化
+            if (list.Count == 0)//長度為0表示這個Item還沒有實例化過
             {
                 Debug.LogWarning("尚未實例化物件");
                 return;
             }
-            List<string> propertyNameList = token as List<string>;
-            //長度大於1則永遠只取一個Hashtable
-            List<Hashtable> hashAttributeList = list[0]["attr"] as List<Hashtable>;
-            foreach (Hashtable hashAttribute in hashAttributeList)
+            List<Dictionary<string, string>> monsterItemList = new List<Dictionary<string, string>>();//初始化物品清單
+
+            for (int i = 0; i < list.Count; i++)
             {
-                string propertyName = hashAttribute["name"].ToString();
-                if (propertyNameList.Contains(propertyName))
+                Dictionary<string, string> propertyDic = new Dictionary<string, string>();//初始化物品的屬性字典
+                List<string> propertyNameList = token as List<string>;
+                //取得該物品ID的屬性清單
+                List<Hashtable> hashAttributeList = list[i]["attr"] as List<Hashtable>;
+                foreach (Hashtable hashAttribute in hashAttributeList)
                 {
-                    int attributeValue = 0;
-                    //取得物品實例ID
-                    PlayerMonsterItemID = int.Parse(list[0]["id"].ToString());
-                    //設定Client端怪獸
-                    Player.OwnResource.SetEnhanceMaterial(propertyName, attributeValue);
+                    string propertyName = hashAttribute["name"].ToString();
+                    if (propertyNameList.Contains(propertyName))
+                    {
+                        propertyDic.Add(propertyName, hashAttribute["value"].ToString());
+                    }
+                    else
+                    {
+                        Debug.LogWarning(string.Format("PlayerMonsterData資料表中的屬性名稱{0}不在欲取得的屬性名稱陣列中", propertyName));
+                    }
                 }
-                else
-                {
-                    Debug.LogWarning(string.Format("PlayerEnhanceResource資料表中的屬性名稱{0}不在欲取得的屬性名稱陣列中", propertyName));
-                }
+                monsterItemList.Add(propertyDic);//將此實例物品屬性的字典存入清單中
+                ArcaletSetter.GetDataProgress("PlayerMonster");//設定資料進度，標示為已向Server取得怪獸資料
             }
+            Player.StartMonsterSet(monsterItemList);//傳入玩家擁有的怪獸資訊並創造怪獸
         }
         //Code非0表示取得資料失敗
         else
         {
-            Debug.LogWarning("向Server取得資料失敗 - Error:" + code);
+            Debug.LogWarning("向Server取得PlayerMonsterData失敗 - Error:" + code);
             return;
         }
-        ArcaletSetter.SetDataProgressCheck(2);//設定資料進度，標示為已向Server取得怪獸強化素材
-        Debug.Log("取得玩家怪獸資料成功!");
     }
 }

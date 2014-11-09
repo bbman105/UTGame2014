@@ -11,10 +11,17 @@ public class HuttingGettor : AchievementGettor
         {
             if (ForceCondition.CharaStatusDic["NPCMonster"][i].NpcType == "HideBoss" && !ForceCondition.CharaStatusDic["NPCMonster"][i].Alive)
             {
-                if (Player.QuestAchievementDic.ContainsKey(ForceCondition.QuestID))
-                    Player.QuestAchievementDic[ForceCondition.QuestID].Achieve[3] = true;//設定此任務的懸賞成就達成
+                if (Player.QuestAchievementDic.ContainsKey(ForceCondition.QuestID))//如果任務成就字典尚未有此任務的成就
+                {
+                    if (!Player.QuestAchievementDic[ForceCondition.QuestID].Achieve[4])//如果任務成就字典中此任務的懸賞成就尚未解鎖
+                    {
+                        Player.UnlockNewQuestAchievement(ForceCondition.QuestID, 4);//設定此任務的懸賞成就達成
+                    }
+                }
                 else
-                    Player.QuestAchievementDic.Add(ForceCondition.QuestID, new PlayerOwnQuestAchievement(4, new bool[4]));//設定此任務的懸賞成就達成
+                {
+                    Player.UnlockNewQuestAchievement(ForceCondition.QuestID, 4);//設定此任務的懸賞成就達成
+                }
             }
 
         }

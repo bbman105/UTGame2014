@@ -15,18 +15,17 @@ public partial class Player : MonoBehaviour
     public static int RoomNum { get; set; }//房間數量
     public static int MonsterCapacity;//怪獸上限容量，可擁有怪獸上限為房間數的3倍
     //讀取玩家擁有的房間
-    private static void StartRoomSet()
+    public static void StartRoomSet(List<Dictionary<string, string>> _roomItemList)
     {
         Room.StartSetOwnResource();//起始設定房間就擁有的資源物件
-        //讀取資料庫中玩家擁有的房間數量，並建立房間
-        TextAsset XMLFlie_Room = Resources.Load<TextAsset>("StringData/PlayerRoomData");
-        LoadOwnRoom(XMLFlie_Room, PlayerID);
+        CreateRooms(_roomItemList);
     }
 
-    //建立擁有的房間
-    private static void LoadOwnRoom(TextAsset XMLFile, int ownPlayerID)
+    /// <summary>
+    /// 依造傳入的擁有房間字典，建立房間,_roomItemDic[propertyName]取得value
+    /// </summary>
+    private static void CreateRooms(List<Dictionary<string, string>> _roomItemList)
     {
-
         //尋找要建立房間的父物件
         roomScene = GameObject.FindGameObjectWithTag("RoomScene");
         TrainSceneBG = roomScene.transform.FindChild("BG").gameObject;
@@ -42,33 +41,22 @@ public partial class Player : MonoBehaviour
         RoomDic = new Dictionary<int, Room>();
         //建立房間GameObject列表
         RoomObjList = new List<GameObject>();
-        //讀取XML文件
-        XmlDocument doc = new XmlDocument();
-        doc.LoadXml(XMLFile.text);
-        XmlNodeList ownPlayerNode = doc.GetElementsByTagName("OwnPlayerID");
-        //以迴圈搜尋此玩家擁有的房間，迴圈長度取決抓取到的node
-        for (int i = 0; i < ownPlayerNode.Count; i++)
+        for (int i = 0; i < _roomItemList.Count; i++)
         {
-            //判斷屬於此玩家的房間，若為此玩家擁有，則建立房間
-            if (ownPlayerNode[i].InnerText == ownPlayerID.ToString())
-            {
-                //建立房間GameObject
-                RoomObjList.Add(Instantiate(roomResourceObj, roomBasePos + (addPos * RoomFloor), roomRot) as GameObject);
-                //把房間放進父物件裡
-                RoomObjList[RoomFloor].transform.parent = roomScene.transform;
-                //在房間GameObject裡新增Component
-                RoomObjList[RoomFloor].AddComponent<Room>();
-                //將此component命名為monsterClass
-                Room roomClass = (Room)RoomObjList[RoomFloor].GetComponent<Room>();
-                //讀取此怪物的ID
-                int roomID = int.Parse(ownPlayerNode[i].ParentNode.SelectSingleNode("RoomID").InnerText);
-                //依照怪物ID設定怪物屬性
-                roomClass.StartSetRoomAttribute(XMLFile, roomID, RoomFloor);
-                //加到房間字典中
-                AddRoomDictionary(roomClass);
-                //設定怪物計數器+1
-                RoomFloor++;
-            }
+            //建立房間GameObject
+            RoomObjList.Add(Instantiate(roomResourceObj, roomBasePos + (addPos * RoomFloor), roomRot) as GameObject);
+            //把房間放進父物件裡
+            RoomObjList[RoomFloor].transform.parent = roomScene.transform;
+            //在房間GameObject裡新增Component
+            RoomObjList[RoomFloor].AddComponent<Room>();
+            //取得此房間的component
+            Room roomClass = RoomObjList[RoomFloor].GetComponent<Room>();
+            //傳入propertyDic設定房間資料
+            roomClass.StartSetRoomAttribute(_roomItemList[i], RoomFloor);
+            //加到房間字典中
+            AddRoomDictionary(roomClass);
+            //房間數++
+            RoomFloor++;
         }
     }
     public static void StartSetRoomResource()//加入房間擁有的資源物件

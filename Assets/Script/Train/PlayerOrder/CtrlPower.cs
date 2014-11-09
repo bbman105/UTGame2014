@@ -19,7 +19,7 @@ public class CtrlPower
         CanCtrl = new bool[21];
         playerTouchCtrl = GameObject.FindGameObjectWithTag("PlayerCtrl");
         StartCtrl(0);//控制權回到培養界面
-        TrainScene.ChangeSceneFunction += ChangeScene;
+        LoadingScene.ChangeSceneFunction += ChangeScene;
     }
 
     public static void ChangeScene()//切換場景

@@ -131,7 +131,7 @@ public class QuestUI : TrainSceneInterfaceUI
         doc.LoadXml(XMLFlie_Map.text);
         XmlNode root = doc.DocumentElement;
         XmlNode CurMapNode = root.SelectSingleNode(string.Format("Map{0}{1}", CurMapPage, CurMapID));
-        for (int i = 0; i < GameDictionary.UnlockQuestDic[CurMapPage].MapQuestLevel[CurMapID]; i++)//最多10個任務
+        for (int i = 0; i < Player.UnlockQuestDic[CurMapPage].MapQuestLevel[CurMapID]; i++)//最多10個任務
         {
             if (int.Parse(CurMapNode.SelectSingleNode(string.Format("Quest{0}ID", i + 1)).InnerText) != 0)
             {
@@ -177,13 +177,13 @@ public class QuestUI : TrainSceneInterfaceUI
 
                 if (Player.QuestAchievementDic.ContainsKey(QuestList[(questNum - (i + 1))].QuestID))//將有達成的成就顯示出來
                 {
-                    if (Player.QuestAchievementDic[QuestList[(questNum - (i + 1))].QuestID].Achieve[0])
-                        completeSprite[i].alpha = 255;
                     if (Player.QuestAchievementDic[QuestList[(questNum - (i + 1))].QuestID].Achieve[1])
-                        exploreSprite[i].alpha = 255;
+                        completeSprite[i].alpha = 255;
                     if (Player.QuestAchievementDic[QuestList[(questNum - (i + 1))].QuestID].Achieve[2])
-                        rankSSprite[i].alpha = 255;
+                        exploreSprite[i].alpha = 255;
                     if (Player.QuestAchievementDic[QuestList[(questNum - (i + 1))].QuestID].Achieve[3])
+                        rankSSprite[i].alpha = 255;
+                    if (Player.QuestAchievementDic[QuestList[(questNum - (i + 1))].QuestID].Achieve[4])
                         huntingSprite[i].alpha = 255;
                 }
             }

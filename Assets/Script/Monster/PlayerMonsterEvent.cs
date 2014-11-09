@@ -78,6 +78,7 @@ public partial class PlayerMonster : Monster
     float eventBubblePos;
     IShowText showFeedBackText;
     IShowText showRewardText;
+
     //設定事件起始設定
     private void StartSetEvent()//事件起始設定
     {
@@ -160,10 +161,10 @@ public partial class PlayerMonster : Monster
         EventBubble.SetActive(true);
         AdjustEventBubblePosition(StatusCom.FaceDir);//歸正ICON位置
         UnityEngine.Random.seed = System.Guid.NewGuid().GetHashCode();
-        int rnd = UnityEngine.Random.Range(0, TrainScene.EventNum);
-        EventID = int.Parse(TrainScene.EventList[rnd].id);
-        EventIconSprite.sprite = Resources.Load<Sprite>(string.Format("Sprite/Room/Event/{0}", TrainScene.EventDic[EventID].dialogueIcon));
-        EventAction = TrainScene.EventDic[EventID].action;
+        int rnd = UnityEngine.Random.Range(0, LoadingScene.EventNum);
+        EventID = int.Parse(LoadingScene.EventList[rnd].id);
+        EventIconSprite.sprite = Resources.Load<Sprite>(string.Format("Sprite/Room/Event/{0}", LoadingScene.EventDic[EventID].dialogueIcon));
+        EventAction = LoadingScene.EventDic[EventID].action;
         StatusCom.Action(EventAction, 1);//1是開始執行,0是結束
     }
     public void RandTriggerEvent()//亂數觸發事件
@@ -215,7 +216,7 @@ public partial class PlayerMonster : Monster
         yield return new WaitForSeconds(_waitTime);
         for (int i = 0; i < 3; i++)//抓取影響的3個屬性
         {
-            if (TrainScene.EventFeedBackDic[string.Format("{0}-{1}", Personality, TrainScene.CurEventID)].ansFeedback[_choiceCase][i] != 0)
+            if (LoadingScene.EventFeedBackDic[string.Format("{0}-{1}", Personality, LoadingScene.CurEventID)].ansFeedback[_choiceCase][i] != 0)
             {
                 //呼叫回饋個性數值
                 showRewardText.ShowText(_choiceCase, i);

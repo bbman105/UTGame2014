@@ -1,22 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerTeam{
+public class PlayerTeam
+{
 
     //擁有這些隊員的隊伍UID
     private int teamID;
     public int TeamID
     {
-      get { return teamID; }
-      set { teamID = value; }
-    }
-
-    //擁有此隊伍的玩家UID
-    private int ownPlayerID;
-    public int OwnPlayerID
-    {
-        get { return ownPlayerID; }
-        set { ownPlayerID = value; }
+        get { return teamID; }
+        set { teamID = value; }
     }
     //隊員陣列UID
     private int[] member;
@@ -39,16 +32,15 @@ public class PlayerTeam{
     }
 
     //隊伍結構建構式
-    public PlayerTeam(int _teamID, int _ownPlayerID,string _teamName ,int[] _member)
+    public PlayerTeam(int _teamID, string _teamName, int[] _member)
     {
         TeamID = _teamID;
-        OwnPlayerID = _ownPlayerID;
         TeamName = _teamName;
         Member = _member;
-        for(int i=0;i<3;i++)
+        for (int i = 0; i < 3; i++)
         {
             if (Member[i] != 0) MemberNum++;
-        }        
+        }
     }
 
 

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
+using System;
 
 public class QuestData : TrainSceneInterfaceUI
 {
@@ -81,92 +82,110 @@ public class QuestData : TrainSceneInterfaceUI
         root = doc.DocumentElement;
         XmlNode NPCMonsterNode;
 
-        for (int i = 0; i < 6; i++)
-        {
-            if (i < monsterNum)
-            {
-                if (int.Parse(npcID[i]) != 0)
-                {
-                    chara[i].SetActive(true);
-                    //讀取當下NPC怪物資料
-                    NPCMonsterNode = root.SelectSingleNode(string.Format("MID{0}", npcID[i]));
-                    /////////////設定怪物頭像//////////////
+        //給予目前的任務ID
+        questDataUI.transform.FindChild("start").GetComponent<GoReady>().QuestID = QuestID;
+        questDataUI.transform.FindChild("start").GetComponent<GoReady>().QuestLevel = QuestLevel;
 
-                    //設置怪物等級label
-                    nameLabel[i].text = NPCMonsterNode.SelectSingleNode("Name").InnerText;
-                    //設置怪物首領ICON
-                    if (NPCMonsterNode.SelectSingleNode("NPCType").InnerText == "Underling")
+        try
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                if (i < monsterNum)
+                {
+                    if (int.Parse(npcID[i]) != 0)
                     {
-                        typeIcon[i].SetActive(false);
-                        unKnownSprite[i].alpha = 0;
-                        charaSprite[i].color = Color.white;
-                    }
-                    else if (NPCMonsterNode.SelectSingleNode("NPCType").InnerText == "HideBoss")
-                    {
-                        if (!Player.QuestAchievementDic.ContainsKey(QuestID))
+                        chara[i].SetActive(true);
+                        //讀取當下NPC怪物資料
+                        NPCMonsterNode = root.SelectSingleNode(string.Format("MID{0}", npcID[i]));
+                        if (NPCMonsterNode == null)//如果不存在此NPCID
                         {
-                            unKnownSprite[i].alpha = 255;
-                            charaSprite[i].color = Color.black;
+                            Debug.LogWarning(string.Format("找不到NPCMosnterID{0}", npcID[i]));
+                            return;
                         }
-                        else
+
+                        /////////////設定怪物頭像//////////////
+
+                        //設置怪物等級label
+                        nameLabel[i].text = NPCMonsterNode.SelectSingleNode("Name").InnerText;
+                        //設置怪物首領ICON
+                        if (NPCMonsterNode.SelectSingleNode("NPCType").InnerText == "Underling")
                         {
-                            if (Player.QuestAchievementDic[QuestID].Achieve[1])
+                            typeIcon[i].SetActive(false);
+                            unKnownSprite[i].alpha = 0;
+                            charaSprite[i].color = Color.white;
+                        }
+                        else if (NPCMonsterNode.SelectSingleNode("NPCType").InnerText == "HideBoss")
+                        {
+                            if (!Player.QuestAchievementDic.ContainsKey(QuestID))
                             {
-                                charaSprite[i].color = Color.white;
-                                unKnownSprite[i].alpha = 0;
+                                unKnownSprite[i].alpha = 255;
+                                charaSprite[i].color = Color.black;
                             }
                             else
                             {
-                                charaSprite[i].color = Color.black;
-                                unKnownSprite[i].alpha = 255;
+                                if (Player.QuestAchievementDic[QuestID].Achieve[2])
+                                {
+                                    charaSprite[i].color = Color.white;
+                                    unKnownSprite[i].alpha = 0;
+                                }
+                                else
+                                {
+                                    charaSprite[i].color = Color.black;
+                                    unKnownSprite[i].alpha = 255;
+                                }
                             }
+                            typeIcon[i].SetActive(true);
+                            typeIcon[i].transform.GetComponent<UISprite>().spriteName = string.Format("NpcType_{0}", NPCMonsterNode.SelectSingleNode("NPCType").InnerText);
                         }
-                        typeIcon[i].SetActive(true);
-                        typeIcon[i].transform.GetComponent<UISprite>().spriteName = string.Format("NpcType_{0}", NPCMonsterNode.SelectSingleNode("NPCType").InnerText);
-                    }
-                    else if (NPCMonsterNode.SelectSingleNode("NPCType").InnerText == "Boss")
-                    {
-                        unKnownSprite[i].alpha = 0;
-                        charaSprite[i].color = Color.white;
-                        typeIcon[i].SetActive(true);
-                        typeIcon[i].transform.GetComponent<UISprite>().spriteName = string.Format("NpcType_{0}", NPCMonsterNode.SelectSingleNode("NPCType").InnerText);
-                    }
-                    //選擇對的物種頭像             
-                    if (int.Parse(NPCMonsterNode.SelectSingleNode("Species").InnerText) < 8)
-                    {
-                        charaSprite[i].atlas = Resources.Load<UIAtlas>("Atlas/Character/Icon/CharaIcon");
+                        else if (NPCMonsterNode.SelectSingleNode("NPCType").InnerText == "Boss")
+                        {
+                            unKnownSprite[i].alpha = 0;
+                            charaSprite[i].color = Color.white;
+                            typeIcon[i].SetActive(true);
+                            typeIcon[i].transform.GetComponent<UISprite>().spriteName = string.Format("NpcType_{0}", NPCMonsterNode.SelectSingleNode("NPCType").InnerText);
+                        }
+                        else
+                        {
+                            Debug.LogWarning("NPCMonster的NPCType無法辨識");
+                        }
+                        //選擇對的物種頭像             
+                        if (int.Parse(NPCMonsterNode.SelectSingleNode("Species").InnerText) < 8)
+                        {
+                            charaSprite[i].atlas = Resources.Load<UIAtlas>("Atlas/Character/Icon/CharaIcon");
+                        }
+                        else
+                        {
+                            charaSprite[i].atlas = Resources.Load<UIAtlas>("Atlas/Character/Icon/CharaIcon2");
+                        }
+                        charaSprite[i].spriteName = string.Format("{0}-{1}", NPCMonsterNode.SelectSingleNode("Species").InnerText, NPCMonsterNode.SelectSingleNode("SpeciesLevel").InnerText);
+                        //歸正縮放比例
+                        charaSprite[i].MakePixelPerfect();
+                        bannerSprite[i].atlas = Resources.Load<UIAtlas>("Atlas/Character/Icon/CharaIcon");
+                        bannerSprite[i].spriteName = "frame" + NPCMonsterNode.SelectSingleNode("MainElement").InnerText;
+                        bannerSprite[i].MakePixelPerfect();
+                        bottomSprite[i].atlas = Resources.Load<UIAtlas>("Atlas/Character/Icon/CharaIcon");
+                        bottomSprite[i].spriteName = "bottom" + NPCMonsterNode.SelectSingleNode("MainElement").InnerText;//NPCMonsterNode.SelectSingleNode("Rare").InnerText;
+                        bottomSprite[i].MakePixelPerfect();
+                        elementSprite[i].atlas = Resources.Load<UIAtlas>("Atlas/Character/Icon/CharaIcon");
+                        elementSprite[i].spriteName = "element" + NPCMonsterNode.SelectSingleNode("MainElement").InnerText;
+                        elementSprite[i].MakePixelPerfect();
                     }
                     else
                     {
-                        charaSprite[i].atlas = Resources.Load<UIAtlas>("Atlas/Character/Icon/CharaIcon2");
+                        chara[i].SetActive(false);
                     }
-                    charaSprite[i].spriteName = string.Format("{0}-{1}", NPCMonsterNode.SelectSingleNode("Species").InnerText, NPCMonsterNode.SelectSingleNode("SpeciesLevel").InnerText);
-                    //歸正縮放比例
-                    charaSprite[i].MakePixelPerfect();
-                    bannerSprite[i].atlas = Resources.Load<UIAtlas>("Atlas/Character/Icon/CharaIcon");
-                    bannerSprite[i].spriteName = "frame" + NPCMonsterNode.SelectSingleNode("MainElement").InnerText;
-                    bannerSprite[i].MakePixelPerfect();
-                    bottomSprite[i].atlas = Resources.Load<UIAtlas>("Atlas/Character/Icon/CharaIcon");
-                    bottomSprite[i].spriteName = "bottom" + NPCMonsterNode.SelectSingleNode("MainElement").InnerText;//NPCMonsterNode.SelectSingleNode("Rare").InnerText;
-                    bottomSprite[i].MakePixelPerfect();
-                    elementSprite[i].atlas = Resources.Load<UIAtlas>("Atlas/Character/Icon/CharaIcon");
-                    elementSprite[i].spriteName = "element" + NPCMonsterNode.SelectSingleNode("MainElement").InnerText;
-                    elementSprite[i].MakePixelPerfect();
                 }
                 else
                 {
                     chara[i].SetActive(false);
                 }
             }
-            else
-            {
-                chara[i].SetActive(false);
-            }
-
         }
-        //給予目前的任務ID
-        questDataUI.transform.FindChild("start").GetComponent<GoReady>().QuestID = QuestID;
-        questDataUI.transform.FindChild("start").GetComponent<GoReady>().QuestLevel = QuestLevel;
+        catch (Exception ex)
+        {
+            Debug.LogWarning(ex);
+        }
+
 
     }
 }

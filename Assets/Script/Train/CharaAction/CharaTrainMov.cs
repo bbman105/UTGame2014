@@ -129,6 +129,8 @@ public partial class RoomCharaStatus : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D col)
     {
+        if (!IsStartSet)//如果還沒起始設定
+            return;
         if (!touchWall)
         {
             if (col.transform.tag == "Wall")

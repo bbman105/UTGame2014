@@ -377,7 +377,6 @@ public partial class PlayerCtrl : Player
                         }
                         else//如果怪獸搬移時在不可放置的狀態下釋放，則恢復怪獸位置
                         {
-                            Debug.Log("222");
                             CurCtrlMonster.transform.position = MonsterStartPos;//恢復怪物位置
                             CurMonsterClass.SetSpriteSortingOrder();//恢復怪獸貼圖層級
                         }

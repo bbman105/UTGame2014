@@ -55,6 +55,15 @@ public partial class PlayerMonster : Monster
     public int SpeciesResistancePlus;
     public int SpeciesAggressivePlus;
     public float SpeciesSizePlus;
+    /// <summary>
+    /// 寫入怪獸升級影響屬性至Server
+    /// </summary>
+    void SetLvPropertyToServer()
+    {
+        string[] attrNameArray = new string[4] { "LvHealth", "LvBrutal", "LvResistance", "LvAggressive" };
+        string[] attrValueArray = new string[4] { LvHealthPlus.ToString(), LvBrutalPlus.ToString(), LvResistancePlus.ToString(), LvAggressivePlus.ToString() };
+        IODataFromArcalet.SetPlayerMonster(attrNameArray, attrValueArray, MonsterID);//向Server寫入玩者怪獸資料
+    }
     public void SetProperty()//設定最終屬性
     {
         /*
@@ -66,6 +75,7 @@ public partial class PlayerMonster : Monster
         Debug.Log("TalentBrutalTimes=" + TalentBrutalTimes);
         Debug.Log("FeatureBrutalTimes=" + FeatureBrutalTimes);
         */
+        SetLvPropertyToServer();
         Health = (int)((LvHealthPlus + TalentHealthPlus + FeatureHealthPlus + SpeciesHealthPlus + RareHealthPlus) * (BaseHealthTimes + TalentHealthTimes + FeatureHealthTimes));
         Brutal = (int)((LvBrutalPlus + TalentBrutalPlus + FeatureBrutalPlus + SpeciesBrutalPlus + RareBrutalPlus) * (BaseBrutalTimes + TalentBrutalTimes + FeatureBrutalTimes));
         Resistance = (int)((LvResistancePlus + TalentResistancePlus + FeatureResistancePlus + SpeciesResistancePlus + RareResistancePlus) * (BaseResistanceTimes + TalentResistanceTimes + FeatureResistanceTimes));
@@ -138,6 +148,7 @@ public partial class PlayerMonster : Monster
                     break;
             }
         }
+
         SetProperty();//設定最終屬性
     }
     public void SetSpeciesProperty()//設定物種進化影響屬性
@@ -201,7 +212,9 @@ public partial class PlayerMonster : Monster
     /// </summary>
     public void EnhanceRare()//品質強化一階
     {
-        Rare++;
+        int tmpRare = Rare + 1;
+        IODataFromArcalet.SetPlayerMonster("Rare", tmpRare.ToString(), MonsterID);//向Server寫入玩者怪獸資料
+        Rare = tmpRare;
         SetRareProperty();//設定品質影響屬性
     }
     void SetRareProperty()//設定品質影響屬性
