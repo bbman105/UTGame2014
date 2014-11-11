@@ -6,6 +6,8 @@ public partial class ArcaletSetter : MonoBehaviour
     //登入需求宣告
     static bool onLogin = false;//是否登入中
     static bool autoLogin = true;	//是否允許玩家在註冊帳號之後自動登入
+    static string LoginAC;//登入的帳號
+    static string LoginPW;//登入的密碼
 
     static void StartSetPlayerLogin()//起始設定PlayerLogin
     {
@@ -17,7 +19,9 @@ public partial class ArcaletSetter : MonoBehaviour
     {
         if (arcaletGame != null)
             arcaletGame.Dispose();
-        arcaletGame = new ArcaletGame(_accountStr, _passwordStr, gguid, sguid, certificate); //輸入所需要的參數
+        LoginAC = _accountStr;
+        LoginPW = _passwordStr;
+        arcaletGame = new ArcaletGame(LoginAC, LoginPW, gguid, sguid, certificate); //輸入所需要的參數
         //偵測連線狀態
         arcaletGame.onStateChanged += OnArcaletStateChanged;
         //指定 CallBack function
@@ -35,6 +39,8 @@ public partial class ArcaletSetter : MonoBehaviour
     {
         if (code == 0)
         {
+            arcaletGame.SendOnClose(string.Format("{0}:{1}", "quit", LoginAC)); //玩家離線時發送的訊息
+            arcaletGame.Send(string.Format("{0}:{1}:{2}", "new", arcaletGame.poid, LoginAC)); //DP收到new的指令後則線上人數+1
             onLogin = true;
             GetGameDataFormArcaletServer();//起始向Server取得所有資料
             //登入成功時執行的區段

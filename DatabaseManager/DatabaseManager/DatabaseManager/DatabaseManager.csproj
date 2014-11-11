@@ -32,8 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="arcalet">
+      <HintPath>lib\arcalet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
@@ -43,16 +47,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="ArcaletSetter.cs" />
+    <Compile Include="ControlMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlMenu.Designer.cs">
+      <DependentUpon>ControlMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ManagerForm.Designer.cs">
+      <DependentUpon>ManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerForm_ControlMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerForm_OnlinePlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerForm_PlayerMonster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerForm_UserControler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OnlinePlayer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OnlinePlayer.Designer.cs">
+      <DependentUpon>OnlinePlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerMonster.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PlayerMonster.Designer.cs">
+      <DependentUpon>PlayerMonster.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="ControlMenu.resx">
+      <DependentUpon>ControlMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerForm.resx">
+      <DependentUpon>ManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OnlinePlayer.resx">
+      <DependentUpon>OnlinePlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerMonster.resx">
+      <DependentUpon>PlayerMonster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
