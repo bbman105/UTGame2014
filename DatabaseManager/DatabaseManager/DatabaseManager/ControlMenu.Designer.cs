@@ -194,6 +194,7 @@
             this.Btn_PlayerMonster.Text = "PlayerMonster";
             this.Btn_PlayerMonster.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_PlayerMonster.UseVisualStyleBackColor = true;
+            this.Btn_PlayerMonster.Click += new System.EventHandler(this.Btn_PlayerMonster_Click);
             // 
             // Btn_MonsterTeam
             // 

@@ -20,6 +20,7 @@ namespace DatabaseManager
             ControlMenuBtnDic = new Dictionary<string, List<UserControl>>();
             StartSetControlMenu();//初始化設定ControlMenu
             StartSetOnlinePlayer();//初始化設定OnlinePlayer
+            StartSetPlayerMonster();//初始化設定PlayerMonster
         }
         /// <summary>
         /// 啟用ControlMenu控制項，傳入要啟用的控制項名稱，若沒傳入就是所有ControlMenu的控制項

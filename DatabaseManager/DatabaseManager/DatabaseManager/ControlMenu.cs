@@ -25,5 +25,13 @@ namespace DatabaseManager
             managerForm.EnableThemeUserControl("OnlinePlayer");//啟用ThemePanel控制項
             managerForm.ShowThemeUserControl("OnlinePlayer");//顯示ThemePanel控制項
         }
+
+        private void Btn_PlayerMonster_Click(object sender, EventArgs e)
+        {
+            managerForm.DisableThemeUserControl();//不啟用ThemePanel控制項
+            managerForm.HideThemeUserControl();//隱藏ThemePanel控制項
+            managerForm.EnableThemeUserControl("PlayerMonster");//啟用ThemePanel控制項
+            managerForm.ShowThemeUserControl("PlayerMonster");//顯示ThemePanel控制項
+        }
     }
 }
