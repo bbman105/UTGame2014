@@ -1,30 +1,72 @@
 <root>
 	<SEID1>
 		<EventID>1</EventID>
-		<ChoiceUnderlingNumber>2</ChoiceUnderlingNumber>
-		<ChoiceUnderling>1,2</ChoiceUnderling>
-		<Weight>1,2</Weight>
-		<AbsoluteUnderling>0</AbsoluteUnderling>
+		<ChoiceUnderlingNumber>1</ChoiceUnderlingNumber>
+		<ChoiceUnderling>4,6,0</ChoiceUnderling>
+		<Weight>1,1,100</Weight>
+		<AbsoluteUnderling>1</AbsoluteUnderling>
 	</SEID1>
 	<SEID2>
 		<EventID>2</EventID>
-		<ChoiceUnderlingNumber>4</ChoiceUnderlingNumber>
-		<ChoiceUnderling>3,4</ChoiceUnderling>
-		<Weight>1,2</Weight>
-		<AbsoluteUnderling>0</AbsoluteUnderling>
+		<ChoiceUnderlingNumber>1</ChoiceUnderlingNumber>
+		<ChoiceUnderling>2,0</ChoiceUnderling>
+		<Weight>1,5</Weight>
+		<AbsoluteUnderling>1,1</AbsoluteUnderling>
 	</SEID2>
 	<SEID3>
 		<EventID>3</EventID>
-		<ChoiceUnderlingNumber>2</ChoiceUnderlingNumber>
-		<ChoiceUnderling>5,6</ChoiceUnderling>
-		<Weight>1,2</Weight>
-		<AbsoluteUnderling>0</AbsoluteUnderling>
+		<ChoiceUnderlingNumber>1</ChoiceUnderlingNumber>
+		<ChoiceUnderling>4,0</ChoiceUnderling>
+		<Weight>1,5</Weight>
+		<AbsoluteUnderling>3,3</AbsoluteUnderling>
 	</SEID3>
 	<SEID4>
 		<EventID>4</EventID>
-		<ChoiceUnderlingNumber>4</ChoiceUnderlingNumber>
-		<ChoiceUnderling>7,8</ChoiceUnderling>
-		<Weight>1,2</Weight>
-		<AbsoluteUnderling>0</AbsoluteUnderling>
+		<ChoiceUnderlingNumber>1</ChoiceUnderlingNumber>
+		<ChoiceUnderling>2,4,0</ChoiceUnderling>
+		<Weight>1,1,10</Weight>
+		<AbsoluteUnderling>1,3</AbsoluteUnderling>
 	</SEID4>
+	<SEID5>
+		<EventID>5</EventID>
+		<ChoiceUnderlingNumber>1</ChoiceUnderlingNumber>
+		<ChoiceUnderling>4,6,0</ChoiceUnderling>
+		<Weight>1,1,10</Weight>
+		<AbsoluteUnderling>3,5</AbsoluteUnderling>
+	</SEID5>
+	<SEID6>
+		<EventID>6</EventID>
+		<ChoiceUnderlingNumber>1</ChoiceUnderlingNumber>
+		<ChoiceUnderling>6,8,0</ChoiceUnderling>
+		<Weight>1,1,10</Weight>
+		<AbsoluteUnderling>5,7</AbsoluteUnderling>
+	</SEID6>
+	<SEID7>
+		<EventID>7</EventID>
+		<ChoiceUnderlingNumber>1</ChoiceUnderlingNumber>
+		<ChoiceUnderling>8,10,0</ChoiceUnderling>
+		<Weight>1,1,10</Weight>
+		<AbsoluteUnderling>7,9</AbsoluteUnderling>
+	</SEID7>
+	<SEID8>
+		<EventID>8</EventID>
+		<ChoiceUnderlingNumber>1</ChoiceUnderlingNumber>
+		<ChoiceUnderling>10,12,0</ChoiceUnderling>
+		<Weight>1,1,10</Weight>
+		<AbsoluteUnderling>9,11</AbsoluteUnderling>
+	</SEID8>
+	<SEID9>
+		<EventID>9</EventID>
+		<ChoiceUnderlingNumber>1</ChoiceUnderlingNumber>
+		<ChoiceUnderling>0</ChoiceUnderling>
+		<Weight>0</Weight>
+		<AbsoluteUnderling>2,4,6</AbsoluteUnderling>
+	</SEID9>
+	<SEID10>
+		<EventID>10</EventID>
+		<ChoiceUnderlingNumber>1</ChoiceUnderlingNumber>
+		<ChoiceUnderling>0</ChoiceUnderling>
+		<Weight>0</Weight>
+		<AbsoluteUnderling>8,10,12</AbsoluteUnderling>
+	</SEID10>
 </root>

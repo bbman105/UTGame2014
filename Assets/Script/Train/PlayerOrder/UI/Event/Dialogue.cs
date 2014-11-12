@@ -11,18 +11,18 @@ public partial class EventLoad
 
     private static void LoadDialogue()
     {
-        curEventID = TrainScene.CurEventID;
-        dialogue.text = TrainScene.EventDic[curEventID].dialogue;
-        dialogueIcon.spriteName = TrainScene.EventDic[curEventID].dialogueIcon;
+        curEventID = LoadingScene.CurEventID;
+        dialogue.text = LoadingScene.EventDic[curEventID].dialogue;
+        dialogueIcon.spriteName = LoadingScene.EventDic[curEventID].dialogueIcon;
         dialogueIcon.MakePixelPerfect();
-        choice1.text = TrainScene.EventDic[curEventID].ans1;
-        choice2.text = TrainScene.EventDic[curEventID].ans2;
-        choice3.text = TrainScene.EventDic[curEventID].ans3;
-        ans1Icon.spriteName = TrainScene.EventDic[curEventID].ans1Icon;
+        choice1.text = LoadingScene.EventDic[curEventID].ans1;
+        choice2.text = LoadingScene.EventDic[curEventID].ans2;
+        choice3.text = LoadingScene.EventDic[curEventID].ans3;
+        ans1Icon.spriteName = LoadingScene.EventDic[curEventID].ans1Icon;
         ans1Icon.MakePixelPerfect();
-        ans2Icon.spriteName = TrainScene.EventDic[curEventID].ans2Icon;
+        ans2Icon.spriteName = LoadingScene.EventDic[curEventID].ans2Icon;
         ans2Icon.MakePixelPerfect();
-        ans3Icon.spriteName = TrainScene.EventDic[curEventID].ans3Icon;
+        ans3Icon.spriteName = LoadingScene.EventDic[curEventID].ans3Icon;
 
         ans3Icon.MakePixelPerfect();
         //typewrite.enabled = true;

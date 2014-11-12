@@ -52,18 +52,28 @@ public class EvolutionGettor
     public bool CheckEvolution()//查看有沒有符合進化條件
     {
         AllWeight = pm.Natural + pm.Mutation + pm.Wild;//三個屬性權重總和
-        if (pm.EvoPhase == 1)//如果目前為一階怪
+        EvoSpecies = string.Format("{0}-{1}", pm.Species, pm.SpeciesLevel);
+        if (GameDictionary.EvolutionTreeDic[EvoSpecies].EvoSpecies[0] == "0"
+            && GameDictionary.EvolutionTreeDic[EvoSpecies].EvoSpecies[1] == "0"
+            && GameDictionary.EvolutionTreeDic[EvoSpecies].EvoSpecies[2] == "0")//如果可進化物種ID都是0代表不能進化
         {
-            if (pm.Lv == 10)//如果總進化點數大於20(已不使用)，且等級大於10就可進化，AllWeight >= 20已不使用
-            {
-                CanEvolution = true;//設為可進化
-            }
+            CanEvolution = false;//設為可進化
         }
-        else if (pm.EvoPhase == 2)//如果目前為二階怪
+        else
         {
-            if (pm.Lv == 20)//如果總進化點數大於40(已不使用)，且等級大於20就可進化
+            if (pm.EvoPhase == 1)//如果目前為一階怪
             {
-                CanEvolution = true;//設為可進化
+                if (pm.Lv == 10)//如果總進化點數大於20(已不使用)，且等級大於10就可進化，AllWeight >= 20已不使用
+                {
+                    CanEvolution = true;//設為可進化
+                }
+            }
+            else if (pm.EvoPhase == 2)//如果目前為二階怪
+            {
+                if (pm.Lv == 20)//如果總進化點數大於40(已不使用)，且等級大於20就可進化
+                {
+                    CanEvolution = true;//設為可進化
+                }
             }
         }
         return CanEvolution;
@@ -74,7 +84,6 @@ public class EvolutionGettor
         if (CanEvolution)//如果可進化，開始選擇進化的物種
         {
             CanEvolution = false;//進化後，設為不可進化
-            EvoSpecies = string.Format("{0}-{1}", pm.Species, pm.SpeciesLevel);
             EveryWeight[0] = pm.Natural;
             EveryWeight[1] = pm.Mutation;
             EveryWeight[2] = pm.Wild;
@@ -84,6 +93,17 @@ public class EvolutionGettor
                 {
                     AllWeight -= EveryWeight[i];
                     EveryWeight[i] = 0;
+                }
+            }
+            if (AllWeight == 0)//如果AllWeight為0代表，可進化物種對應的屬性都為0，把每個可進化物種對應的屬性權重都+1
+            {
+                for (int i = 0; i < EveryWeight.Length; i++)
+                {
+                    if (GameDictionary.EvolutionTreeDic[EvoSpecies].EvoSpecies[i] != "0")//如果可進化物種ID是0代表不能進行該類型進化，所以權重設為0
+                    {
+                        EveryWeight[i] += 1;
+                        AllWeight += 1;
+                    }
                 }
             }
             CurWeight = UnityEngine.Random.Range(0, AllWeight);
@@ -109,16 +129,17 @@ public class EvolutionGettor
             try
             {
                 NewSpeciesString = GameDictionary.EvolutionTreeDic[EvoSpecies].EvoSpecies[EvoType].Split('-');
-                pm.Species = int.Parse(NewSpeciesString[0]);
-                pm.SpeciesLevel = int.Parse(NewSpeciesString[1]);
+                pm.SetEvolution(NewSpeciesString[0], NewSpeciesString[1], EvoLevelSpecies);//將資料寫入Server
+                pm.SetSpecies(int.Parse(NewSpeciesString[0]));
+                pm.SetSpeciesLevel(int.Parse(NewSpeciesString[1]));
                 pm.SpeciesKey = GameDictionary.EvolutionTreeDic[EvoSpecies].EvoSpecies[EvoType];
                 if (EvoLevelSpecies < 4)//如果是進化到二階
                 {
-                    pm.Level2Species = EvoLevelSpecies;
+                    pm.SetLevel2Species(EvoLevelSpecies);
                     TalentText = GameDictionary.SpeciesEvolutionTalentDic[pm.Species][pm.Level2Species].TalentName;
                     for (int i = 0; i < GameDictionary.SpeciesEvolutionSkillDic[pm.Species][pm.Level2Species].Length; i++)
                     {
-                        if (i ==0)
+                        if (i == 0)
                         {
                             Skilltext += GameDictionary.SpeciesEvolutionSkillDic[pm.Species][pm.Level2Species][i].SkillName;
                         }
@@ -130,7 +151,7 @@ public class EvolutionGettor
                 }
                 else//如果是進化到三階
                 {
-                    pm.Level3Species = EvoLevelSpecies;
+                    pm.SetLevel3Species(EvoLevelSpecies);
                     TalentText = GameDictionary.SpeciesEvolutionTalentDic[pm.Species][pm.Level3Species].TalentName;
                     for (int i = 0; i < GameDictionary.SpeciesEvolutionSkillDic[pm.Species][pm.Level3Species].Length; i++)
                     {

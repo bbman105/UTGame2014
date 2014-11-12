@@ -33,11 +33,11 @@ public class ShowFeedBackText:IShowText
         if (textAnimator.GetCurrentAnimatorStateInfo(0).IsName("stop"))
         {
             //根據所選得選項及怪物個性對應到顯示的文字
-            feedBackText = TrainScene.EventFeedBackDic[string.Format("{0}-{1}", monsterStatus.Personality, TrainScene.CurEventID)].ansDialogue[choseCase];
+            feedBackText = LoadingScene.EventFeedBackDic[string.Format("{0}-{1}", monsterStatus.Personality, LoadingScene.CurEventID)].ansDialogue[choseCase];
             //設定文字
             textTextMesh.text = WrapWord.GetWarpWord(feedBackText, 20);
             //設定文字動畫
-            textAnimator.SetTrigger(TrainScene.EventFeedBackDic[string.Format("{0}-{1}", monsterStatus.Personality, TrainScene.CurEventID)].ansTextAni[choseCase]);
+            textAnimator.SetTrigger(LoadingScene.EventFeedBackDic[string.Format("{0}-{1}", monsterStatus.Personality, LoadingScene.CurEventID)].ansTextAni[choseCase]);
             //校正文字方向
             UpdateTextDirection();
         }

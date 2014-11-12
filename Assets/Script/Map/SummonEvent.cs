@@ -115,15 +115,20 @@ public class SummonEvent
             int tmpWeight = AllWeight;//3,1
             int summonMonsterRank = 0;
             //加入選擇性出怪
-            while (tmpWeight > rndNum && summonMonsterRank < ChoiceUnderlingNumber)
+            while (tmpWeight > rndNum && summonMonsterRank < ChoiceUnderlingWeight.Length)
             {
                 tmpWeight -= ChoiceUnderlingWeight[summonMonsterRank];
                 if (tmpWeight <= rndNum)
+                {
+                    if (ChoiceUnderlingID[summonMonsterRank] != 0)
+                        AddMonster(ChoiceUnderlingID[summonMonsterRank]);
                     break;
+                }
                 else
+                {
                     summonMonsterRank++;
+                }
             }
-            AddMonster(ChoiceUnderlingID[summonMonsterRank]);
         }
         return ResultMonsterID;
     }

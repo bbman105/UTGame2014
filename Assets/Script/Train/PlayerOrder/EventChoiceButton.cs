@@ -71,7 +71,7 @@ public class EventChoiceButton : MonoBehaviour
     }
     static void SetTargetMonster()
     {
-        playerMonster = (PlayerMonster)Player.monster[Player.curMonsterID].GetComponent<PlayerMonster>();
+        playerMonster = Player.MonsterDic[Player.curMonsterID];
     }
 
 

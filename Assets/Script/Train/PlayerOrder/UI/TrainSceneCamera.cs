@@ -10,7 +10,7 @@ public class TrainSceneCamera : MonoBehaviour
     {
         Camera = gameObject;
         DontDestroyOnLoad(transform.gameObject);//切場景時不清除物件
-        TrainScene.ChangeSceneFunction += ChangeScene;
+        LoadingScene.ChangeSceneFunction += ChangeScene;
     }
 
     public static void ChangeScene()//切換場景

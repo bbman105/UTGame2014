@@ -84,7 +84,7 @@ public partial class PlayerCtrl
         CtrlPower.StartCtrl(-1);//-1為關閉所有控制權
         SetCurMonsterID(CurCtrlTarget);
         StopMonsterEventAction(CurCtrlTarget);
-        TrainScene.CurEventID = CurCtrlTarget.transform.parent.GetComponent<PlayerMonster>().EventID;
+        LoadingScene.CurEventID = CurCtrlTarget.transform.parent.GetComponent<PlayerMonster>().EventID;
         EventUI.SetActive(true);//預設是inActive所以先打開
         EventLoad.OnEvent = true;//設定為正執行事件介面
         EventLoad.LoadValues();
@@ -107,7 +107,7 @@ public partial class PlayerCtrl
     void SetCurMonsterID(GameObject target)
     {
         charaStatus = (RoomCharaStatus)target.transform.parent.GetComponent<RoomCharaStatus>();
-        Player.curMonsterID = charaStatus.monsterID;
+        Player.curMonsterID = charaStatus.MonsterID;
         //eventBubbleObj = target;
         //eventBubbleObj.SetActive(false);
     }

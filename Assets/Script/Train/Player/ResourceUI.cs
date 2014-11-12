@@ -7,7 +7,7 @@ public class ResourceUI : TrainSceneInterfaceUI
 
     void Start()
     {
-        StartSetUI();
+        //StartSetUI();
         UISet = true;
         UpdateResourceUI();
     }
@@ -20,6 +20,7 @@ public class ResourceUI : TrainSceneInterfaceUI
             dimandLabel.text = Player.OwnResource.Dimand.ToString();
             energyLabel.text = Player.OwnResource.CurEnergy.ToString();
         }
+
     }
 
 }

@@ -52,7 +52,7 @@ public partial class PlayerMonster : Monster
     public void StartSetHappy(int _setHappy)
     {
         Happy = _setHappy;
-        MyRoom.UpdateRoomHappy();//更新房間的快樂度
+        //MyRoom.UpdateRoomHappy();//更新房間的快樂度
     }
     /// <summary>
     /// 增加快樂度，傳入要增加的快樂度
@@ -61,6 +61,7 @@ public partial class PlayerMonster : Monster
     {
         LastRoomHappy = GetRoomHappy();//取得增加快樂度前此房間的快樂度總值
         Happy += _addHappy;
+        IODataFromArcalet.SetPlayerMonster("Happy", Happy.ToString(), MonsterID);//向Server寫入玩者怪獸
         MonsterHappyChangeEvent();//快樂度改變時呼叫此方法
     }
     /// <summary>

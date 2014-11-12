@@ -29,6 +29,8 @@ public class EditMemberData : TrainSceneInterfaceUI
     static private UISprite[] rareSprite;
 
     //腳色各屬性數值UILabel 與 經驗UISprite
+    static private ViewSkill viewSkill;
+    static private ViewData viewData;
     static private UILabel lvLabel;
     static private UILabel nameLabel;
     static private UILabel speciesLabel;
@@ -57,6 +59,10 @@ public class EditMemberData : TrainSceneInterfaceUI
         elementSprite = memberTitleUI.transform.FindChild("chara").FindChild("element").GetComponent<UISprite>();
 
         //抓取EditMemberData上腳色各屬性數值的物件
+        viewSkill = memberTitleUI.transform.FindChild("skillBTN").GetComponent<ViewSkill>();
+        viewSkill.StartSet();
+        viewData = memberTitleUI.transform.FindChild("DataBTN").GetComponent<ViewData>();
+        viewData.StartSet();
         nameLabel = memberTitleUI.transform.FindChild("name").GetComponent<UILabel>();
         speciesLabel = memberTitleUI.transform.FindChild("speciesName").GetComponent<UILabel>();
         lvLabel = memberTitleUI.transform.FindChild("lv").GetComponent<UILabel>();

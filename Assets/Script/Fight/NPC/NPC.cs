@@ -48,7 +48,7 @@ public class NPC
         MainElement = int.Parse(CurMonsterNode.SelectSingleNode("MainElement").InnerText);//屬性
         EXP = int.Parse(CurMonsterNode.SelectSingleNode("EXP").InnerText);//經驗
         Gold = int.Parse(CurMonsterNode.SelectSingleNode("Gold").InnerText);//金錢
-        NPCType = CurMonsterNode.SelectSingleNode("SpeciesLevel").InnerText;//種類
+        NPCType = CurMonsterNode.SelectSingleNode("NPCType").InnerText;//種類
         AIID = int.Parse(CurMonsterNode.SelectSingleNode("AIID").InnerText);//AI編號
         Loot = int.Parse(CurMonsterNode.SelectSingleNode("Loot").InnerText);//戰利品ID
         DropPercent = float.Parse(CurMonsterNode.SelectSingleNode("DropPercent").InnerText);//戰利品掉落機率

@@ -12,19 +12,6 @@ public partial class PlayerMonster : Monster, IMonsterSize, IComparable
 
     //擁有此怪物玩家的編號
     private int ownPlayerID;
-    public int OwnPlayerID
-    {
-        get { return ownPlayerID; }
-        set
-        {
-            if (value < 0)
-            {
-                ownPlayerID = 0;
-            }
-            else { ownPlayerID = value; }
-        }
-    }
-
     //怪物的進化點數上限
     const int limitEvoPoint = 60;
     //怪物野性值
@@ -170,13 +157,13 @@ public partial class PlayerMonster : Monster, IMonsterSize, IComparable
     public CircleCollider2D EventCollider { get; set; }
     //怪獸進化控制器
     EvolutionGettor EvoGettor;
-    //怪獸資料
-    TextAsset PlayerMonsterXml { get; set; }
-    XmlNode MIDXml;
     Transform myTransform;
+    bool IsStartSet;//是否已啟動功能，未啟動時不觸發update裡的內容
 
     void Update()
     {
+        if (!IsStartSet)
+            return;
         EventTimerFunction();//獨立事件觸發
         DailyEventTimerFunction();//日常事件的計時觸發
     }
@@ -188,82 +175,91 @@ public partial class PlayerMonster : Monster, IMonsterSize, IComparable
         SizeGettor = new MonsterSizeGettor(this);//怪獸大小控制器
         EvoGettor = new EvolutionGettor(this);//怪獸進化控制器
     }
-
-    /// <summary>
-    /// 從XML讀取怪獸資料
-    /// </summary>
-    void LoadMonsterAttributeFromXml()//從XML讀取怪獸資料
+    //初始設定怪獸
+    public void StartSetMonster()//初始設定怪獸
     {
-        MonsterID = int.Parse(MIDXml.SelectSingleNode("MonsterID").InnerText);
-        OwnPlayerID = int.Parse(MIDXml.SelectSingleNode("OwnPlayerID").InnerText);
-        MonsterName = MIDXml.SelectSingleNode("Name").InnerText;
-        Species = int.Parse(MIDXml.SelectSingleNode("Species").InnerText);
-        SpeciesLevel = int.Parse(MIDXml.SelectSingleNode("SpeciesLevel").InnerText);
-        SpeciesKey = string.Format("{0}-{1}", Species, SpeciesLevel);
-        Rare = int.Parse(MIDXml.SelectSingleNode("Rare").InnerText);
-        Lv = int.Parse(MIDXml.SelectSingleNode("LV").InnerText);
-        CurExp = int.Parse(MIDXml.SelectSingleNode("EXP").InnerText);
-        NeedExp = GameDictionary.MonsterExperienceDic[Lv][RareToString(Rare)];
-        LvHealthPlus = int.Parse(MIDXml.SelectSingleNode("Health").InnerText);
-        Wild = int.Parse(MIDXml.SelectSingleNode("Wild").InnerText);
-        Mutation = int.Parse(MIDXml.SelectSingleNode("Mutation").InnerText);
-        Natural = int.Parse(MIDXml.SelectSingleNode("Natural").InnerText);
-        Player.AddMonsterToDictionary(this);//將此怪物加入玩者擁有怪物字典中
-        LvBrutalPlus = int.Parse(MIDXml.SelectSingleNode("Brutal").InnerText);
-        LvAggressivePlus = int.Parse(MIDXml.SelectSingleNode("Aggressive").InnerText);
-        LvResistancePlus = int.Parse(MIDXml.SelectSingleNode("Resistance").InnerText);
-        MainElement = int.Parse(MIDXml.SelectSingleNode("MainElement").InnerText);
-        Personality = int.Parse(MIDXml.SelectSingleNode("Personality").InnerText);
-        SelectedSkillID = int.Parse(MIDXml.SelectSingleNode("SelectedSkill").InnerText);
-        Level2Species = int.Parse(MIDXml.SelectSingleNode("Level2Species").InnerText);
-        Level3Species = int.Parse(MIDXml.SelectSingleNode("Level3Species").InnerText);
-        SpeciesName = GameDictionary.SpeciesNameDic[SpeciesKey];
-        //放置怪物到房間並設定所在房間的資訊
-        InRoomID = int.Parse(MIDXml.SelectSingleNode("InRoomID").InnerText);
-        StartSetMonsterToRoom();//起始放置怪物到房間
-        SetMonsterHappyInRoom(Player.RoomDic[InRoomID]);//設定此怪獸所在的房間及相關資訊
-        StartSetHappy(int.Parse(MIDXml.SelectSingleNode("Happy").InnerText));//設定快樂度     
-    }
-    public void StartSetMonsterAttribute(TextAsset XMLFile, int MID)
-    {
-        try
-        {
-            GetPlayerMonsterTool();//取得各種控制器
-            //讀取XML文件
-            XmlDocument doc = new XmlDocument();
-            PlayerMonsterXml = XMLFile;
-            doc.LoadXml(PlayerMonsterXml.text);
-            //讀取xml文件中欲抓取的MonsterID標籤
-            MIDXml = doc.SelectSingleNode(string.Format("root/MID{0}", MID));
-            LoadMonsterAttributeFromXml();//從XML讀取怪獸資料
-        }
-        catch (Exception ex)
-        {
-            Debug.Log("讀取玩家怪物數值文件時發生錯誤，文件名稱PlayerMonster.xml");
-            throw ex;
-        }
+        SetCachedObj();//抓取物件
+        GetPlayerMonsterTool();//取得各種控制器
+        //SetAttribute(_propertyDic);//讀取怪獸資料
         StartSetMonsterProperty();//初始化怪獸起始數值
         StartSetMonsterResourceQuality();//起始設定怪獸生產資源量
-        SetCachedObj();//抓取物件
         StartSetMonsterSkill();//讀入怪物擁有技能
         EvoGettor.GetEvoPhase();//設定怪獸階級
         StartSetEvent();//事件起始設定
         StartSetDailyEvent();//日常事件起始設置
         StartSetTouch();//觸摸怪獸事件
         SetSize(Size);//依怪物體型設定圖像縮放大小及碰撞範圍
-        CharaStatus = myTransform.GetComponent<RoomCharaStatus>();//取得此怪獸的狀態
+        CharaStatus.MonsterID = MonsterID;
         CharaStatus.StartSetRoomCharaStatus();//起始設至怪獸狀態
         SetSprite();//依怪物種類設定物件圖像
         SetSpriteSortingOrder();//設定怪獸貼圖層級
+        SetMonsterHappyInRoom(Player.RoomDic[InRoomID]);//設定此怪獸所在的房間及相關資訊
+        SpeciesName = GameDictionary.SpeciesNameDic[SpeciesKey];//設定怪物物種名稱
+        IsStartSet = true;
     }
+    /// <summary>
+    /// 讀取怪獸資料
+    /// </summary>
+    public void SetAttribute(Dictionary<string, string> _propertyDic)//讀取怪獸資料
+    {
+        MonsterID = int.Parse(_propertyDic["MonsterID"]);
+        MonsterName = _propertyDic["Name"];
+        Species = int.Parse(_propertyDic["Species"]);
+        SpeciesLevel = int.Parse(_propertyDic["SpeciesLevel"]);
+        SpeciesKey = string.Format("{0}-{1}", Species, SpeciesLevel);
+        Rare = int.Parse(_propertyDic["Rare"]);
+        Lv = int.Parse(_propertyDic["LV"]);
+        CurExp = int.Parse(_propertyDic["EXP"]);
+        NeedExp = GameDictionary.MonsterExperienceDic[Lv][RareToString(Rare)];
+        LvHealthPlus = int.Parse(_propertyDic["LvHealth"]);
+        Wild = int.Parse(_propertyDic["Wild"]);
+        Mutation = int.Parse(_propertyDic["Mutation"]);
+        Natural = int.Parse(_propertyDic["Natural"]);
+        LvBrutalPlus = int.Parse(_propertyDic["LvBrutal"]);
+        LvAggressivePlus = int.Parse(_propertyDic["LvAggressive"]);
+        LvResistancePlus = int.Parse(_propertyDic["LvResistance"]);
+        MainElement = int.Parse(_propertyDic["MainElement"]);
+        Personality = int.Parse(_propertyDic["Personality"]);
+        SelectedSkillID = int.Parse(_propertyDic["SelectedSkill"]);
+        Level2Species = int.Parse(_propertyDic["LV2Species"]);
+        Level3Species = int.Parse(_propertyDic["LV3Species"]);
+        Player.AddMonsterToDictionary(this);//將此怪物加入玩者擁有怪物字典中
+        //放置怪物到房間並設定所在房間的資訊
+        InRoomID = int.Parse(_propertyDic["InRoomID"]);
+        StartSetHappy(int.Parse(_propertyDic["Happy"]));//設定快樂度   
+        StartSetMonsterToRoom();//起始放置怪物到房間
+    }
+
     void StartSetMonsterToRoom()//起始放置怪物到房間
     {
         try
         {
-            Player.RoomDic[InRoomID].AddMonster(MonsterID);//加入到新房間
+            if (InRoomID == 0)//如果InRoomID為0，代表初始得到此怪獸
+            {
+                List<int> dicBuffer = new List<int>(Player.RoomDic.Keys);
+                foreach (int key in dicBuffer)
+                {
+                    if (Player.RoomDic[key].OwnMonsterDic.Count < Player.RoomDic[key].RoomCapacity)//如果房間還沒客滿
+                    {
+                        Player.RoomDic[key].AddMonster(MonsterID);//加入到新房間
+                        InRoomID = Player.RoomDic[key].RoomID;//設定此怪獸所在的房間ID
+                    }
+                }
+            }
+            else
+            {
+                if (Player.RoomDic.ContainsKey(InRoomID))//如果怪獸所在的房間存在
+                {
+                    if (Player.RoomDic[InRoomID].OwnMonsterDic.Count < Player.RoomDic[InRoomID].RoomCapacity)//如果房間還沒客滿
+                    {
+                        Player.RoomDic[InRoomID].AddMonster(MonsterID);//加入到新房間
+                    }
+                }
+            }
         }
         catch (Exception ex)
         {
+            Debug.LogWarning(string.Format("起始放置怪物{0}到房間時發生錯誤", MonsterID));
             Debug.Log(ex);
         }
     }
@@ -317,6 +313,7 @@ public partial class PlayerMonster : Monster, IMonsterSize, IComparable
                         MyRoom.RemoveMonster(MonsterID);//從原本房間移除
                         MyRoom = _moveToRoom;
                         InRoomID = _moveToRoom.RoomID;
+                        IODataFromArcalet.SetPlayerMonster("InRoomID", InRoomID.ToString(), MonsterID);//向Server寫入玩者怪獸
                         MyRoom.AddMonster(MonsterID);//加入到新房間
                         myTransform.parent = MyRoom.transform;
                         myTransform.position = _pos;
@@ -324,17 +321,17 @@ public partial class PlayerMonster : Monster, IMonsterSize, IComparable
                     }
                     else
                     {
-                        Debug.Log("目標房間已經客滿了");
+                        Debug.LogWarning("目標房間已經客滿了");
                     }
                 }
                 else
                 {
-                    Debug.Log("原本房間不存在此怪物");
+                    Debug.LogWarning("原本房間不存在此怪物");
                 }
             }
             else
             {
-                Debug.Log("此怪物原本房間ID不存在房間字典中");
+                Debug.LogWarning("此怪物原本房間ID不存在房間字典中");
             }
         }
         catch (Exception ex)
@@ -347,6 +344,7 @@ public partial class PlayerMonster : Monster, IMonsterSize, IComparable
         myTransform = transform;//將transform暫存自快取中
         //怪物圖像物件
         MonsterSprite = myTransform.FindChild("status").FindChild("sprite").GetComponent<SpriteRenderer>();
+        CharaStatus = myTransform.GetComponent<RoomCharaStatus>();//取得此怪獸的狀態
     }
     //設定sprite的方法
     public void SetSprite()

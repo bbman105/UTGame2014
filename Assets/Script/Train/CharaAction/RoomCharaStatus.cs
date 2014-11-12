@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public partial class RoomCharaStatus : MonoBehaviour
 {
     public float speed;
-    public int monsterID;
+    public int MonsterID;
     Transform myTransform;
     ICharaAction FearCom;
     ICharaAction NervousCom;
@@ -13,6 +13,7 @@ public partial class RoomCharaStatus : MonoBehaviour
     List<ICharaAction> ActionList { get; set; }
     CharaTrainSwing SwingCom;
     PlayerMonster myStatus;
+    bool IsStartSet;//使否已啟動，若沒啟動不觸發update裡的內容
 
 
 
@@ -23,6 +24,7 @@ public partial class RoomCharaStatus : MonoBehaviour
         SetCachedObj();
         CharaTrainStatusSetup();
         MovSetup();
+        IsStartSet = true;
     }
     void SetCachedObj()
     {
@@ -68,6 +70,8 @@ public partial class RoomCharaStatus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!IsStartSet)
+            return;
         MoveTimeFunction();
         StayTimeFunction();
         TouchTimerFunction();

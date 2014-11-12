@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_5_5;UNITY_4_5;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_5_5;UNITY_4_5;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -205,7 +205,40 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
      <Compile Include="Assets\Script\Achievement\AchievementType.cs" />
      <Compile Include="Assets\Script\Achievement\PlayerOwnQuestAchievement.cs" />
-     <Compile Include="Assets\Script\Connet\ConnectToPhotonServer.cs" />
+     <Compile Include="Assets\Script\Arcalet\ArcaletSetter.cs" />
+     <Compile Include="Assets\Script\Arcalet\GetDataFormServer.cs" />
+     <Compile Include="Assets\Script\Arcalet\PlayerConnect.cs" />
+     <Compile Include="Assets\Script\Arcalet\PlayerLogin.cs" />
+     <Compile Include="Assets\Script\Arcalet\PlayerLogout.cs" />
+     <Compile Include="Assets\Script\Arcalet\PlayerRegister.cs" />
+     <Compile Include="Assets\Script\Connect\AutoLogin.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\CheckEnhanceResource.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\CheckMonsterData.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\CheckPlayerSetting.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\CheckQuestAchievement.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\CheckResource.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\CheckRoom.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\CheckTeam.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\CheckVenture.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\DeleteVenture.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\GetPlayerEnhanceResource.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\GetPlayerMonster.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\GetPlayerResource.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\GetPlayerSetting.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\GetQuestAchievement.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\GetRoom.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\GetTeam.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\GetVenture.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\IODataFromArcalet.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\SetPlayerEnhanceResourceToServer.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\SetPlayerMonsterToServer.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\SetPlayerResourceToServer.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\SetPlayerSettingToServer.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\SetQuestAchievementToServer.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\SetRoomToServer.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\SetTeamToServer.cs" />
+     <Compile Include="Assets\Script\Connect\GetData\SetVentureToServer.cs" />
+     <Compile Include="Assets\Script\Connect\ReAutoLogin.cs" />
      <Compile Include="Assets\Script\Debug\IViewDebugLog.cs" />
      <Compile Include="Assets\Script\Dictionary\GameDictionary.cs" />
      <Compile Include="Assets\Script\Effect\KnockFX.cs" />
@@ -299,7 +332,6 @@
      <Compile Include="Assets\Script\Fight\Spawner\RetreatNumberSpawner.cs" />
      <Compile Include="Assets\Script\Fight\Spawner\SceneSet.cs" />
      <Compile Include="Assets\Script\Fight\StageScript\StageControler.cs" />
-     <Compile Include="Assets\Script\Login\LoginButton.cs" />
      <Compile Include="Assets\Script\Map\HealthTactics.cs" />
      <Compile Include="Assets\Script\Map\Map.cs" />
      <Compile Include="Assets\Script\Map\Quest.cs" />
@@ -307,6 +339,7 @@
      <Compile Include="Assets\Script\Map\SummonEvent.cs" />
      <Compile Include="Assets\Script\Map\Tactics.cs" />
      <Compile Include="Assets\Script\Map\UnlockQuest.cs" />
+     <Compile Include="Assets\Script\Monster\DefaultMonster.cs" />
      <Compile Include="Assets\Script\Monster\EvolutionGettor.cs" />
      <Compile Include="Assets\Script\Monster\EvolutionPointGettor.cs" />
      <Compile Include="Assets\Script\Monster\EvolutionProperty.cs" />
@@ -319,15 +352,21 @@
      <Compile Include="Assets\Script\Monster\MonsterNameGettor.cs" />
      <Compile Include="Assets\Script\Monster\MonsterResourceQuality.cs" />
      <Compile Include="Assets\Script\Monster\MonsterSizeGettor.cs" />
+     <Compile Include="Assets\Script\Monster\MonsterSpecies.cs" />
      <Compile Include="Assets\Script\Monster\NPCMonster.cs" />
      <Compile Include="Assets\Script\Monster\PlayerMonsteProperty.cs" />
      <Compile Include="Assets\Script\Monster\PlayerMonsteSkill.cs" />
      <Compile Include="Assets\Script\Monster\PlayerMonster.cs" />
+     <Compile Include="Assets\Script\Monster\PlayerMonsterData.cs" />
      <Compile Include="Assets\Script\Monster\PlayerMonsterEvent.cs" />
      <Compile Include="Assets\Script\Monster\PlayerMonsterFeature.cs" />
      <Compile Include="Assets\Script\Monster\PlayerMonsterHappy.cs" />
      <Compile Include="Assets\Script\Monster\PlayerMonsterTouchEvent.cs" />
      <Compile Include="Assets\Script\Room\Room.cs" />
+     <Compile Include="Assets\Script\Scene\Coroutiner.cs" />
+     <Compile Include="Assets\Script\Scene\LoadingScene.cs" />
+     <Compile Include="Assets\Script\Scene\SceneController.cs" />
+     <Compile Include="Assets\Script\Scene\TrainScene.cs" />
      <Compile Include="Assets\Script\Skill\BaseSkill.cs" />
      <Compile Include="Assets\Script\Skill\BaseSkillName.cs" />
      <Compile Include="Assets\Script\Skill\Cure.cs" />
@@ -365,8 +404,10 @@
      <Compile Include="Assets\Script\Train\CharaAction\RoomCharaStatus.cs" />
      <Compile Include="Assets\Script\Train\Experience\GetExperience.cs" />
      <Compile Include="Assets\Script\Train\Player\Player.cs" />
+     <Compile Include="Assets\Script\Train\Player\PlayerQuestAchievement.cs" />
      <Compile Include="Assets\Script\Train\Player\PlayerResource.cs" />
      <Compile Include="Assets\Script\Train\Player\PlayerRoomFloor.cs" />
+     <Compile Include="Assets\Script\Train\Player\PlayerVenture.cs" />
      <Compile Include="Assets\Script\Train\Player\ResourceUI.cs" />
      <Compile Include="Assets\Script\Train\Player\TrainSceneInterfaceUI.cs" />
      <Compile Include="Assets\Script\Train\Player\TrainSceneUICtrl.cs" />
@@ -430,8 +471,6 @@
      <Compile Include="Assets\Script\Train\RoomItem\ResourceIsUsing.cs" />
      <Compile Include="Assets\Script\Train\RoomItem\RoomResource.cs" />
      <Compile Include="Assets\Script\Train\RoomItem\RoomResourceData.cs" />
-     <Compile Include="Assets\Script\Train\Scene\SceneTimer.cs" />
-     <Compile Include="Assets\Script\Train\Scene\TrainScene.cs" />
      <Compile Include="Assets\Script\Train\Spawner\RoomResourceSpawner.cs" />
      <Compile Include="Assets\Script\UI\BattleLog\ArrowLog.cs" />
      <Compile Include="Assets\Script\UI\BattleLog\ChapLoad.cs" />
@@ -455,6 +494,7 @@
      <None Include="Assets\Resources\String\Damage.xml" />
      <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo14.txt" />
      <None Include="Assets\Resources\String\Spell.xml" />
+     <None Include="Assets\Resources\String\PlayerDefaultMonster.xml" />
      <None Include="Assets\Font\Impact.fnt" />
      <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_login_activity_layout.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_picker_item_background.xml" />
@@ -558,6 +598,9 @@
      <None Include="Assets\Resources\StringData\PlayerMonsterData.xml" />
  <Reference Include="IFacebook">
  <HintPath>D:/GameDesign/UTGame2014/Assets/Facebook/Scripts/IFacebook.dll</HintPath>
+ </Reference>
+ <Reference Include="arcalet">
+ <HintPath>D:/GameDesign/UTGame2014/Assets/Plugins/Arcalet/arcalet.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

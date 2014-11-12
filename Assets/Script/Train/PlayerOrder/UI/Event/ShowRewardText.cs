@@ -44,17 +44,17 @@ public class ShowRewardText : IShowText
     public void ShowText(int choseCase, int _feedBackType)
     {
         //personality = "";
-        feedBackPoint = TrainScene.EventFeedBackDic[string.Format("{0}-{1}", monsterStatus.Personality, TrainScene.CurEventID)].ansFeedback[choseCase][_feedBackType];
+        feedBackPoint = LoadingScene.EventFeedBackDic[string.Format("{0}-{1}", monsterStatus.Personality, LoadingScene.CurEventID)].ansFeedback[choseCase][_feedBackType];
         switch (_feedBackType)
         {
             case 0://增加快樂度
                 monsterStatus.AddHappy(feedBackPoint);
                 break;
             case 1://增加金幣
-                Player.OwnResource.AddResource(0, feedBackPoint);
+                Player.OwnResource.AddResource("Gold", feedBackPoint);
                 break;
             case 2://增加能量
-                Player.OwnResource.AddResource(1, feedBackPoint);
+                Player.OwnResource.AddResource("CurEnergy", feedBackPoint);
                 break;
             default :
                 Debug.Log("獨立事件回饋要增加的屬性類型無法辨識");

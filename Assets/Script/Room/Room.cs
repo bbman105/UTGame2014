@@ -14,13 +14,6 @@ public class Room : MonoBehaviour
         get { return roomID; }
         set { roomID = value; }
     }
-    //房間所屬玩家ID
-    private int ownPlayerID;
-    public int OwnPlayerID
-    {
-        get { return ownPlayerID; }
-        set { ownPlayerID = value; }
-    }
     //房間名稱
     private string roomName;
     public string RoomName
@@ -97,56 +90,51 @@ public class Room : MonoBehaviour
     //房間已經擁有的資源物件
     Dictionary<int, RoomResourceData> RoomOwnResourceDic = new Dictionary<int, RoomResourceData>();
     static string Filepath = Application.persistentDataPath + @"/RoomResource.xml";
-    //static string Filepath2 = "jar:file://" + Application.dataPath + "!/assets/" + "RoomResource.xml";
     static XmlDocument xmlDoc = new XmlDocument();
     static TextAsset XMLFlie_Room;
     static byte[] InBytes;
 
 
 
-    public void StartSetRoomAttribute(TextAsset XMLFile, int RID, int _floor)
+    public void StartSetRoomAttribute(Dictionary<string, string> _propertyDic, int _floor)
     {
-        myTransform = transform;
-        myHappyBar = myTransform.FindChild("happyBar").GetComponent<HappyBar>();
-        XmlDocument doc = new XmlDocument();
-        doc.LoadXml(XMLFile.text);
-        XmlNode MIDXml = doc.SelectSingleNode(string.Format("root/RID{0}", RID));
         try
         {
-            RoomID = int.Parse(MIDXml.SelectSingleNode("RoomID").InnerText);
-            OwnPlayerID = int.Parse(MIDXml.SelectSingleNode("OwnPlayerID").InnerText);
+            myTransform = transform;
+            myHappyBar = myTransform.FindChild("happyBar").GetComponent<HappyBar>();
+            RoomID = int.Parse(_propertyDic["RoomID"]);
+            RoomName = _propertyDic["Name"];
+            StyleID = int.Parse(_propertyDic["Style"]);
+            Lv = byte.Parse(_propertyDic["LV"]);
             Floor = _floor;
-            RoomName = MIDXml.SelectSingleNode("Name").InnerText;
-            StyleID = int.Parse(MIDXml.SelectSingleNode("Style").InnerText);
-            Lv = byte.Parse(MIDXml.SelectSingleNode("LV").InnerText);
-            RoomCapacity = Lv;
+            RoomCapacity = 3;
             SetSpriteSortingOrder();//依照房間屬於第幾層設定房間層級
             OwnMonsterDic = new Dictionary<int, PlayerMonster>();//初始化擁有怪獸字典
+            //依房間名稱設定物件名稱
+            SetName();
+            //設定房間風格
+            SetRoomStyle();
         }
         catch (Exception ex)
         {
-            Debug.LogError("讀取文件數值時發生錯誤");
+            Debug.LogError("依造從Server取得的屬性設定房間資料時發生錯誤");
             throw ex;
         }
-        //依房間名稱設定物件名稱
-        SetName();
-        //設定房間風格
-        SetRoomStyle();
     }
-    //建構式
     private void SetName()
     {
-        transform.name = RoomName;
+        myTransform.name = string.Format("Room{0}", RoomID);
     }
     /// <summary>
     /// 設定房間風格
     /// </summary>
     public void SetRoomStyle()//設定房間風格
     {
+
         try
         {
             RoomStyleSprite = myTransform.FindChild("style").GetComponent<SpriteRenderer>();
-            StyleFileName = GameDictionary.RoomStyleDic[StyleID];
+            StyleFileName = GameDictionary.RoomStyleDic[1];
             StyleSpriteResource = Resources.Load<Sprite>(String.Format("Sprite/Room/{0}", StyleFileName));
             RoomStyleSprite.sprite = StyleSpriteResource;
         }
@@ -155,6 +143,7 @@ public class Room : MonoBehaviour
             Debug.LogError(ex);
             Debug.LogError("設定房間造景時發生錯誤");
         }
+
     }
     /// <summary>
     /// 將房間中加入此怪獸ID的怪獸

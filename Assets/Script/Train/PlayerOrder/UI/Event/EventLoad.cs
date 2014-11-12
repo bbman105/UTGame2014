@@ -20,18 +20,18 @@ public partial class EventLoad : MonoBehaviour
 
     public static void LoadValues()
     {
-        PlayerMonster m = (PlayerMonster)Player.monster[Player.curMonsterID].GetComponent<PlayerMonster>();
+        PlayerMonster m = Player.MonsterDic[Player.curMonsterID];
         SetName(m.MonsterName);
-        LoadMonsterSprite(charaSprite, m.Species,m.SpeciesLevel);
+        LoadMonsterSprite(charaSprite, m.Species, m.SpeciesLevel);
         LoadDialogue();
     }
 
     static void SetName(string _name)
     {
-        charaName.text = _name; 
+        charaName.text = _name;
     }
-    public static void LoadMonsterSprite(UISprite _sprite,int _species,int _speciesLevel)
-    {        
+    public static void LoadMonsterSprite(UISprite _sprite, int _species, int _speciesLevel)
+    {
         _sprite.atlas = Resources.Load<UIAtlas>(string.Format("Atlas/Character/{0}", _species));
         _sprite.spriteName = _speciesLevel.ToString();
         _sprite.MakePixelPerfect();

@@ -107,11 +107,11 @@ public class EvolutionLoad
         EvoTitleSprite.atlas = Resources.Load<UIAtlas>("Atlas/TrainScene/Event/Event");
         //各種屬性
         NameLabel = EvoUI.transform.FindChild("MemberTitle").FindChild("name").GetComponent<UILabel>();
-        HealthLabel=EvoUI.transform.FindChild("MemberTitle").FindChild("life").GetComponent<UILabel>();
+        HealthLabel = EvoUI.transform.FindChild("MemberTitle").FindChild("life").GetComponent<UILabel>();
         BrutalLabel = EvoUI.transform.FindChild("MemberTitle").FindChild("brutal").GetComponent<UILabel>();
         AggressiveLabel = EvoUI.transform.FindChild("MemberTitle").FindChild("aggressive").GetComponent<UILabel>();
         ResistanceLabel = EvoUI.transform.FindChild("MemberTitle").FindChild("resistance").GetComponent<UILabel>();
-        HealthAddLabel=EvoUI.transform.FindChild("MemberTitle").FindChild("lifeAdd").GetComponent<UILabel>();
+        HealthAddLabel = EvoUI.transform.FindChild("MemberTitle").FindChild("lifeAdd").GetComponent<UILabel>();
         BrutalAddLabel = EvoUI.transform.FindChild("MemberTitle").FindChild("brutalAdd").GetComponent<UILabel>();
         AggressiveAddLabel = EvoUI.transform.FindChild("MemberTitle").FindChild("aggressiveAdd").GetComponent<UILabel>();
         ResistanceAddLabel = EvoUI.transform.FindChild("MemberTitle").FindChild("resistanceAdd").GetComponent<UILabel>();
@@ -127,7 +127,7 @@ public class EvolutionLoad
         BottomSprite.atlas = Resources.Load<UIAtlas>("Atlas/Character/Icon/CharaIcon");
     }
 
-    public void ShowEvolution(int _preHealth, int _preBrutal,int _preAggressive,int _preResistance,string _talent,string _skill)
+    public void ShowEvolution(int _preHealth, int _preBrutal, int _preAggressive, int _preResistance, string _talent, string _skill)
     {
         //怪物圖像
         MonsterSprite.atlas = Resources.Load<UIAtlas>(string.Format("Atlas/Character/{0}", Pm.Species));
@@ -165,9 +165,9 @@ public class EvolutionLoad
         IconSprite.MakePixelPerfect();
         ElementSprite.spriteName = "element" + Pm.MainElement.ToString();
         ElementSprite.MakePixelPerfect();
-        BannerSprite.spriteName = "frame" + Pm.Rare.ToString();
+        BannerSprite.spriteName = "frame" + Pm.MainElement.ToString();
         BannerSprite.MakePixelPerfect();
-        BottomSprite.spriteName = "bottom" + Pm.Rare.ToString();
+        BottomSprite.spriteName = "bottom" + Pm.MainElement.ToString();
         BottomSprite.MakePixelPerfect();
         OnEvolutionUI = true;//設定目前已經顯示進化介面，若有其他怪物可進化不會立刻跳出
         EvoUI.SetActive(true);//顯示進化介面

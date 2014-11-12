@@ -1,171 +1,171 @@
 <root>
 	<MID1>
 		<MonsterID>1</MonsterID>
-		<OwnPlayerID>2</OwnPlayerID>
-		<Name>1</Name>
+		<OwnPlayerID>1</OwnPlayerID>
+		<Name>ªü¥_Ã~</Name>
 		<Species>1</Species>
 		<SpeciesLevel>1</SpeciesLevel>
-		<Rare>2</Rare>
+		<Rare>1</Rare>
+		<LV>3</LV>
+		<Health>0</Health>
+		<Wild>5</Wild>
+		<Mutation>5</Mutation>
+		<Natural>5</Natural>
+		<Happy>60</Happy>
+		<Brutal>12</Brutal>
+		<Aggressive>4</Aggressive>
+		<Resistance>4</Resistance>
+		<MainElement>0</MainElement>
+		<EXP>0</EXP>
+		<Personality>1</Personality>
+		<SelectedSkill>1</SelectedSkill>
+		<Level2Species>0</Level2Species>
+		<Level3Species>0</Level3Species>
+		<InRoomID>1</InRoomID>
+	</MID1>
+	<MID2>
+		<MonsterID>2</MonsterID>
+		<OwnPlayerID>1</OwnPlayerID>
+		<Name>­³­ôÃ~</Name>
+		<Species>2</Species>
+		<SpeciesLevel>1</SpeciesLevel>
+		<Rare>1</Rare>
+		<LV>4</LV>
+		<Health>0</Health>
+		<Wild>5</Wild>
+		<Mutation>5</Mutation>
+		<Natural>5</Natural>
+		<Happy>50</Happy>
+		<Brutal>4</Brutal>
+		<Aggressive>4</Aggressive>
+		<Resistance>12</Resistance>
+		<MainElement>1</MainElement>
+		<EXP>0</EXP>
+		<Personality>2</Personality>
+		<SelectedSkill>71</SelectedSkill>
+		<Level2Species>0</Level2Species>
+		<Level3Species>0</Level3Species>
+		<InRoomID>2</InRoomID>
+	</MID2>
+	<MID3>
+		<MonsterID>3</MonsterID>
+		<OwnPlayerID>1</OwnPlayerID>
+		<Name>«p¿AÃ~</Name>
+		<Species>3</Species>
+		<SpeciesLevel>1</SpeciesLevel>
+		<Rare>1</Rare>
 		<LV>5</LV>
 		<Health>0</Health>
 		<Wild>5</Wild>
 		<Mutation>5</Mutation>
 		<Natural>5</Natural>
-		<Happy>0</Happy>
-		<Brutal>0</Brutal>
-		<Aggressive>0</Aggressive>
-		<Resistance>0</Resistance>
-		<MainElement>1</MainElement>
-		<EXP>0</EXP>
-		<Personality>1</Personality>
-		<SelectedSkill>1</SelectedSkill>
-		<Level2Species>0</Level2Species>
-		<Level3Species>0</Level3Species>
-		<InRoomID>0</InRoomID>
-	</MID1>
-	<MID2>
-		<MonsterID>2</MonsterID>
-		<OwnPlayerID>2</OwnPlayerID>
-		<Name>2</Name>
-		<Species>2</Species>
-		<SpeciesLevel>1</SpeciesLevel>
-		<Rare>1</Rare>
-		<LV>1</LV>
-		<Health>0</Health>
-		<Wild>5</Wild>
-		<Mutation>5</Mutation>
-		<Natural>5</Natural>
-		<Happy>0</Happy>
-		<Brutal>0</Brutal>
-		<Aggressive>0</Aggressive>
-		<Resistance>0</Resistance>
-		<MainElement>0</MainElement>
-		<EXP>0</EXP>
-		<Personality>2</Personality>
-		<SelectedSkill>1</SelectedSkill>
-		<Level2Species>0</Level2Species>
-		<Level3Species>0</Level3Species>
-		<InRoomID>0</InRoomID>
-	</MID2>
-	<MID3>
-		<MonsterID>3</MonsterID>
-		<OwnPlayerID>2</OwnPlayerID>
-		<Name>3</Name>
-		<Species>3</Species>
-		<SpeciesLevel>1</SpeciesLevel>
-		<Rare>1</Rare>
-		<LV>1</LV>
-		<Health>0</Health>
-		<Wild>5</Wild>
-		<Mutation>5</Mutation>
-		<Natural>5</Natural>
-		<Happy>0</Happy>
-		<Brutal>0</Brutal>
-		<Aggressive>0</Aggressive>
-		<Resistance>0</Resistance>
-		<MainElement>1</MainElement>
+		<Happy>10</Happy>
+		<Brutal>4</Brutal>
+		<Aggressive>12</Aggressive>
+		<Resistance>4</Resistance>
+		<MainElement>2</MainElement>
 		<EXP>0</EXP>
 		<Personality>3</Personality>
-		<SelectedSkill>1</SelectedSkill>
+		<SelectedSkill>141</SelectedSkill>
 		<Level2Species>0</Level2Species>
 		<Level3Species>0</Level3Species>
-		<InRoomID>0</InRoomID>
+		<InRoomID>3</InRoomID>
 	</MID3>
 	<MID4>
 		<MonsterID>4</MonsterID>
-		<OwnPlayerID>2</OwnPlayerID>
-		<Name>4</Name>
+		<OwnPlayerID>1</OwnPlayerID>
+		<Name>ªü¶QÃ~</Name>
 		<Species>4</Species>
 		<SpeciesLevel>1</SpeciesLevel>
 		<Rare>1</Rare>
-		<LV>1</LV>
+		<LV>6</LV>
 		<Health>0</Health>
 		<Wild>5</Wild>
 		<Mutation>5</Mutation>
 		<Natural>5</Natural>
-		<Happy>0</Happy>
-		<Brutal>0</Brutal>
-		<Aggressive>0</Aggressive>
-		<Resistance>0</Resistance>
-		<MainElement>2</MainElement>
+		<Happy>40</Happy>
+		<Brutal>12</Brutal>
+		<Aggressive>4</Aggressive>
+		<Resistance>4</Resistance>
+		<MainElement>0</MainElement>
 		<EXP>0</EXP>
 		<Personality>1</Personality>
-		<SelectedSkill>1</SelectedSkill>
+		<SelectedSkill>211</SelectedSkill>
 		<Level2Species>0</Level2Species>
 		<Level3Species>0</Level3Species>
-		<InRoomID>0</InRoomID>
+		<InRoomID>4</InRoomID>
 	</MID4>
 	<MID5>
 		<MonsterID>5</MonsterID>
-		<OwnPlayerID>2</OwnPlayerID>
-		<Name>5</Name>
+		<OwnPlayerID>1</OwnPlayerID>
+		<Name>ºs­ôÃ~</Name>
 		<Species>5</Species>
 		<SpeciesLevel>1</SpeciesLevel>
 		<Rare>1</Rare>
-		<LV>1</LV>
+		<LV>7</LV>
 		<Health>0</Health>
 		<Wild>5</Wild>
 		<Mutation>5</Mutation>
 		<Natural>5</Natural>
-		<Happy>0</Happy>
-		<Brutal>0</Brutal>
-		<Aggressive>0</Aggressive>
-		<Resistance>0</Resistance>
-		<MainElement>0</MainElement>
+		<Happy>80</Happy>
+		<Brutal>4</Brutal>
+		<Aggressive>4</Aggressive>
+		<Resistance>12</Resistance>
+		<MainElement>1</MainElement>
 		<EXP>0</EXP>
 		<Personality>2</Personality>
 		<SelectedSkill>1</SelectedSkill>
 		<Level2Species>0</Level2Species>
 		<Level3Species>0</Level3Species>
-		<InRoomID>0</InRoomID>
+		<InRoomID>5</InRoomID>
 	</MID5>
 	<MID6>
 		<MonsterID>6</MonsterID>
-		<OwnPlayerID>2</OwnPlayerID>
-		<Name>6</Name>
+		<OwnPlayerID>1</OwnPlayerID>
+		<Name>°¨·ÝÃ~</Name>
 		<Species>6</Species>
 		<SpeciesLevel>1</SpeciesLevel>
 		<Rare>1</Rare>
-		<LV>1</LV>
+		<LV>8</LV>
 		<Health>0</Health>
 		<Wild>5</Wild>
 		<Mutation>5</Mutation>
 		<Natural>5</Natural>
-		<Happy>0</Happy>
-		<Brutal>0</Brutal>
-		<Aggressive>0</Aggressive>
-		<Resistance>0</Resistance>
-		<MainElement>1</MainElement>
+		<Happy>30</Happy>
+		<Brutal>4</Brutal>
+		<Aggressive>12</Aggressive>
+		<Resistance>4</Resistance>
+		<MainElement>2</MainElement>
 		<EXP>0</EXP>
 		<Personality>3</Personality>
-		<SelectedSkill>1</SelectedSkill>
+		<SelectedSkill>71</SelectedSkill>
 		<Level2Species>0</Level2Species>
 		<Level3Species>0</Level3Species>
-		<InRoomID>0</InRoomID>
+		<InRoomID>6</InRoomID>
 	</MID6>
 	<MID7>
 		<MonsterID>7</MonsterID>
 		<OwnPlayerID>2</OwnPlayerID>
-		<Name>7</Name>
+		<Name>«ÂÀMÃ~</Name>
 		<Species>7</Species>
 		<SpeciesLevel>1</SpeciesLevel>
 		<Rare>1</Rare>
-		<LV>1</LV>
+		<LV>9</LV>
 		<Health>0</Health>
 		<Wild>5</Wild>
 		<Mutation>5</Mutation>
 		<Natural>5</Natural>
-		<Happy>0</Happy>
-		<Brutal>0</Brutal>
-		<Aggressive>0</Aggressive>
-		<Resistance>0</Resistance>
+		<Happy>60</Happy>
+		<Brutal>4</Brutal>
+		<Aggressive>12</Aggressive>
+		<Resistance>4</Resistance>
 		<MainElement>0</MainElement>
 		<EXP>0</EXP>
 		<Personality>1</Personality>
-		<SelectedSkill>1</SelectedSkill>
+		<SelectedSkill>141</SelectedSkill>
 		<Level2Species>0</Level2Species>
 		<Level3Species>0</Level3Species>
-		<InRoomID>0</InRoomID>
+		<InRoomID>1</InRoomID>
 	</MID7>
 	<MID8>
 		<MonsterID>8</MonsterID>
@@ -241,7 +241,7 @@
 	</MID10>
 	<MID1000001>
 		<MonsterID>1000001</MonsterID>
-		<OwnPlayerID>1</OwnPlayerID>
+		<OwnPlayerID>2</OwnPlayerID>
 		<Name>ªü¥_Ã~</Name>
 		<Species>10</Species>
 		<SpeciesLevel>3</SpeciesLevel>
@@ -265,7 +265,7 @@
 	</MID1000001>
 	<MID1000002>
 		<MonsterID>1000002</MonsterID>
-		<OwnPlayerID>1</OwnPlayerID>
+		<OwnPlayerID>2</OwnPlayerID>
 		<Name>­³­ôÃ~</Name>
 		<Species>9</Species>
 		<SpeciesLevel>3</SpeciesLevel>
@@ -289,7 +289,7 @@
 	</MID1000002>
 	<MID1000003>
 		<MonsterID>1000003</MonsterID>
-		<OwnPlayerID>1</OwnPlayerID>
+		<OwnPlayerID>2</OwnPlayerID>
 		<Name>«p¿AÃ~</Name>
 		<Species>4</Species>
 		<SpeciesLevel>4</SpeciesLevel>
@@ -313,7 +313,7 @@
 	</MID1000003>
 	<MID1000004>
 		<MonsterID>1000004</MonsterID>
-		<OwnPlayerID>1</OwnPlayerID>
+		<OwnPlayerID>2</OwnPlayerID>
 		<Name>ºs­ôÃ~</Name>
 		<Species>1</Species>
 		<SpeciesLevel>1</SpeciesLevel>
@@ -337,7 +337,7 @@
 	</MID1000004>
 	<MID1000005>
 		<MonsterID>1000005</MonsterID>
-		<OwnPlayerID>1</OwnPlayerID>
+		<OwnPlayerID>2</OwnPlayerID>
 		<Name>°¨·ÝÃ~</Name>
 		<Species>7</Species>
 		<SpeciesLevel>1</SpeciesLevel>
@@ -361,7 +361,7 @@
 	</MID1000005>
 	<MID1000006>
 		<MonsterID>1000006</MonsterID>
-		<OwnPlayerID>1</OwnPlayerID>
+		<OwnPlayerID>2</OwnPlayerID>
 		<Name>«ÂÀMÃ~</Name>
 		<Species>8</Species>
 		<SpeciesLevel>1</SpeciesLevel>

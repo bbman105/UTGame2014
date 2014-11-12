@@ -36,7 +36,6 @@ public partial class ForceCondition : MonoBehaviour
 
     private static void StartSetBattleEndUI()//戰鬥結算UI設置
     {
-
         //結算面板
         battleEndPannel = GameObject.FindGameObjectWithTag("BattleEnd");//抓取battleEndPannel物件
         battleEndDetail = battleEndPannel.transform.FindChild("BattleEndDetail").gameObject;
@@ -136,27 +135,6 @@ public partial class ForceCondition : MonoBehaviour
                 CurMember = Player.MonsterDic[(Player.TeamDic[PlayerTeamID].Member[i])];
                 reRollProperty[pos].playerMonster = CurMember;
                 reRollProperty[pos].RollBtnID = pos;
-
-                /*
-                ///////////////////////讀取目前選取腳色的資料/////////////////////////////
-                //設置腳色Icon的各種資料(怪物、元素、邊框、底圖)
-                //判斷物種頭像放在哪個atlas
-                if (CurMember.Species < 49)
-                {
-                    iconCharaAtlas[pos] = Resources.Load<UIAtlas>("Atlas/Character/Icon/CharaIcon");
-                }
-                iconCharaSprite[pos].spriteName = CurMember.Species.ToString();
-                iconCharaSprite[pos].MakePixelPerfect();
-                elementSprite[pos].atlas = iconCharaAtlas[i];
-                elementSprite[pos].spriteName = "element" + CurMember.MainElement.ToString();
-                elementSprite[pos].MakePixelPerfect();
-                bannerSprite[pos].atlas = iconCharaAtlas[i];
-                bannerSprite[pos].spriteName = "frame" + CurMember.MainElement.ToString();
-                bannerSprite[pos].MakePixelPerfect();
-                bottomSprite[pos].atlas = iconCharaAtlas[i];
-                bottomSprite[pos].spriteName = "bottom" + CurMember.MainElement.ToString();
-                bottomSprite[pos].MakePixelPerfect();
-                 */
                 pos++;
             }
         }
@@ -175,7 +153,6 @@ public partial class ForceCondition : MonoBehaviour
             default:
                 break;
         }
-
     }
     void BattleEndAnim()
     {
@@ -460,7 +437,7 @@ public partial class ForceCondition : MonoBehaviour
                 resistanceLabel[pos].text = TmpMemberResistance[i].ToString();
                 if (ForceCondition.CharaStatusDic["PlayerMonster"][i].Alive)//如果該隊員活著
                 {
-                    CurMember.GetExp(PerFinalExp);
+                    //CurMember.GetExp(PerFinalExp);
                     deathLabel[pos].enabled = false;
                     deathMaskSprite[pos].enabled = false;
                 }
@@ -708,7 +685,8 @@ public partial class ForceCondition : MonoBehaviour
             if (ForceCondition.CharaStatusDic["PlayerMonster"][i].Alive)
                 aliveMember++;
         }
-        PerFinalExp = (int)(FinalExp / aliveMember);
+        if (aliveMember > 0)
+            PerFinalExp = (int)(FinalExp / aliveMember);
     }
     /// <summary>
     /// 計算評價加權獎勵比例
@@ -768,21 +746,18 @@ public partial class ForceCondition : MonoBehaviour
                 }
             }
             /////////////玩家增加金幣並回傳///////////////
-            Player.OwnResource.AddResource(0, FinalGold);
+            Player.OwnResource.AddResource("Gold", FinalGold);
             /////////////玩家增加資源並回傳///////////////
             List<int> dicBuffer = new List<int>(KillLootDic.Keys);
             foreach (int key in dicBuffer)
             {
-                for (int i = 0; i < KillLootDic[key]; i++)
-                {
-                    Player.OwnResource.AddEnhanceMaterial(key, KillLootDic[key]);
-                }
+                Player.OwnResource.AddEnhanceMaterial(key, KillLootDic[key]);
             }
         }
         catch (Exception ex)
         {
-            Debug.LogError("回傳戰鬥結果時發生錯誤");
-            Debug.LogError(ex);
+            Debug.LogWarning("回傳戰鬥結果時發生錯誤");
+            Debug.LogWarning(ex);
         }
     }
     void CalculateRank()//計算評價
@@ -874,8 +849,8 @@ public partial class ForceCondition : MonoBehaviour
     /// </summary>
     void ResultCaculate()//結果計算
     {
-        CalculateReward();//計算獎勵
         CalculatePerMemberExperience();//計算取得經驗
+        CalculateReward();//計算獎勵
         CalculateAchievement();//計算取得成就
         UnlockCheck();//解鎖關卡檢查
     }

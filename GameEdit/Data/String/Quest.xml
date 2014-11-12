@@ -1,105 +1,105 @@
 <root>
 	<QID1>
 		<QuestID>1</QuestID>
-		<QuestName>¤j¯ó­ì</QuestName>
+		<QuestName>´Óª«¶é</QuestName>
 		<ChoiceEvent>0</ChoiceEvent>
 		<EventWeight>0</EventWeight>
 		<AbsoluteEvent>1</AbsoluteEvent>
-		<OwnMonsterID>1,2</OwnMonsterID>
+		<OwnMonsterID>1</OwnMonsterID>
 		<OwnItemID>0</OwnItemID>
-		<Gold>10</Gold>
-		<Exp>2000</Exp>
+		<Gold>30</Gold>
+		<Exp>50</Exp>
 		<OnFightMinNumber>1</OnFightMinNumber>
 		<OnFightMaxNumber>2</OnFightMaxNumber>
 	</QID1>
 	<QID2>
 		<QuestID>2</QuestID>
-		<QuestName>ÂÎ¤§´Ë</QuestName>
+		<QuestName>´Óª«¥P¹Ò</QuestName>
 		<ChoiceEvent>0</ChoiceEvent>
 		<EventWeight>0</EventWeight>
 		<AbsoluteEvent>2</AbsoluteEvent>
-		<OwnMonsterID>3,4</OwnMonsterID>
+		<OwnMonsterID>1,2</OwnMonsterID>
 		<OwnItemID>0</OwnItemID>
-		<Gold>11</Gold>
-		<Exp>2000</Exp>
+		<Gold>40</Gold>
+		<Exp>70</Exp>
 		<OnFightMinNumber>1</OnFightMinNumber>
 		<OnFightMaxNumber>2</OnFightMaxNumber>
 	</QID2>
 	<QID3>
 		<QuestID>3</QuestID>
-		<QuestName>¸H¤ö¸ô®|</QuestName>
+		<QuestName>ÂÎ¬}</QuestName>
 		<ChoiceEvent>0</ChoiceEvent>
 		<EventWeight>0</EventWeight>
 		<AbsoluteEvent>3</AbsoluteEvent>
-		<OwnMonsterID>5,6</OwnMonsterID>
+		<OwnMonsterID>3,4</OwnMonsterID>
 		<OwnItemID>0</OwnItemID>
-		<Gold>12</Gold>
-		<Exp>2000</Exp>
+		<Gold>50</Gold>
+		<Exp>90</Exp>
 		<OnFightMinNumber>1</OnFightMinNumber>
 		<OnFightMaxNumber>2</OnFightMaxNumber>
 	</QID3>
 	<QID4>
 		<QuestID>4</QuestID>
-		<QuestName>¾_¾Ù¤§¦a</QuestName>
+		<QuestName>ÂÎ¼Ö¶é</QuestName>
 		<ChoiceEvent>0</ChoiceEvent>
 		<EventWeight>0</EventWeight>
 		<AbsoluteEvent>4</AbsoluteEvent>
-		<OwnMonsterID>7,8</OwnMonsterID>
+		<OwnMonsterID>1,2,3,4</OwnMonsterID>
 		<OwnItemID>0</OwnItemID>
-		<Gold>13</Gold>
-		<Exp>2000</Exp>
+		<Gold>60</Gold>
+		<Exp>110</Exp>
 		<OnFightMinNumber>1</OnFightMinNumber>
 		<OnFightMaxNumber>2</OnFightMaxNumber>
 	</QID4>
 	<QID5>
 		<QuestID>5</QuestID>
-		<QuestName>µU©¥</QuestName>
+		<QuestName>±IÀRÀ­</QuestName>
 		<ChoiceEvent>0</ChoiceEvent>
 		<EventWeight>0</EventWeight>
-		<AbsoluteEvent>4</AbsoluteEvent>
-		<OwnMonsterID>7,8</OwnMonsterID>
+		<AbsoluteEvent>5</AbsoluteEvent>
+		<OwnMonsterID>3,4,5,6</OwnMonsterID>
 		<OwnItemID>0</OwnItemID>
-		<Gold>14</Gold>
-		<Exp>2000</Exp>
+		<Gold>70</Gold>
+		<Exp>130</Exp>
 		<OnFightMinNumber>1</OnFightMinNumber>
 		<OnFightMaxNumber>2</OnFightMaxNumber>
 	</QID5>
 	<QID6>
 		<QuestID>6</QuestID>
-		<QuestName>¥¨¥Û¿ò¸ñ</QuestName>
+		<QuestName>¨IÀq¤§¥C</QuestName>
 		<ChoiceEvent>0</ChoiceEvent>
 		<EventWeight>0</EventWeight>
-		<AbsoluteEvent>4</AbsoluteEvent>
-		<OwnMonsterID>7,8</OwnMonsterID>
+		<AbsoluteEvent>6</AbsoluteEvent>
+		<OwnMonsterID>5,6,7,8</OwnMonsterID>
 		<OwnItemID>0</OwnItemID>
-		<Gold>15</Gold>
-		<Exp>2000</Exp>
+		<Gold>80</Gold>
+		<Exp>150</Exp>
 		<OnFightMinNumber>1</OnFightMinNumber>
 		<OnFightMaxNumber>2</OnFightMaxNumber>
 	</QID6>
 	<QID7>
 		<QuestID>7</QuestID>
-		<QuestName>ÅK¾ðªL</QuestName>
+		<QuestName>µU©¥</QuestName>
 		<ChoiceEvent>0</ChoiceEvent>
 		<EventWeight>0</EventWeight>
-		<AbsoluteEvent>4</AbsoluteEvent>
-		<OwnMonsterID>7,8</OwnMonsterID>
+		<AbsoluteEvent>7</AbsoluteEvent>
+		<OwnMonsterID>7,8,9,10</OwnMonsterID>
 		<OwnItemID>0</OwnItemID>
-		<Gold>16</Gold>
-		<Exp>2000</Exp>
+		<Gold>90</Gold>
+		<Exp>170</Exp>
 		<OnFightMinNumber>1</OnFightMinNumber>
 		<OnFightMaxNumber>2</OnFightMaxNumber>
 	</QID7>
 	<QID8>
 		<QuestID>8</QuestID>
-		<QuestName>¯ð´Æ¦a</QuestName>
+		<QuestName>µU¸t¦a</QuestName>
 		<ChoiceEvent>0</ChoiceEvent>
 		<EventWeight>0</EventWeight>
-		<AbsoluteEvent>4</AbsoluteEvent>
-		<OwnMonsterID>7,8</OwnMonsterID>
+		<AbsoluteEvent>8</AbsoluteEvent>
+		<OwnMonsterID>9,10,11,12</OwnMonsterID>
 		<OwnItemID>0</OwnItemID>
-		<Gold>17</Gold>
-		<Exp>2000</Exp>
+		<Gold>100</Gold>
+		<Exp>190</Exp>
 		<OnFightMinNumber>1</OnFightMinNumber>
 		<OnFightMaxNumber>2</OnFightMaxNumber>
 	</QID8>
@@ -108,11 +108,11 @@
 		<QuestName>¤@½u¤Ñ</QuestName>
 		<ChoiceEvent>0</ChoiceEvent>
 		<EventWeight>0</EventWeight>
-		<AbsoluteEvent>4</AbsoluteEvent>
-		<OwnMonsterID>7,8</OwnMonsterID>
+		<AbsoluteEvent>9</AbsoluteEvent>
+		<OwnMonsterID>2,4,6</OwnMonsterID>
 		<OwnItemID>0</OwnItemID>
-		<Gold>18</Gold>
-		<Exp>2000</Exp>
+		<Gold>110</Gold>
+		<Exp>210</Exp>
 		<OnFightMinNumber>1</OnFightMinNumber>
 		<OnFightMaxNumber>2</OnFightMaxNumber>
 	</QID9>
@@ -121,11 +121,11 @@
 		<QuestName>ÀRÁÄ¤§²\</QuestName>
 		<ChoiceEvent>0</ChoiceEvent>
 		<EventWeight>0</EventWeight>
-		<AbsoluteEvent>4</AbsoluteEvent>
-		<OwnMonsterID>7,8</OwnMonsterID>
+		<AbsoluteEvent>10</AbsoluteEvent>
+		<OwnMonsterID>8,10,12</OwnMonsterID>
 		<OwnItemID>0</OwnItemID>
-		<Gold>19</Gold>
-		<Exp>2000</Exp>
+		<Gold>120</Gold>
+		<Exp>230</Exp>
 		<OnFightMinNumber>1</OnFightMinNumber>
 		<OnFightMaxNumber>2</OnFightMaxNumber>
 	</QID10>

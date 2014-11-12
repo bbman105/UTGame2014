@@ -1,26 +1,26 @@
 <root>
 	<EID0>
 		<ElementID>0</ElementID>
-		<Copper>1,10,500</Copper>
-		<Silver>2,10,2500</Silver>
-		<Gold>3,10,5000</Gold>
-		<Dimand>4,10,10000</Dimand>
+		<Copper>1,5,50</Copper>
+		<Silver>2,5,100</Silver>
+		<Gold>3,5,150</Gold>
+		<Dimand>4,5,200</Dimand>
 		<Crystal>0</Crystal>
 	</EID0>
 	<EID1>
 		<ElementID>1</ElementID>
-		<Copper>11,10,500</Copper>
-		<Silver>12,10,2500</Silver>
-		<Gold>13,10,5000</Gold>
-		<Dimand>14,10,10000</Dimand>
+		<Copper>11,5,50</Copper>
+		<Silver>12,5,100</Silver>
+		<Gold>13,5,150</Gold>
+		<Dimand>14,5,150</Dimand>
 		<Crystal>0</Crystal>
 	</EID1>
 	<EID2>
 		<ElementID>2</ElementID>
-		<Copper>21,10,500</Copper>
-		<Silver>22,10,2500</Silver>
-		<Gold>23,10,5000</Gold>
-		<Dimand>24,10,10000</Dimand>
+		<Copper>21,5,50</Copper>
+		<Silver>22,5,100</Silver>
+		<Gold>23,5,150</Gold>
+		<Dimand>24,5,150</Dimand>
 		<Crystal>0</Crystal>
 	</EID2>
 </root>
